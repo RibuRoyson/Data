@@ -74,6 +74,7 @@
             android:layout_weight="0.5"
             android:gravity="bottom|left"
             android:text="PROFILE"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <View
@@ -215,6 +216,7 @@
             android:layout_height="0dp"
             android:layout_weight="0.5"
             android:text="Your phone number and email address willalways reamin private"
+            android:gravity="center_vertical"
             android:textSize="20sp" />
 
         <LinearLayout

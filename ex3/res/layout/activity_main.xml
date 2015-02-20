@@ -144,6 +144,8 @@
                 android:src="@drawable/ic_launcher"
                 android:layout_gravity="bottom" />
 
+            
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="42dp"
