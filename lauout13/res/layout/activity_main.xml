@@ -217,7 +217,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.50"
             android:gravity="center"
-            android:text="Athlete Information "
+            android:text="Athlete Information"
             android:textColor="#ffffff" />
 
         <View
