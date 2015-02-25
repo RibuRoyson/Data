@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;EgTable/res/drawable-hdpi/Home Green.png&apos; to &apos;home_green.png&apos;" description="Rename resource &apos;Home Green.png&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="res/drawable-hdpi/Home Green.png" name="home_green.png" stamp="1424848306042" updateReferences="true"/>
+</session>
