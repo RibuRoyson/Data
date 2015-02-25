@@ -1,0 +1,335 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:weightSum="5.0"
+    android:background="#000000"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:weightSum="4.0"
+        android:layout_weight="1.0" >
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:text="INTERNET" 
+            android:background="#008299"
+            android:textColor="#ffffff"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:text="STORE"
+            android:background="#DC572E"
+            android:textColor="#ffffff" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:background="#921143"
+            android:textColor="#ffffff"
+            android:text="WHATSAPP" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:textColor="#ffffff"
+            android:background="#14459A"
+            android:text="LINKEDIN" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:textColor="#ffffff"
+            android:background="#739D57"
+            android:text="HTC" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:textColor="#ffffff"
+            android:background="#1F5D7B"
+            android:text="FACEBOOK" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:weightSum="0.80"
+        android:layout_weight="3.0" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="0.30" 
+            android:weightSum="3.0">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.0"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Texting"
+                    android:background="#008A00"
+                    android:textColor="#ffffff" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:textColor="#ffffff"
+                android:orientation="horizontal"
+                android:weightSum="0.75"
+                android:layout_weight="1.0" >
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="MAPS"
+                    android:textColor="#ffffff"
+                    android:background="#79A31C"
+                    android:layout_weight="0.25" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:textColor="#ffffff"
+                    android:layout_height="match_parent"
+                    android:text="YOUTUBE" 
+                    android:background="#AC193D"
+                    android:layout_weight="0.25"/>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:textColor="#ffffff"
+                    android:layout_height="match_parent"
+                    android:text="CHESS"
+                    android:background="#421D5C"
+                    android:layout_weight="0.25" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                android:weightSum="0.75"
+                android:layout_weight="1.0" >
+
+                <Button
+                    android:layout_width="0dp"
+                    android:textColor="#ffffff"
+                    android:layout_height="match_parent"
+                    android:text="CAMERA"
+                     android:background="#918660"
+                    android:layout_weight="0.25" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:textColor="#ffffff"
+                    android:layout_height="match_parent"
+                    android:text="CHROME"
+                     android:background="#472E3E"
+                    android:layout_weight="0.50" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="0.20"
+            android:weightSum="0.6" >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="0.4"
+				android:weightSum=".75">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:text="PEOPLE"
+                    android:background="#904F3B"
+                    android:textColor="#ffffff"
+                    android:layout_weight="0.25" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:textColor="#ffffff"
+                    android:layout_weight="0.25"
+                    android:text="MAIL"
+                    android:background="#22144F" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:textColor="#ffffff"
+                    android:layout_weight="0.25"
+                     android:background="#3E401F"
+                    android:text="DOLPHIN" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="0.2" >
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="WORLD" 
+                    android:background="#48555D"
+                    android:textColor="#ffffff"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="0.30"
+            android:weightSum="0.75" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                android:weightSum="1.0"
+                android:layout_weight="0.25" >
+
+                <Button
+                    android:layout_width="0dp"
+                    android:textColor="#ffffff"
+                    android:layout_height="match_parent"
+                    android:text="RISEOFG" 
+                    android:background="#407A4D"
+                    android:layout_weight="0.48"/>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="FILE MANAGER"
+                    android:textColor="#ffffff"
+                    android:background="#7E6746"
+                    android:layout_weight="0.52" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                android:weightSum="1.0"
+                android:layout_weight="0.50" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.50"
+                    android:orientation="vertical"
+                    android:weightSum="0.50" >
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:text="SKYPE" 
+                        android:textColor="#ffffff"
+                         android:background="#621717"
+                        android:layout_weight="0.25"/>
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:textColor="#ffffff"
+                        android:text="MOVIE EDITOR"
+                         android:background="#755813"
+                        android:layout_weight="0.25" />
+                </LinearLayout>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="FM RADIO" 
+                    android:textColor="#ffffff"
+                     android:background="#799898"
+                    android:layout_weight="0.50"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:weightSum="2.0"
+        android:layout_weight="1.0" >
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="PHONE"
+            android:textColor="#ffffff"
+             android:background="#A03E91"
+            android:layout_weight="0.25" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="BUTTON"
+            android:textColor="#ffffff"
+             android:background="#18264A"
+            android:layout_weight="0.25" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="BUTTON"
+            android:textColor="#ffffff"
+             android:background="#2E8DEF"
+            android:layout_weight="0.25" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="MUSIC"
+             android:background="#254B5D"
+            android:textColor="#ffffff"
+            android:layout_weight="0.25" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="TWITTER" 
+            android:textColor="#ffffff"
+             android:background="#5F9231"
+            android:layout_weight="0.25"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="SETTINGS"
+            android:textColor="#ffffff"
+             android:background="#23037E"
+            android:layout_weight="1.0" />
+    </LinearLayout>
+
+</LinearLayout>
