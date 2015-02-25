@@ -28,29 +28,20 @@ public final class R {
         public static final int save1=0x7f020003;
     }
     public static final class id {
-        public static final int analogClock1=0x7f070010;
-        public static final int but1=0x7f07000b;
-        public static final int editText1=0x7f070001;
-        public static final int editText2=0x7f070003;
-        public static final int imageButton1=0x7f07000d;
-        public static final int imageButton2=0x7f070009;
-        public static final int imageView1=0x7f070008;
-        public static final int numberPicker1=0x7f07000e;
-        public static final int quickContactBadge1=0x7f07000c;
-        public static final int radio0=0x7f070005;
-        public static final int radio1=0x7f070006;
-        public static final int radioGroup1=0x7f070004;
-        public static final int ratingBar1=0x7f070007;
+        public static final int analogClock1=0x7f070008;
+        public static final int but1=0x7f070001;
+        public static final int editText1=0x7f070002;
+        public static final int imageButton1=0x7f070005;
+        public static final int imageView1=0x7f070004;
+        public static final int numberPicker1=0x7f070006;
+        public static final int quickContactBadge1=0x7f070003;
         public static final int textView1=0x7f070000;
-        public static final int textView2=0x7f070002;
-        public static final int toggleButton1=0x7f07000a;
-        public static final int zoomButton1=0x7f07000f;
+        public static final int zoomButton1=0x7f070007;
     }
     public static final class layout {
-        public static final int activity_main=0x7f030000;
-        public static final int layoutgravity=0x7f030001;
-        public static final int second=0x7f030002;
-        public static final int third=0x7f030003;
+        public static final int layoutgravity=0x7f030000;
+        public static final int second=0x7f030001;
+        public static final int third=0x7f030002;
     }
     public static final class string {
         public static final int action_settings=0x7f050002;

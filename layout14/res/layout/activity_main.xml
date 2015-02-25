@@ -75,6 +75,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.30"
                 android:text="Call"
+                android:layout_marginRight="1dp"
                 android:background="#ffffff" />
 
             <Button
@@ -82,6 +83,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.30"
                 android:text="Edit"
+                android:layout_marginRight="1dp"
 				android:background="#ffffff"
 				/>
 

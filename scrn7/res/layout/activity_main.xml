@@ -249,11 +249,12 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
+                android:layout_weight="0.25"
                 android:gravity="bottom|center"
                 android:text="Alphine to Marthahlli Bridge Flyover"
                 android:textColor="#ffffff"
-                android:layout_weight="0.25"
-                android:textSize="20sp" />
+               
+                 />
 
             <TextView
                 android:layout_width="match_parent"

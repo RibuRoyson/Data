@@ -24,9 +24,10 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1.0"
+            android:background="#80000000"
             android:orientation="horizontal"
-            android:padding="20dp"
-             android:background="#80000000" >
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp" >
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -41,19 +42,18 @@
                 android:background="#38A7DB"
                 android:gravity="center"
                 android:text="Sign in with Twitter"
-                android:textSize="30sp"
-                android:textColor="#ffffff" />
-            
-
+                android:textColor="#ffffff"
+                />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1.0"
+            android:background="#80000000"
             android:orientation="horizontal"
-            android:padding="20dp"
-             android:background="#80000000" >
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp" >
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -68,26 +68,36 @@
                 android:background="#DCDCD9"
                 android:gravity="center"
                 android:text="Sign up with Email"
-                 android:textSize="30sp"
-                android:textColor="#000000"  />
+                android:textColor="#000000"
+                />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1.0"
-            android:orientation="horizontal"
-             android:background="#000000" >
+            android:background="#000000"
+            android:orientation="horizontal" 
+            android:weightSum="1.0">
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
-                android:gravity="center"
-                android:text="Already have an account? Sign in now"
+                android:gravity="center|right"
+                android:text="Already have an account?"
                 android:textColor="#ffffff"
-                android:textSize="25sp" />
-
+                android:layout_weight="0.60"
+                />
+            <TextView 
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="Sign in now"
+                 android:textColor="#ffffff"
+                 android:gravity="left|center"
+                 android:textStyle="bold"
+                 android:layout_weight="0.40"
+                />
         </LinearLayout>
     </LinearLayout>
 
