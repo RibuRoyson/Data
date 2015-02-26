@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <Button
+        android:id="@+id/cat"
+        android:layout_width="250px"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="81dp"
+        android:text="Category"
+         android:textColor="#C00808" />
+
+    <Button
+        android:id="@+id/all"
+        android:layout_width="250px"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="All"
+         android:textColor="#C00808" />
+
+    <Button
+        android:id="@+id/month"
+        android:layout_width="250px"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/cat"
+        android:layout_below="@+id/cat"
+        android:layout_marginTop="15dp"
+        android:text="Month-Wise"
+        android:textColor="#C00808" />
+
+</RelativeLayout>

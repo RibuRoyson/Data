@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <Button
+        android:id="@+id/drinks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="59dp"
+        android:text="Drinks"
+        android:textColor="#C00808" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/button1"
+        android:layout_marginTop="36dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <ListView
+                android:id="@+id/listView1"
+                android:layout_width="match_parent"
+                android:layout_height="326dp" >
+            </ListView>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/cloth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/drinks"
+        android:layout_alignBottom="@+id/drinks"
+        android:layout_marginLeft="26dp"
+        android:layout_toRightOf="@+id/drinks"
+        android:text="Cloth" 
+        android:textColor="#C00808"/>
+
+    <Button
+        android:id="@+id/food"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/drinks"
+        android:layout_alignBottom="@+id/drinks"
+        android:layout_marginRight="27dp"
+        android:layout_toLeftOf="@+id/drinks"
+        android:text="Food"
+        android:textColor="#C00808" />
+
+</RelativeLayout>
