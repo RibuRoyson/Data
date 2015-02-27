@@ -1,0 +1,78 @@
+package com.example.asyntask1;
+
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+import android.widget.Toast;
+
+public class MainActivity extends ActionBarActivity {
+	ProgressBar pb;
+	TextView tv;
+	String url="http://images.visitcanberra.com.au/images/canberra_hero_image.jpg";
+	ImageView im;
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		pb=(ProgressBar)findViewById(R.id.progressBar1);
+		tv=(TextView)findViewById(R.id.textView1);
+		im=(ImageView)findViewById(R.id.imageView1);
+	}
+	public void download(View v)
+	{
+		MyAsyntask myObj1=new MyAsyntask();
+		myObj1.execute("");	
+	}
+
+	class MyAsyntask extends AsyncTask<String, Void, String>
+	{
+
+		Bitmap bmp;
+		@Override
+		protected String doInBackground(String... params) {
+			InputStream is=null;
+			try
+			{
+				URL ulrn=new URL(url);
+				HttpURLConnection con=(HttpURLConnection)ulrn.openConnection();
+				is=con.getInputStream();
+			}catch(Exception e)
+			{
+				e.printStackTrace();
+			}
+			bmp=BitmapFactory.decodeStream(is);
+		    return null;
+		}
+
+		
+
+		@Override
+		protected void onPreExecute() {
+			Toast.makeText(getApplicationContext(), "Starting Async", Toast.LENGTH_LONG).show();
+		}
+
+		@Override
+		protected void onPostExecute(String result) {
+			super.onPostExecute(result);
+			
+			im.setImageBitmap(bmp);
+		}
+
+		@Override
+		protected void onProgressUpdate(Void... values) {
+			super.onProgressUpdate(values);
+		}
+		
+		
+	}
+}

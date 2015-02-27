@@ -1,0 +1,56 @@
+package com.example.asyntask1;
+
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.view.View;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+
+public class MainActivity extends ActionBarActivity {
+	ProgressBar pb;
+	TextView tv;
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		pb=(ProgressBar)findViewById(R.id.progressBar1);
+		tv=(TextView)findViewById(R.id.textView1);
+	}
+	public void download(View v)
+	{
+		MyAsyntask myObj1=new MyAsyntask();
+		myObj1.execute("http://www.google.co.in/logo1.png","http://www.google.co.in/logo2.png","http://www.google.co.in/logo3.png");	
+	}
+
+	class MyAsyntask extends AsyncTask<String, Integer, String>
+	{
+
+		
+		@Override
+		protected String doInBackground(String... params) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		@Override
+		protected void onPreExecute() {
+			// TODO Auto-generated method stub
+			super.onPreExecute();
+		}
+
+		@Override
+		protected void onPostExecute(String result) {
+			// TODO Auto-generated method stub
+			super.onPostExecute(result);
+		}
+
+		@Override
+		protected void onProgressUpdate(Integer... values) {
+			// TODO Auto-generated method stub
+			super.onProgressUpdate(values);
+		}
+		
+		
+	}
+}

@@ -41,15 +41,15 @@ public class MainActivity extends ActionBarActivity {
 					{
 						e.printStackTrace();
 					}
-					
+
 					final int j=i;
-				runOnUiThread(new Runnable() {
-					public void run() {
-						Toast.makeText(getApplicationContext(), "for loop running", Toast.LENGTH_SHORT).show();
-						ProgressBar pb=(ProgressBar)findViewById(R.id.progressBar1);
-						pb.setProgress(j*10);
-					}
-				});
+					runOnUiThread(new Runnable() {
+						public void run() {
+							Toast.makeText(getApplicationContext(), "for loop running", Toast.LENGTH_SHORT).show();
+							ProgressBar pb=(ProgressBar)findViewById(R.id.progressBar1);
+							pb.setProgress(j*10);
+						}
+					});
 				}
 
 			}

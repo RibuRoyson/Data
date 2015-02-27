@@ -1,0 +1,49 @@
+package com.example.asynctask;
+
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.view.View;
+import android.widget.Toast;
+
+public class MainActivity extends ActionBarActivity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+
+	}
+
+
+	public void startDownload(View v) {
+
+	}
+
+	class MyAsyncTask extends AsyncTask<String, Integer, String>{
+
+		@Override
+		protected void onPreExecute() {
+			Toast.makeText(getApplicationContext(), "Starting Async", Toast.LENGTH_LONG).show();
+			//super.onPreExecute();
+		}
+
+		@Override
+		protected String doInBackground(String... params) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		@Override
+		protected void onProgressUpdate(Integer... values) {
+			super.onProgressUpdate(values);
+		}
+
+		@Override
+		protected void onPostExecute(String result) {
+			Toast.makeText(getApplicationContext(), "Finished Async", Toast.LENGTH_LONG).show();
+			super.onPostExecute(result);
+		}
+
+	}
+}

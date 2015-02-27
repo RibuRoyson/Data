@@ -1,0 +1,32 @@
+package com.example.asyntask1;
+
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.view.View;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+
+public class MainActivity extends ActionBarActivity {
+ProgressBar pb;
+TextView tv;
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		pb=(ProgressBar)findViewById(R.id.progressBar1);
+		tv=(TextView)findViewById(R.id.textView1);
+	}
+	public void download(View v)
+	{
+			MyAsyntask myobj=new MyAsyntask();
+			myobj.execute("http://www.google.co.in/photo1","http://www.google.co.in/photo2","http://www.google.co.in/photo3");
+	}
+
+	class MyAsyntask extends AsyncTask<Params, Progress, Result>
+	{
+
+		
+		
+	}
+}
