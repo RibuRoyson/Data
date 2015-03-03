@@ -28,6 +28,7 @@ public class MainActivity extends ActionBarActivity {
 	}
 
 	class MyAsyncTask extends AsyncTask<String, Integer, String>{
+		String currentURL="";
 
 		@Override
 		protected void onPreExecute() {
@@ -46,6 +47,8 @@ public class MainActivity extends ActionBarActivity {
 		@Override
 		protected void onProgressUpdate(Integer... values) {
 			Toast.makeText(getApplicationContext(), "Running onProgressUpdate", Toast.LENGTH_LONG).show();
+			percentageBar.setProgress(values[0]);
+			txtStatus.setText("Downloading.. \n"+values[0]+"% complete.\n"+currentURL);
 		}
 
 		@Override
@@ -55,24 +58,13 @@ public class MainActivity extends ActionBarActivity {
 		}
 
 		private void downlaodFile(final String fileURL){
-
-			runOnUiThread(new Runnable() {
-				public void run() {
-					percentageBar.setProgress(0);
-				}
-			});
-
+			currentURL=fileURL;
+			publishProgress(0);
 
 			try {
-				for (int i = 0; i < 100; i+=10) {
+				for (int i = 0; i < 101; i+=10) {
 					Thread.sleep(1000);
-					final int k=i;
-					runOnUiThread(new Runnable() {
-						public void run() {
-							percentageBar.setProgress(k);
-							txtStatus.setText("Downloading.. \n"+k+"% complete.\n"+fileURL);
-						}
-					});
+					publishProgress(i);
 				}
 			} catch (InterruptedException e) {
 				e.printStackTrace();

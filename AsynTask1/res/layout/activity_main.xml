@@ -24,12 +24,13 @@
         android:onClick="download"
         android:text="Download Now" />
 
-    <ProgressBar
-        android:id="@+id/progress1"
-        style="?android:attr/progressBarStyleHorizontal"
+    <Button
+        android:id="@+id/button2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.1" />
+        android:layout_weight="0.1"
+        android:onClick="exit"
+        android:text="Exit Now" />
 
     <TextView
         android:id="@+id/textView1"
@@ -37,7 +38,7 @@
         android:layout_height="0dp"
         android:layout_weight="0.1"
         android:gravity="center"
-        android:text="Not Started" />
+        android:text="Download Me!" />
 
     <ImageView
         android:id="@+id/imageView1"

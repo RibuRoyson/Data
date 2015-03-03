@@ -3,5 +3,6 @@
 >>>>>>>=4d17ac67d0551b8d5cadf8b52fb8093e1f169a52
 com.android.ide.eclipse.adt.fixLegacyEditors=1
 com.android.ide.eclipse.adt.sdk=/home/imrokraft/android-sdk
+com.android.ide.eclipse.adt.xmlEditor=true
 design.structure.flyout.width=318
 eclipse.preferences.version=1

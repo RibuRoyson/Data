@@ -33,10 +33,14 @@ public class MainActivity extends ActionBarActivity {
 		tv=(TextView)findViewById(R.id.textView1);
 		im=(ImageView)findViewById(R.id.imageView1);
 		
-		tv.setText("Started!!");
+		
 		MyAsyntask myObj1=new MyAsyntask();
 		myObj1.execute(((EditText)findViewById(R.id.editText1)).getText().toString());	
 		
+	}
+	public void exit(View v)
+	{
+		finish();
 	}
 
 	class MyAsyntask extends AsyncTask<String, Void, String>
@@ -65,12 +69,14 @@ public class MainActivity extends ActionBarActivity {
 		protected void onPreExecute() {
 			super.onPreExecute();
 			pb=ProgressDialog.show(MainActivity.this,"Asyansample","Loading...");
+			Toast.makeText(getApplicationContext(), "Started!!", Toast.LENGTH_SHORT).show();
 		}
 
 		@Override
 		protected void onPostExecute(String result) {
 			pb.dismiss();		
 			im.setImageBitmap(bmp);
+			Toast.makeText(getApplicationContext(), "Completed!!", Toast.LENGTH_SHORT).show();
 			super.onPostExecute(result);
 		}
 
