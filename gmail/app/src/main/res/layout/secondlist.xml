@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:weightSum="0.5"
+    android:layout_marginRight="10dp">
+
+<ImageView
+    android:layout_width="0dp"
+    android:layout_height="30dp"
+    android:src="@drawable/contacts"
+    android:layout_gravity="center"
+    android:layout_weight="0.1"/>
+
+    <LinearLayout
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+        android:layout_weight="0.4"
+        android:weightSum="3.0">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:orientation="horizontal"
+    android:weightSum="0.5"
+    android:layout_weight="1.0">
+
+<TextView
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:text="weasd"
+    android:id="@+id/namesec"
+    android:layout_weight="0.4"
+    android:gravity="bottom"
+    />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:text="weasd"
+        android:id="@+id/datesec"
+        android:layout_weight="0.1"
+        android:gravity="bottom"/>
+
+
+
+</LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="weasd"
+            android:id="@+id/data1"
+            android:gravity="left|center"
+            android:layout_weight="1.0"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:weightSum="0.5"
+            android:layout_weight="1.0">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="weasd"
+                android:id="@+id/datathird"
+                android:layout_weight="0.3"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="wea"
+                android:layout_weight="0.1"
+                android:id="@+id/datafour"
+                android:background="#FB4C2F"
+                android:gravity="top|center"/>
+            <RatingBar
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:numStars="1"
+                android:layout_weight="0.1"/>
+
+            </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>
