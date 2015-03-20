@@ -5,8 +5,8 @@ android {
     buildToolsVersion "21.1.2"
 
     defaultConfig {
-        applicationId "com.example.imrokraft.myapplication"
-        minSdkVersion 15
+        applicationId "com.imrokraft.myapp1"
+        minSdkVersion 14
         targetSdkVersion 21
         versionCode 1
         versionName "1.0"

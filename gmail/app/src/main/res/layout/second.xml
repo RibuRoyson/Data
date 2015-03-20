@@ -24,7 +24,7 @@
         android:weightSum="1.0">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
             android:text="Social"
             android:layout_weight="0.5"
@@ -32,11 +32,11 @@
             android:textSize="25sp"
             android:textStyle="bold"/>
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
             android:text="Google+"
             android:layout_weight="0.5"
-            android:textSize="20sp"
+            android:textSize="15sp"
             />
 
         </LinearLayout>
@@ -78,7 +78,7 @@
             android:weightSum="1.0">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:text="Promotions"
                 android:layout_weight="0.5"
@@ -86,11 +86,11 @@
                 android:textSize="25sp"
                 android:textStyle="bold"/>
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:text="Zagat,Google Offers"
                 android:layout_weight="0.5"
-                android:textSize="20sp"/>
+                android:textSize="15sp"/>
 
         </LinearLayout>
         <TextView
@@ -131,7 +131,7 @@
             android:weightSum="1.0">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:text="Updates"
                 android:gravity="bottom"
@@ -139,10 +139,10 @@
                 android:textStyle="bold"
                 android:layout_weight="0.5"/>
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:text="Google play"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 android:layout_weight="0.5"/>
 
         </LinearLayout>
