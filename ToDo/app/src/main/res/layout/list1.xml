@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:weightSum="1.0"
+    android:background="#ffffff"
+   android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="asasasasas"
+        android:textSize="20dp"
+        android:layout_weight="0.5"
+        android:id="@+id/text1"
+        android:textColor="#000000"
+        android:gravity="left|center"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:weightSum="1.0"
+        android:layout_weight="0.5">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/reload_refresh"
+            android:layout_weight="0.04"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="asasasasas"
+            android:layout_weight="0.46"
+            android:gravity="left|center"
+            android:id="@+id/text2"
+            android:textColor="#000000"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="asasasasas"
+            android:layout_weight="0.46"
+            android:gravity="end|center"
+            android:textColor="#000000"
+            android:id="@+id/text3"/>
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="15dp"
+            android:src="@drawable/orangeball"
+            android:layout_gravity="end|center"
+            android:layout_weight="0.04"/>
+
+
+
+        </LinearLayout>
+
+</LinearLayout>
