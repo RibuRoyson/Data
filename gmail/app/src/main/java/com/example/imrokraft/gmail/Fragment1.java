@@ -1,22 +1,27 @@
 package com.example.imrokraft.gmail;
 
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ListView;
 
 /**
- * Created by imrokraft on 19/3/15.
+ * Created by imrokraft on 26/3/15.
  */
-public class Secondgmail extends ActionBarActivity {
+public class Fragment1 extends Fragment {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.second);
-        ListView mylistview1=(ListView)findViewById(R.id.list2);
-        UserAdapter1 myUserAdapter1=new UserAdapter1(getApplicationContext(),Dummyusermodels());
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View rootview = inflater.inflate(R.layout.fragment_1, container, false);
+        ListView mylistview1 = (ListView) rootview.findViewById(R.id.listViewfrag);
+        UserAdapter1 myUserAdapter1=new UserAdapter1(getActivity().getApplicationContext(),Dummyusermodels());
         mylistview1.setAdapter(myUserAdapter1);
+        return rootview;
     }
+
     public UserModel1[] Dummyusermodels()
     {
         String[] names1={"Andy Brown","Keri Anderson","Regis,Peter,Racheal"};
@@ -31,6 +36,6 @@ public class Secondgmail extends ActionBarActivity {
         }
         return userlist;
     }
+}
 
- }
 

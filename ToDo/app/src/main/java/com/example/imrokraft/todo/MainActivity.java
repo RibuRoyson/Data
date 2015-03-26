@@ -12,6 +12,7 @@ boolean twoPanel=false;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         if(savedInstanceState==null)
         {
             if(findViewById(R.id.container)==null)

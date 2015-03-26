@@ -12,7 +12,7 @@ import android.widget.ListView;
 
 
 public class MainActivity extends ActionBarActivity {
-
+boolean twopanel=false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,21 +20,27 @@ public class MainActivity extends ActionBarActivity {
         android.support.v7.app.ActionBar ab = getSupportActionBar();
         ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#DA4336"));
         ab.setBackgroundDrawable(colorDrawable);
-        ListView mylistview=(ListView)findViewById(R.id.listview);
-        UserAdapter myUserAdapter=new UserAdapter(getApplicationContext(),Dummyusermodels());
-        mylistview.setAdapter(myUserAdapter);
-    }
-    public UserModel[] Dummyusermodels()
-    {
-        String[] names={"Regis Miller","Peter Johnson","Racheal Shin"};
-        String[] dates={"Sep 29","Sep 29","Sep 29"};
-        String[] data={"Maria i am trying to schedule a broad game night this week,when would you be... ","What do you think about sunday?My car seats five so i could pick up Dexter","to me"};
-        UserModel[] userlist=new UserModel[names.length];
-        for(int i=0;i<dates.length;i++)
+        if(savedInstanceState==null)
         {
-            userlist[i]=new UserModel(names[i],dates[i],data[i]);
+            if(findViewById(R.id.container)==null)
+            {
+                twopanel=true;
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.list2,new Fragment1())
+                        .commit();
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.list3,new Fragment2())
+                        .commit();
+            }
+            else
+            {
+                twopanel=false;
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.listview,new Mobilegmail())
+                        .commit();
+            }
         }
-return userlist;
+
     }
 
     @Override
