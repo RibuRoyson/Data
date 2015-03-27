@@ -188,6 +188,7 @@
         android:layout_weight="0.5"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
+        android:onClick="exit"
       />
         </LinearLayout>
 
