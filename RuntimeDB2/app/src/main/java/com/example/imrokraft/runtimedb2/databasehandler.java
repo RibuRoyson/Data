@@ -43,10 +43,10 @@ db.execSQL("drop table if exists "+MYTB);
         cv.put("qualification",d.getQual());
         db.insert(MYTB,"id",cv);
     }
-    public ArrayList<String> resultdata()
+    public ArrayList<details> resultdata()
     {
-        ArrayList<String> results=new ArrayList<String>();
-        SQLiteDatabase db=this.getWritableDatabase();
+        ArrayList<details> results=new ArrayList<details>();
+        SQLiteDatabase db=this.getReadableDatabase();
         try
         {
             Cursor c=null;
@@ -60,7 +60,7 @@ db.execSQL("drop table if exists "+MYTB);
                         String Name=c.getString(c.getColumnIndex("name"));
                         String Qualification=c.getString(c.getColumnIndex("qualification"));
                         int id=c.getInt(c.getColumnIndex("id"));
-                        results.add("\nID:"+id+"\nName:"+Name+"\nQualification:"+Qualification);
+                        results.add(new details(id,Name,Qualification));
                     }while(c.moveToNext());
                 }
             }
@@ -95,5 +95,33 @@ db.execSQL("drop table if exists "+MYTB);
         String where="id=?";
         String[] whereArgs={id1};
         db.update(MYTB,cv,where,whereArgs);
+    }
+    public void delete(String id)
+    {
+        Cursor c=null;
+        SQLiteDatabase db=getWritableDatabase();
+        deleted="false";
+        String[] columns={"name","qualification"};
+        String selection="id=?";
+        String[] selectionArgs={id};
+        c=db.query(MYTB,columns,selection,selectionArgs,null,null,null);
+        if(c!=null)
+        {
+            if(c.moveToFirst())
+            {
+                String where="id=?";
+                String[] args={id};
+                db.delete(MYTB,where,args);
+                deleted="true";
+            }
+            else
+            {
+                deleted="false";
+            }
+        }
+        else
+        {
+            deleted="fasle";
+        }
     }
 }

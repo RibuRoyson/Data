@@ -3,7 +3,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="1.0">
+    <TextView
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:text="Name:"
+        android:layout_weight="0.5"/>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Qualification:"
+        android:layout_weight="0.5"/>
+</LinearLayout>
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"

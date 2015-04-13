@@ -18,6 +18,7 @@ public class MainActivity extends ActionBarActivity {
 
     EditText name,qual;
     String name1,qual1;
+    int id=-1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,12 +30,14 @@ public void submitclick(View v)
     qual=(EditText)findViewById(R.id.editqua);
     name1=name.getText().toString();
     qual1=qual.getText().toString();
-    details d=new details();
+    details d=new details(id,name1,qual1);
     d.setName(name1);
     d.setQual(qual1);
     databasehandler dbh=new databasehandler(this);
     dbh.insert(d);
     Toast.makeText(getApplicationContext(),"Details Submitted",Toast.LENGTH_SHORT).show();
+    name.setText("");
+    qual.setText("");
 }
 public void viewclick(View v)
 {

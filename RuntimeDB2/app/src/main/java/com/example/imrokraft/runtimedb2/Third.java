@@ -55,12 +55,14 @@ public class Third extends ActionBarActivity {
         databasehandler dbh=new databasehandler(this);
         name1=nam.getText().toString();
         qual1=qua.getText().toString();
-        id1=id.getText().toString();
-        details d=new details();
-        d.setName(name1);
-        d.setQual(qual1);
+       id1=id.getText().toString();
+        details d=new details(Integer.parseInt(id1),name1,qual1);
+
         dbh.updateDetails(d, id1);
         Toast.makeText(getApplicationContext(),"Details Updated",Toast.LENGTH_SHORT).show();
+        id.setText("");
+        nam.setText("");
+        qua.setText("");
     }
     public void viewdata(View v)
     {
