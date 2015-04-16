@@ -4,13 +4,18 @@ package com.example.imrokraft.runtimedb2;
  * Created by imrokraft on 10/4/15.
  */
 public class details {
-    String name,qual;
+    String name, qual;
     int id;
-    details(int id,String name,String qual)
-    {
-        this.id=id;
-        this.name=name;
-        this.qual=qual;
+
+    details(int id, String name, String qual) {
+        this.id = id;
+        this.name = name;
+        this.qual = qual;
+    }
+    details( String name, String qual) {
+        this.id = -1;
+        this.name = name;
+        this.qual = qual;
     }
 
     public String getName() {

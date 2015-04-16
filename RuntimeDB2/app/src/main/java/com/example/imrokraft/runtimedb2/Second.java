@@ -7,8 +7,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 
-import java.util.ArrayList;
-
 /**
  * Created by imrokraft on 10/4/15.
  */
@@ -21,7 +19,7 @@ public class Second extends ActionBarActivity {
         ListView list = (ListView) findViewById(R.id.listView);
         databasehandler dbh = new databasehandler(getApplicationContext());
 
-        myuser = new UserAdapter(getApplicationContext(),dbh.resultdata());
+        myuser = new UserAdapter(getApplicationContext(), dbh.resultdata());
         list.setAdapter(myuser);
 //        if(result.isEmpty())
 //        {
@@ -33,33 +31,26 @@ public class Second extends ActionBarActivity {
 //            list.setAdapter(adapter);
 //        }
     }
-
     @Override
     protected void onResume() {
         super.onResume();
         myuser.notifyDataSetChanged();
         myuser.notifyDataSetInvalidated();
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         switch (item.getItemId()) {
-            case R.id.edititem:
-                Intent inc = new Intent(getApplication(), Third.class);
-                startActivity(inc);
-                break;
-            case R.id.deleteitem:
-                Intent incc = new Intent(getApplication(), Four.class);
+                case R.id.deleteitem:
+                Intent incc = new Intent(getApplication(), Second.class);
                 startActivity(incc);
                 break;
         }

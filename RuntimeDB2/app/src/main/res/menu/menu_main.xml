@@ -5,7 +5,7 @@
         android:orderInCategory="100" app:showAsAction="never" />
     <item android:id="@+id/edititem" android:title="Edit"
         app:showAsAction="always"/>
-    <item android:id="@+id/deleteitem" android:title="Delete"
+    <item android:id="@+id/deleteitem" android:title="Refresh"
         app:showAsAction="always"/>
 
 </menu>

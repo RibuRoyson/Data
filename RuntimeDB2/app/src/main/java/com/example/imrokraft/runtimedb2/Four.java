@@ -16,21 +16,18 @@ public class Four extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fourth);
     }
-    public void deletedetails(View v)
-    {
-        EditText t1=(EditText)findViewById(R.id.editdelete);
-        String id=t1.getText().toString();
-        databasehandler dbh=new databasehandler(this);
+
+    public void deletedetails(View v) {
+        EditText t1 = (EditText) findViewById(R.id.editdelete);
+        String id = t1.getText().toString();
+        databasehandler dbh = new databasehandler(this);
         dbh.delete(id);
-        String s=dbh.deleted;
-        if(s=="true")
-        {
-            Toast.makeText(getApplicationContext(),"Deleted",Toast.LENGTH_SHORT).show();
+        String s = dbh.deleted;
+        if (s == "true") {
+            Toast.makeText(getApplicationContext(), "Deleted", Toast.LENGTH_SHORT).show();
             t1.setText("");
-        }
-        else
-        {
-            Toast.makeText(getApplicationContext(),"No Data Found",Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(getApplicationContext(), "No Data Found", Toast.LENGTH_SHORT).show();
         }
     }
 
