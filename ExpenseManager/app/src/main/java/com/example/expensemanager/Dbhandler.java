@@ -49,16 +49,13 @@ public class Dbhandler extends SQLiteOpenHelper {
         cv.put("day", d.getDy());
         cv.put("month", d.getMn());
         cv.put("year", d.getYr());
-
         return db.insert(TB_name, null, cv);
     }
-
-    public Cursor viewdata() {
-        db = this.getReadableDatabase();
-        Cursor c = db.rawQuery("select * from " + TB_name, null);
-        return c;
-    }
-
+//    public Cursor viewdata() {
+//        db = this.getReadableDatabase();
+//        Cursor c = db.rawQuery("select * from " + TB_name, null);
+//        return c;
+//    }
     public ArrayList<details> resultdata() {
         ArrayList<details> results = new ArrayList<details>();
         SQLiteDatabase db = this.getReadableDatabase();
@@ -66,6 +63,129 @@ public class Dbhandler extends SQLiteOpenHelper {
             Cursor c = null;
             c = db.rawQuery("select * from " + TB_name, null);
             if (c != null) {
+                if (c.moveToFirst()) ;
+                {
+                    do {
+                        int cc = c.getCount();
+                        String exp = c.getString(c.getColumnIndex("expense"));
+                        String cat = c.getString(c.getColumnIndex("cat"));
+                        String des = c.getString(c.getColumnIndex("description"));
+                        String tim = c.getString(c.getColumnIndex("time"));
+                        String dat = c.getString(c.getColumnIndex("date"));
+                        String id = c.getString(c.getColumnIndex("id"));
+                        int d = c.getInt(c.getColumnIndex("day"));
+                        int m = c.getInt(c.getColumnIndex("month"));
+                        int y = c.getInt(c.getColumnIndex("year"));
+                        results.add(new details(id,exp, cat, des, tim,dat,d,m,y));
+                    } while (c.moveToNext());
+                }
+                c.close();
+                db.close();
+            } else {
+                Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
+            }
+        } catch (SQLiteException se) {
+            Log.e(getClass().getSimpleName(), "could not connect");
+        }
+        return results;
+    }
+    public ArrayList<details> food() {
+        ArrayList<details> results = new ArrayList<details>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        try {
+            Cursor c = null;
+            String[] columns = {"id", "expense", "cat", "description", "time", "date", "day", "month", "year"};
+            String selection = "cat=?";
+            String[] selectionArgs = {"Food"};
+            Log.v("selection", selection);
+            c = db.query(TB_name, columns, selection, selectionArgs, null, null, null);
+            if (c != null) {
+                if (c.moveToFirst()) ;
+                {
+                    do {
+                        int cc = c.getCount();
+                       String exp = c.getString(c.getColumnIndex("expense"));
+                        String cat = c.getString(c.getColumnIndex("cat"));
+                        String des = c.getString(c.getColumnIndex("description"));
+                        String tim = c.getString(c.getColumnIndex("time"));
+                        String dat = c.getString(c.getColumnIndex("date"));
+                        String id = c.getString(c.getColumnIndex("id"));
+                        int d = c.getInt(c.getColumnIndex("day"));
+                        int m = c.getInt(c.getColumnIndex("month"));
+                        int y = c.getInt(c.getColumnIndex("year"));
+                        results.add(new details(id,exp, cat, des, tim,dat,d,m,y));
+                        if (results.isEmpty() == true) {
+                            Toast.makeText(context, "No Records", Toast.LENGTH_SHORT).show();
+                        }
+                    } while (c.moveToNext());
+                }
+                c.close();
+                db.close();
+            } else {
+                Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
+            }
+        } catch (SQLiteException se) {
+            Log.e(getClass().getSimpleName(), "could not connect");
+        }
+        return results;
+    }
+    public ArrayList<details> Drinks() {
+        ArrayList<details> results = new ArrayList<details>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        try {
+            Cursor c = null;
+            String[] columns = {"id", "expense", "cat", "description", "time", "date", "day", "month", "year"};
+            String selection = "cat=?";
+            String[] selectionArgs = {"Drinks"};
+            Log.v("selection", selection);
+            c = db.query(TB_name, columns, selection, selectionArgs, null, null, null);
+            if (c != null)
+            {
+                if (c.moveToFirst()) ;
+                {
+                    do {
+                        int cc = c.getCount();
+                        String exp = c.getString(c.getColumnIndex("expense"));
+                        String cat = c.getString(c.getColumnIndex("cat"));
+                        String des = c.getString(c.getColumnIndex("description"));
+                        String tim = c.getString(c.getColumnIndex("time"));
+                        String dat = c.getString(c.getColumnIndex("date"));
+                        String id = c.getString(c.getColumnIndex("id"));
+                        int d = c.getInt(c.getColumnIndex("day"));
+                        int m = c.getInt(c.getColumnIndex("month"));
+                        int y = c.getInt(c.getColumnIndex("year"));
+                        results.add(new details(id,exp, cat, des, tim,dat,d,m,y));
+                        if (results.isEmpty() == true) {
+                            Toast.makeText(context, "No Records", Toast.LENGTH_SHORT).show();
+                        }
+
+                    } while (c.moveToNext());
+                }
+                c.close();
+                db.close();
+            } else {
+                Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
+            }
+        } catch (SQLiteException se) {
+            Log.e(getClass().getSimpleName(), "could not connect");
+        }
+        return results;
+    }
+
+    public ArrayList<details> Cloth() {
+        ArrayList<details> results = new ArrayList<details>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        try {
+            Cursor c = null;
+            String[] columns = {"id", "expense", "cat", "description", "time", "date", "day", "month", "year"};
+            String selection = "cat=?";
+            String[] selectionArgs = {"Dress"};
+            Log.v("selection", selection);
+
+            c = db.query(TB_name, columns, selection, selectionArgs, null, null, null);
+            if (c != null)
+
+            {
                 if (c.moveToFirst()) ;
                 {
                     do {
@@ -95,166 +215,45 @@ public class Dbhandler extends SQLiteOpenHelper {
         return results;
     }
 
-    public ArrayList<String> food() {
-        ArrayList<String> results = new ArrayList<String>();
-        SQLiteDatabase db = this.getReadableDatabase();
-        try {
-            Cursor c = null;
-
-            String[] columns = {"id", "expense", "cat", "description", "time", "date"};
-            String selection = "cat=?";
-            String[] selectionArgs = {"Food"};
-            Log.v("selection", selection);
-            c = db.query(TB_name, columns, selection, selectionArgs, null, null, null);
-            if (c != null) {
-                if (c.moveToFirst()) ;
-                {
-                    do {
-                        int cc = c.getCount();
-                        int exp = c.getInt(c.getColumnIndex("expense"));
-                        String cat = c.getString(c.getColumnIndex("cat"));
-                        String des = c.getString(c.getColumnIndex("description"));
-                        String tim = c.getString(c.getColumnIndex("time"));
-                        String dat = c.getString(c.getColumnIndex("date"));
-                        String id = c.getString(c.getColumnIndex("id"));
-                        results.add("Id:" + id + "\nExpense" + exp + "\nDescription:" + des + "\nTime:" + tim + "\nDate:" + dat);
-                        if (results.isEmpty() == true) {
-                            Toast.makeText(context, "No Records", Toast.LENGTH_SHORT).show();
-                        }
-                    } while (c.moveToNext());
-                }
-                c.close();
-                db.close();
-            } else {
-                Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
-
-            }
-
-        } catch (SQLiteException se) {
-            Log.e(getClass().getSimpleName(), "could not connect");
-        }
-        return results;
-    }
-
-    public ArrayList<String> Drinks() {
-        ArrayList<String> results = new ArrayList<String>();
-        SQLiteDatabase db = this.getReadableDatabase();
-        try {
-            Cursor c = null;
-            String[] columns = {"id", "expense", "cat", "description", "time", "date"};
-            String selection = "cat=?";
-            String[] selectionArgs = {"Drinks"};
-            Log.v("selection", selection);
-            c = db.query(TB_name, columns, selection, selectionArgs, null, null, null);
-            if (c != null)
-
-            {
-                if (c.moveToFirst()) ;
-                {
-                    do {
-                        int cc = c.getCount();
-                        int exp = c.getInt(c.getColumnIndex("expense"));
-                        String cat = c.getString(c.getColumnIndex("cat"));
-                        String des = c.getString(c.getColumnIndex("description"));
-                        String tim = c.getString(c.getColumnIndex("time"));
-                        String dat = c.getString(c.getColumnIndex("date"));
-                        String id = c.getString(c.getColumnIndex("id"));
-                        results.add("Id:" + id + "\nExpense" + exp + "\nDescription:" + des + "\nTime:" + tim + "\nDate:" + dat);
-
-                    } while (c.moveToNext());
-                }
-                c.close();
-                db.close();
-            } else {
-                Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
-
-            }
-
-        } catch (SQLiteException se) {
-            Log.e(getClass().getSimpleName(), "could not connect");
-        }
-        return results;
-    }
-
-    public ArrayList<String> Cloth() {
-        ArrayList<String> results = new ArrayList<String>();
-        SQLiteDatabase db = this.getReadableDatabase();
-        try {
-            Cursor c = null;
-            String[] columns = {"id", "expense", "cat", "description", "time", "date"};
-            String selection = "cat=?";
-            String[] selectionArgs = {"Dress"};
-            Log.v("selection", selection);
-
-            c = db.query(TB_name, columns, selection, selectionArgs, null, null, null);
-            if (c != null)
-
-            {
-                if (c.moveToFirst()) ;
-                {
-                    do {
-                        int cc = c.getCount();
-                        int exp = c.getInt(c.getColumnIndex("expense"));
-                        String cat = c.getString(c.getColumnIndex("cat"));
-                        String des = c.getString(c.getColumnIndex("description"));
-                        String tim = c.getString(c.getColumnIndex("time"));
-                        String dat = c.getString(c.getColumnIndex("date"));
-                        String id = c.getString(c.getColumnIndex("id"));
-                        results.add("Id:" + id + "\nExpense" + exp + "\nDescription:" + des + "\nTime:" + tim + "\nDate:" + dat);
-                    } while (c.moveToNext());
-                }
-                c.close();
-                db.close();
-            } else {
-                Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
-
-            }
-
-        } catch (SQLiteException se) {
-            Log.e(getClass().getSimpleName(), "could not connect");
-        }
-        return results;
-    }
-
-    public ArrayList<String> Jan(int x) {
-        ArrayList<String> results = new ArrayList<String>();
-        SQLiteDatabase db = this.getReadableDatabase();
-        try {
-            Cursor c = null;
-            //int i=x;
-            String[] columns = {"id", "expense", "cat", "description", "time", "date", "day", "month", "year"};
-            String selection = "month=?";
-            String[] selectionArgs = {"x"};
-            c = db.query(TB_name, columns, selection, selectionArgs, null, null, null);
-            if (c != null) {
-                if (c.moveToFirst()) ;
-                {
-                    do {
-                        int exp = c.getInt(c.getColumnIndex("expense"));
-                        String cat = c.getString(c.getColumnIndex("cat"));
-                        String des = c.getString(c.getColumnIndex("description"));
-                        String tim = c.getString(c.getColumnIndex("time"));
-                        String dat = c.getString(c.getColumnIndex("date"));
-                        String id = c.getString(c.getColumnIndex("id"));
-                        results.add("Id:" + id + "\nExpense" + exp + "\nCategory" + cat + "\nDescription:" + des + "\nTime:" + tim);
-
-
-                    } while (c.moveToNext());
-                }
-                c.close();
-                db.close();
-            } else {
-                Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
-
-            }
-
-        } catch (SQLiteException se) {
-            Log.e(getClass().getSimpleName(), "could not connect");
-        }
-
-        return results;
-
-    }
+//    public ArrayList<String> Jan(int x) {
+//        ArrayList<String> results = new ArrayList<String>();
+//        SQLiteDatabase db = this.getReadableDatabase();
+//        try {
+//            Cursor c = null;
+//            //int i=x;
+//            String[] columns = {"id", "expense", "cat", "description", "time", "date", "day", "month", "year"};
+//            String selection = "month=?";
+//            String[] selectionArgs = {"x"};
+//            c = db.query(TB_name, columns, selection, selectionArgs, null, null, null);
+//            if (c != null) {
+//                if (c.moveToFirst()) ;
+//                {
+//                    do {
+//                        int exp = c.getInt(c.getColumnIndex("expense"));
+//                        String cat = c.getString(c.getColumnIndex("cat"));
+//                        String des = c.getString(c.getColumnIndex("description"));
+//                        String tim = c.getString(c.getColumnIndex("time"));
+//                        String dat = c.getString(c.getColumnIndex("date"));
+//                        String id = c.getString(c.getColumnIndex("id"));
+//                        results.add("Id:" + id + "\nExpense" + exp + "\nCategory" + cat + "\nDescription:" + des + "\nTime:" + tim);
+//
+//
+//                    } while (c.moveToNext());
+//                }
+//                c.close();
+//                db.close();
+//            } else {
+//                Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
+//
+//            }
+//
+//        } catch (SQLiteException se) {
+//            Log.e(getClass().getSimpleName(), "could not connect");
+//        }
+//
+//        return results;
+//
+//    }
 
     public int total() {
         int exp = 0;
@@ -382,7 +381,6 @@ public class Dbhandler extends SQLiteOpenHelper {
             Cursor c = null;
             //int i=x;
             String val = String.valueOf(x).toString();
-
             Log.e("monthvalue", val);
             String[] columns = {"id", "expense", "cat", "description", "time", "date"};
             String selection = "month=?";

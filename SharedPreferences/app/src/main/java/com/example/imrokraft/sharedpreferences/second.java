@@ -4,10 +4,6 @@ import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.TextView;
-
-/**
- * Created by imrokraft on 9/3/15.
- */
 public class second extends Activity {
     public static  final String MyPreferences="MyPrefs";
     TextView tname,tphone,tstreet,temail,tplace;
@@ -18,7 +14,6 @@ public class second extends Activity {
     public static final String MyStreet="streetkey";
     public static final String MyPlace="placekey";
     String name,phone,street,email,place;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

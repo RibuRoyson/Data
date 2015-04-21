@@ -12,9 +12,9 @@ import java.util.ArrayList;
 
 public class Bycat extends Activitymain {
     ListView lv;
-    Dbhandler dbh;
     Button a1, b1, c1;
-    ArrayList<String> data;
+    UserAdaptercat myuser;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,15 +29,15 @@ public class Bycat extends Activitymain {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                lv = (ListView) findViewById(R.id.listView1);
+                lv = (ListView) findViewById(R.id.listView21);
                 Dbhandler dbh = new Dbhandler(getApplicationContext());
-                ArrayList<String> result = new ArrayList<String>();
+                ArrayList<details> result = new ArrayList<details>();
                 result = dbh.food();
                 if (result.isEmpty() == true) {
                     Toast.makeText(Bycat.this, "Database Empty", Toast.LENGTH_LONG).show();
                 } else {
-                    ArrayAdapter<String> adapter = new ArrayAdapter<String>(Bycat.this, android.R.layout.simple_list_item_1, result);
-                    lv.setAdapter(adapter);
+                    myuser = new UserAdaptercat(getApplicationContext(),dbh.food());
+                    lv.setAdapter(myuser);
                 }
 
             }
@@ -47,15 +47,15 @@ public class Bycat extends Activitymain {
             @Override
             public void onClick(View arg0) {
                 // TODO Auto-generated method stub
-                lv = (ListView) findViewById(R.id.listView1);
+                lv = (ListView) findViewById(R.id.listView21);
                 Dbhandler dbh = new Dbhandler(getApplicationContext());
-                ArrayList<String> result = new ArrayList<String>();
+                ArrayList<details> result = new ArrayList<details>();
                 result = dbh.Drinks();
                 if (result.isEmpty() == true) {
                     Toast.makeText(Bycat.this, "Database Empty", Toast.LENGTH_LONG).show();
                 } else {
-                    ArrayAdapter<String> adapter = new ArrayAdapter<String>(Bycat.this, android.R.layout.simple_list_item_1, result);
-                    lv.setAdapter(adapter);
+                    myuser = new UserAdaptercat(getApplicationContext(),dbh.Drinks());
+                    lv.setAdapter(myuser);
                 }
             }
         });
@@ -64,15 +64,15 @@ public class Bycat extends Activitymain {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                lv = (ListView) findViewById(R.id.listView1);
+                lv = (ListView) findViewById(R.id.listView21);
                 Dbhandler dbh = new Dbhandler(getApplicationContext());
-                ArrayList<String> result = new ArrayList<String>();
+                ArrayList<details> result = new ArrayList<details>();
                 result = dbh.Cloth();
                 if (result.isEmpty() == true) {
                     Toast.makeText(Bycat.this, "Database Empty", Toast.LENGTH_LONG).show();
                 } else {
-                    ArrayAdapter<String> adapter = new ArrayAdapter<String>(Bycat.this, android.R.layout.simple_list_item_1, result);
-                    lv.setAdapter(adapter);
+                    myuser = new UserAdaptercat(getApplicationContext(),dbh.Cloth());
+                    lv.setAdapter(myuser);
                 }
             }
         });

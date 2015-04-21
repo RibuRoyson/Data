@@ -18,7 +18,7 @@ public class Activitymain extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.main1);
 
     }
 
@@ -33,25 +33,25 @@ public class Activitymain extends Activity {
     }
 
     public void viewdatas(View v) {
-        Intent ab = new Intent(getApplicationContext(), Show.class);
-        startActivity(ab);
+        Intent in = new Intent(getApplicationContext(), Viewdb.class);
+        startActivity(in);
     }
 
     public void exit(View v) {
         new AlertDialog.Builder(this)
                 .setTitle("Expense Manager")
                 .setMessage("Are you Sure?")
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                .setPositiveButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                })
+                .setNegativeButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Activitymain.this.finish();
                         System.exit(0);
-                    }
-                })
-                .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
                     }
                 })
                 .setIcon(getResources().getDrawable(R.drawable.expense))
@@ -80,6 +80,21 @@ public class Activitymain extends Activity {
 //            }
 //        });
 //        dialog.show();
+    }
+    public void showmonth(View v)
+    {
+        Intent incc = new Intent(getApplicationContext(), Monthwise.class);
+        startActivity(incc);
+    }
+    public void showcat(View v)
+    {
+        Intent inc = new Intent(getApplicationContext(), Bycat.class);
+        startActivity(inc);
+    }
+    public void aboutus(View v)
+    {
+        Intent inccc = new Intent(getApplicationContext(), Aboutus.class);
+        startActivity(inccc);
     }
 
 }

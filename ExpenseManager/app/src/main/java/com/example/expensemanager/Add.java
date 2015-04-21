@@ -33,7 +33,7 @@ public class Add extends Activity implements android.view.View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.add);
+        setContentView(R.layout.addnew);
 
         sp = (Spinner) findViewById(R.id.spinner1);
         tim = (Button) findViewById(R.id.timebtn);
@@ -99,7 +99,7 @@ public class Add extends Activity implements android.view.View.OnClickListener {
                         public void onDateSet(DatePicker view, int year,
                                               int monthOfYear, int dayOfMonth) {
                             // Display Selected date in textbox
-                            date.setText(dayOfMonth + "-"
+                            dat.setText(dayOfMonth + "-"
                                     + (monthOfYear + 1) + "-" + year);
                             dy = dayOfMonth;
                             mn = monthOfYear + 1;
@@ -123,7 +123,7 @@ public class Add extends Activity implements android.view.View.OnClickListener {
                         public void onTimeSet(TimePicker view, int hourOfDay,
                                               int minute) {
                             // Display Selected time in textbox
-                            time.setText(hourOfDay + ":" + minute);
+                            tim.setText(hourOfDay + ":" + minute);
                         }
                     }, mHour, mMinute, false);
             tpd.show();
@@ -132,8 +132,8 @@ public class Add extends Activity implements android.view.View.OnClickListener {
             Log.e("reached", "save");
             expense = expen.getText().toString();
             des = descpt.getText().toString();
-            time1 = time.getText().toString();
-            date1 = date.getText().toString();
+            time1 = tim.getText().toString();
+            date1 = dat.getText().toString();
             int id=-1;
             details d = new details(id+"",expense, cat, des,time1,date1,dy,mn,yr);
             d.setExpense(expense);
@@ -150,8 +150,7 @@ public class Add extends Activity implements android.view.View.OnClickListener {
             }
             expen.setText("");
             descpt.setText("");
-            time.setText("");
-            date.setText("");
+
         }
         if (v == show) {
             Intent inc = new Intent(Add.this, Viewdb.class);
