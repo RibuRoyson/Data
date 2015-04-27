@@ -1,0 +1,35 @@
+import java.io.DataInputStream;
+import java.io.PrintStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+
+public class EchoServer {
+
+	public static void main(String[] args) {
+
+		ServerSocket echoserver=null;
+		String line;
+		DataInputStream is;
+		PrintStream os;
+		Socket clientSocket;
+		try
+		{
+			echoserver =new ServerSocket(9999);
+
+			clientSocket=echoserver.accept();
+			is=new DataInputStream(clientSocket.getInputStream());
+			os=new PrintStream(clientSocket.getOutputStream());
+			while(true)
+			{
+				line=is.readLine();
+				os.println(line);
+			}
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+
+	}
+
+}

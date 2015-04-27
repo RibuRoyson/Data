@@ -1,0 +1,2743 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="Index_files/site.css" rel="stylesheet" type="text/css">
+    <link href="Index_files/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="Index_files/prettify.css" rel="stylesheet" type="text/css">
+    <link href="Index_files/css.css" rel="stylesheet" type="text/css">
+
+<script src="Index_files/async-ads.js" async=""></script><script async="" src="Index_files/cbgapi.loaded_1"></script><script async="" src="Index_files/cbgapi.loaded_0"></script><script gapi_processed="true" src="Index_files/plusone.js" async="" type="text/javascript"></script><script src="Index_files/cse.js" async="" type="text/javascript"></script><script src="Index_files/analytics.js" async=""></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41980257-1', 'auto');
+  ga('create', 'UA-49880327-5', {'name': 'chromeDocs'});
+  ga('send', 'pageview');
+  ga('chromeDocs.send', 'pageview');
+
+</script>
+
+    <title>Getting Started: WebView-based Applications for Web Developers - Google Chrome</title>
+  <script type="text/javascript" src="Index_files/jsapi"></script><script src="Index_files/a" type="text/javascript"></script><script src="Index_files/a.html" type="text/javascript"></script><link rel="stylesheet" href="Index_files/defaulten.css" type="text/css"><link rel="stylesheet" href="Index_files/default.css" type="text/css"><script src="Index_files/defaulten.js" type="text/javascript"></script><style type="text/css">
+.gsc-control-cse {
+font-family: Arial, sans-serif;
+border-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gsc-control-cse .gsc-table-result {
+font-family: Arial, sans-serif;
+}
+input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus {
+border-color: #D9D9D9;
+}
+input.gsc-search-button, input.gsc-search-button:hover, input.gsc-search-button:focus {
+border-color: #666666;
+background-color: #CECECE;
+background-image: none;
+filter: none;
+}
+.gsc-tabHeader.gsc-tabhInactive {
+border-color: #E9E9E9;
+background-color: #E9E9E9;
+}
+.gsc-tabHeader.gsc-tabhActive {
+border-color: #FF9900;
+border-bottom-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gsc-tabsArea {
+border-color: #FF9900;
+}
+.gsc-webResult.gsc-result,
+.gsc-results .gsc-imageResult {
+border-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gsc-webResult.gsc-result:hover,
+.gsc-imageResult:hover {
+border-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gs-webResult.gs-result a.gs-title:link,
+.gs-webResult.gs-result a.gs-title:link b,
+.gs-imageResult a.gs-title:link,
+.gs-imageResult a.gs-title:link b {
+color: #0000CC;
+}
+.gs-webResult.gs-result a.gs-title:visited,
+.gs-webResult.gs-result a.gs-title:visited b,
+.gs-imageResult a.gs-title:visited,
+.gs-imageResult a.gs-title:visited b {
+color: #0000CC;
+}
+.gs-webResult.gs-result a.gs-title:hover,
+.gs-webResult.gs-result a.gs-title:hover b,
+.gs-imageResult a.gs-title:hover,
+.gs-imageResult a.gs-title:hover b {
+color: #0000CC;
+}
+.gs-webResult.gs-result a.gs-title:active,
+.gs-webResult.gs-result a.gs-title:active b,
+.gs-imageResult a.gs-title:active,
+.gs-imageResult a.gs-title:active b {
+color: #0000CC;
+}
+.gsc-cursor-page {
+color: #0000CC;
+}
+a.gsc-trailing-more-results:link {
+color: #0000CC;
+}
+.gs-webResult .gs-snippet,
+.gs-imageResult .gs-snippet,
+.gs-fileFormatType {
+color: #000000;
+}
+.gs-webResult div.gs-visibleUrl,
+.gs-imageResult div.gs-visibleUrl {
+color: #008000;
+}
+.gs-webResult div.gs-visibleUrl-short {
+color: #008000;
+}
+.gs-webResult div.gs-visibleUrl-short {
+display: none;
+}
+.gs-webResult div.gs-visibleUrl-long {
+display: block;
+}
+.gs-promotion div.gs-visibleUrl-short {
+display: none;
+}
+.gs-promotion div.gs-visibleUrl-long {
+display: block;
+}
+.gsc-cursor-box {
+border-color: #FFFFFF;
+}
+.gsc-results .gsc-cursor-box .gsc-cursor-page {
+border-color: #E9E9E9;
+background-color: #FFFFFF;
+color: #0000CC;
+}
+.gsc-results .gsc-cursor-box .gsc-cursor-current-page {
+border-color: #FF9900;
+background-color: #FFFFFF;
+color: #0000CC;
+}
+.gsc-webResult.gsc-result.gsc-promotion {
+border-color: #336699;
+background-color: #FFFFFF;
+}
+.gsc-completion-title {
+color: #0000CC;
+}
+.gsc-completion-snippet {
+color: #000000;
+}
+.gs-promotion a.gs-title:link,
+.gs-promotion a.gs-title:link *,
+.gs-promotion .gs-snippet a:link {
+color: #0000CC;
+}
+.gs-promotion a.gs-title:visited,
+.gs-promotion a.gs-title:visited *,
+.gs-promotion .gs-snippet a:visited {
+color: #0000CC;
+}
+.gs-promotion a.gs-title:hover,
+.gs-promotion a.gs-title:hover *,
+.gs-promotion .gs-snippet a:hover {
+color: #0000CC;
+}
+.gs-promotion a.gs-title:active,
+.gs-promotion a.gs-title:active *,
+.gs-promotion .gs-snippet a:active {
+color: #0000CC;
+}
+.gs-promotion .gs-snippet,
+.gs-promotion .gs-title .gs-promotion-title-right,
+.gs-promotion .gs-title .gs-promotion-title-right * {
+color: #000000;
+}
+.gs-promotion .gs-visibleUrl,
+.gs-promotion .gs-visibleUrl-short {
+color: #008000;
+}</style><style type="text/css">.gscb_a{display:inline-block;font:27px/13px arial,sans-serif}.gsst_a .gscb_a{color:#a1b9ed;cursor:pointer}.gsst_a:hover .gscb_a,.gsst_a:focus .gscb_a{color:#36c}.gsst_a{display:inline-block}.gsst_a{cursor:pointer;padding:0 4px}.gsst_a:hover{text-decoration:none!important}.gsst_b{font-size:16px;padding:0 2px;position:relative;user-select:none;-moz-user-select:none;white-space:nowrap}.gsst_e{opacity:0.55;}.gsst_a:hover .gsst_e,.gsst_a:focus .gsst_e{opacity:0.72;}.gsst_a:active .gsst_e{opacity:1;}.gsst_f{background:white;text-align:left}.gsst_g{background-color:white;border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-moz-box-shadow:0 2px 4px rgba(0,0,0,0.2);margin:-1px -3px;padding:0 6px}.gsst_h{background-color:white;height:1px;margin-bottom:-1px;position:relative;top:-1px}.gsib_a{width:100%;padding:4px 6px 0}.gsib_a,.gsib_b{vertical-align:top}.gssb_c{border:0;position:absolute;z-index:989}.gssb_e{border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-moz-box-shadow:0 2px 4px rgba(0,0,0,0.2);cursor:default}.gssb_f{visibility:hidden;white-space:nowrap}.gssb_k{border:0;display:block;position:absolute;top:0;z-index:988}.gsdd_a{border:none!important}.gsq_a{padding:0}.gscsep_a{display:none}.gssb_a{padding:0 7px}.gssb_a,.gssb_a td{white-space:nowrap;overflow:hidden;line-height:22px}#gssb_b{font-size:11px;color:#36c;text-decoration:none}#gssb_b:hover{font-size:11px;color:#36c;text-decoration:underline}.gssb_g{text-align:center;padding:8px 0 7px;position:relative}.gssb_h{font-size:15px;height:28px;margin:0.2em}.gssb_i{background:#eee}.gss_ifl{visibility:hidden;padding-left:5px}.gssb_i .gss_ifl{visibility:visible}a.gssb_j{font-size:13px;color:#36c;text-decoration:none;line-height:100%}a.gssb_j:hover{text-decoration:underline}.gssb_l{height:1px;background-color:#e5e5e5}.gssb_m{color:#000;background:#fff}.gsfe_a{border:1px solid #b9b9b9;border-top-color:#a0a0a0;box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);-moz-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);-webkit-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);}.gsfe_b{border:1px solid #4d90fe;outline:none;box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);-moz-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);-webkit-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);}.gssb_a{padding:0 9px}.gsib_a{padding-right:8px;padding-left:8px}.gsst_a{padding-top:3px}.gssb_e{border:0}.gssb_l{margin:5px 0}.gssb_c .gsc-completion-container{position:static}.gssb_c{z-index:5000}.gsc-completion-container table{background:transparent;font-size:inherit;font-family:inherit}.gssb_c > tbody > tr,.gssb_c > tbody > tr > td,.gssb_d,.gssb_d > tbody > tr,.gssb_d > tbody > tr > td,.gssb_e,.gssb_e > tbody > tr,.gssb_e > tbody > tr > td{padding:0;margin:0;border:0}.gssb_a table,.gssb_a table tr,.gssb_a table tr td{padding:0;margin:0;border:0}</style><style type="text/css">.gscb_a{display:inline-block;font:27px/13px arial,sans-serif}.gsst_a .gscb_a{color:#a1b9ed;cursor:pointer}.gsst_a:hover .gscb_a,.gsst_a:focus .gscb_a{color:#36c}.gsst_a{display:inline-block}.gsst_a{cursor:pointer;padding:0 4px}.gsst_a:hover{text-decoration:none!important}.gsst_b{font-size:16px;padding:0 2px;position:relative;user-select:none;-moz-user-select:none;white-space:nowrap}.gsst_e{opacity:0.55;}.gsst_a:hover .gsst_e,.gsst_a:focus .gsst_e{opacity:0.72;}.gsst_a:active .gsst_e{opacity:1;}.gsst_f{background:white;text-align:left}.gsst_g{background-color:white;border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-moz-box-shadow:0 2px 4px rgba(0,0,0,0.2);margin:-1px -3px;padding:0 6px}.gsst_h{background-color:white;height:1px;margin-bottom:-1px;position:relative;top:-1px}.gsib_a{width:100%;padding:4px 6px 0}.gsib_a,.gsib_b{vertical-align:top}.gssb_c{border:0;position:absolute;z-index:989}.gssb_e{border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-moz-box-shadow:0 2px 4px rgba(0,0,0,0.2);cursor:default}.gssb_f{visibility:hidden;white-space:nowrap}.gssb_k{border:0;display:block;position:absolute;top:0;z-index:988}.gsdd_a{border:none!important}.gscsep_a{display:none}.gsq_a{padding:0}.gssb_a{padding:0 7px}.gssb_a,.gssb_a td{white-space:nowrap;overflow:hidden;line-height:22px}#gssb_b{font-size:11px;color:#36c;text-decoration:none}#gssb_b:hover{font-size:11px;color:#36c;text-decoration:underline}.gssb_g{text-align:center;padding:8px 0 7px;position:relative}.gssb_h{font-size:15px;height:28px;margin:0.2em}.gssb_i{background:#eee}.gss_ifl{visibility:hidden;padding-left:5px}.gssb_i .gss_ifl{visibility:visible}a.gssb_j{font-size:13px;color:#36c;text-decoration:none;line-height:100%}a.gssb_j:hover{text-decoration:underline}.gssb_l{height:1px;background-color:#e5e5e5}.gssb_m{color:#000;background:#fff}.gsfe_a{border:1px solid #b9b9b9;border-top-color:#a0a0a0;box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);-moz-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);-webkit-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);}.gsfe_b{border:1px solid #4d90fe;outline:none;box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);-moz-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);-webkit-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);}.gssb_a{padding:0 2px}.gssb_e{border:0}.gssb_l{margin:5px 0}.gssb_c .gsc-completion-container{position:static}.gssb_c{z-index:5000}.gsc-completion-container table{background:transparent;font-size:inherit;font-family:inherit}.gssb_c > tbody > tr,.gssb_c > tbody > tr > td,.gssb_d,.gssb_d > tbody > tr,.gssb_d > tbody > tr > td,.gssb_e,.gssb_e > tbody > tr,.gssb_e > tbody > tr > td{padding:0;margin:0;border:0}.gssb_a table,.gssb_a table tr,.gssb_a table tr td{padding:0;margin:0;border:0}</style></head>
+
+  <body>
+    <div id="gc-container">
+    <a href="#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="https://developer.chrome.com/">
+          <img alt="Chrome: developer" src="Index_files/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">Devtools</span>
+            <ul class="expandee">
+                <li class="submenu">Learn Basics
+                  <ul>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/devtools">
+                        Overview
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/devtools/docs/authoring-development-workflow">
+                        Development Workflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/devtools/docs/console">
+                        Using the Console
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/devtools/docs/tips-and-tricks">
+                        Tips &amp; Tricks
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/devtools/docs/videos">
+                        Additional Resources
+                        </a>
+                        <ul>
+                            <li><a href="https://developer.chrome.com/devtools/docs/videos">Videos</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/devtools/docs/blog-posts">Blog Posts</a>
+                            </li>
+                            <li><a href="https://groups.google.com/forum/?fromgroups#%21forum/google-chrome-developer-tools">Mailing List</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/devtools/docs/contributing">Contributing to DevTools</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Use Tools
+                  <ul>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/devtools/docs/dom-and-styles">
+                        Inspecting &amp; Tweaking
+                        </a>
+                        <ul>
+                            <li><a href="https://developer.chrome.com/devtools/docs/dom-and-styles">Editing Styles and the DOM</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/devtools/docs/css-preprocessors">Working with CSS Preprocessors</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/devtools/docs/resource-panel">Managing Application Storage</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/devtools/docs/javascript-debugging">
+                        Debugging JavaScript
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/devtools/docs/device-mode">
+                        Device Mode &amp; Mobile Emulation
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/devtools/docs/remote-debugging">
+                        Remote Debugging on Android
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/devtools/docs/workspaces">
+                        Saving Changes with Workspaces
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Performance &amp; Profiling
+                  <ul>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/devtools/docs/network">
+                        Evaluating Network Performance
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/devtools/docs/timeline">
+                        Using the Timeline
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/devtools/docs/demos/too-much-layout/index">
+                        Timeline Demo: Layout Thrashing
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/devtools/docs/cpu-profiling">
+                        Profiling JavaScript Performance
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/devtools/docs/javascript-memory-profiling">
+                        JavaScript Memory Profiling
+                        </a>
+                        <ul>
+                            <li><a href="https://developer.chrome.com/devtools/docs/javascript-memory-profiling">JavaScript Memory Profiling</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/devtools/docs/heap-profiling-summary">Demos</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Reference
+                  <ul>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/devtools/docs/console-api">
+                        Console API Reference
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/devtools/docs/commandline-api">
+                        Command Line API Reference
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/devtools/docs/integrating">
+                        Integrating with DevTools &amp; Chrome
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/extensions/devtools">
+                        DevTools Extensions API
+                        </a>
+                        <ul>
+                            <li><a href="https://developer.chrome.com/devtools/docs/sample-extensions">Sample DevTools Extensions</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/devtools/docs/shortcuts">
+                        Keyboard Shortcuts
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/devtools/docs/settings">
+                        Settings
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/devtools/docs/debugger-protocol">
+                        Remote Debugging Protocol
+                        </a>
+                        <ul>
+                            <li><a href="https://developer.chrome.com/devtools/docs/debugging-clients">Showcase Debugging Protocol Clients</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/devtools/docs/protocol/1.1/index">Version 1.1 (Stable)</a>
+                            </li>
+                            <li><a href="https://chromedevtools.github.io/debugger-protocol-viewer/">Tip-of-tree (Unstable)</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/devtools/docs/protocol/1.0/index">Version 1.0</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/devtools/docs/protocol/0.1/index">Version .1</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar highlight">
+            <span class="toplevel">Multi-device</span>
+            <ul class="expandee">
+                <li class="submenu">Getting Started
+                  <ul>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/multidevice">
+                        Chrome for a Multi-Device World
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/multidevice/data-compression">
+                        Data Compression Proxy
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/multidevice/user-agent">
+                        User Agents
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/devtools/docs/mobile-emulation">
+                        Mobile Emulation
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/devtools/docs/remote-debugging">
+                        Remote Debugging
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/multidevice/faq">
+                        FAQ
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome for Android
+                  <ul>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/multidevice/android/overview">
+                        Overview
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/multidevice/android/intents">
+                        Android Intents with Chrome
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/multidevice/android/installtohomescreen">
+                        Add to Homescreen
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome WebView
+                  <ul>
+                      <li class="category">
+                        <a class="highlight" href="https://developer.chrome.com/multidevice/webview/overview">
+                        WebView for Android
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/multidevice/webview/gettingstarted">
+                        Getting Started
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/multidevice/webview/pixelperfect">
+                        Pixel-Perfect UI
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/multidevice/webview/workflow">
+                        WebView Workflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/multidevice/webview/tipsandtricks">
+                        Tips &amp; Tricks
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome for iOS
+                  <ul>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/multidevice/ios/overview">
+                        Overview
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/multidevice/ios/links">
+                        Opening Links in Chrome
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/multidevice/ios/case-studies">
+                        Case Studies
+                        </a>
+                        <ul>
+                            <li><a href="https://developer.chrome.com/multidevice/ios/case-studies">Case Studies</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/multidevice/ios/pocket">Pocket</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/multidevice/ios/feedly">Feedly</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">Platform</span>
+            <ul class="expandee">
+                <li class="submenu">Apps
+                  <ul>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/apps/about_apps">
+                        Learn Basics
+                        </a>
+                        <ul>
+                            <li><a href="https://developer.chrome.com/apps/about_apps">What Are Chrome Apps?</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/apps/first_app">Create Your First App</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/apps/app_architecture">App Architecture</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/apps/app_lifecycle">App Lifecycle</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/apps/contentSecurityPolicy">Content Security Policy</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/apps/app_codelab_intro">
+                        Learn with Codelab
+                        </a>
+                        <ul>
+                            <li><a href="https://developer.chrome.com/apps/app_codelab_intro">Intro - Build Chrome App</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/apps/app_codelab_basics">1 - Create and run a Chrome App</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/apps/app_codelab_import_todomvc">2 - Import an existing web app</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/apps/app_codelab_alarms">3 - Add alarms and notifications</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/apps/app_codelab_webview">4 - Open external links with a webview</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/apps/app_codelab_images">5 - Add images from the web</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/apps/app_codelab_filesystem">6 - Export todos to the filesystem</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/apps/app_codelab_publish">7 - Publish your app</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/apps/chrome_apps_on_mobile">
+                        Run Chrome Apps on Mobile
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/apps/getstarted_arc">
+                        Run Android Apps on Chrome OS
+                        </a>
+                        <ul>
+                            <li><a href="https://developer.chrome.com/apps/getstarted_arc">Getting Started With ARC</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/apps/arc_playservices">Enable Play Services in Your ARC App</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/apps/samples">
+                        Samples
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/apps/offline_apps">
+                        Develop in the Cloud
+                        </a>
+                        <ul>
+                            <li><a href="https://developer.chrome.com/apps/offline_apps">Offline First</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/apps/app_external">Handling External Content</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/apps/app_storage">Storing Data</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/apps/offline_storage">Managing Offline Storage</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/apps/inform_users">Keep Users Informed</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/apps/cloudMessaging">Cloud Messaging</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/apps/nativeMessaging">Native Messaging</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/apps/richNotifications">Rich Notifications</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/apps/app_identity">User Authentication</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/apps/app_usb">
+                        User Low-Level System Services
+                        </a>
+                        <ul>
+                            <li><a href="https://developer.chrome.com/apps/app_usb">USB</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/apps/app_serial">Serial</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/apps/app_network">Network Communications</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/apps/app_bluetooth">Bluetooth</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/apps/app_frameworks">
+                        MVC Architecture &amp; Frameworks
+                        </a>
+                        <ul>
+                            <li><a href="https://developer.chrome.com/apps/app_frameworks">About MVC Architecture</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/apps/angular_framework">Build Apps with AngularJS</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/apps/sencha_framework">Build Apps with SenchaJS</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/apps/game_engines">Game Engines</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/apps/publish_app">
+                        Distribute Apps
+                        </a>
+                        <ul>
+                            <li><a href="https://developer.chrome.com/apps/publish_app">Publish Your App</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/apps/google_wallet">Monetize Your App</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/webstore/one_time_payments">One-Time Payments</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/apps/analytics">Analytics</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/apps/api_index">
+                        Chrome Platform APIs
+                        </a>
+                        <ul>
+                            <li><a href="https://developer.chrome.com/apps/api_index">JavaScript APIs</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/apps/manifest">Manifest File Format</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/apps/tags/webview">Webview Tag</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/apps/tags/appview">Appview Tag</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/apps/api_other">Web APIs</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/apps/app_deprecated">Disabled Web Features</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/apps/faq">
+                        Help
+                        </a>
+                        <ul>
+                            <li><a href="https://developer.chrome.com/apps/faq">FAQ</a>
+                            </li>
+                            <li><a href="https://groups.google.com/a/chromium.org/forum/#%21forum/chromium-apps">Google Groups</a>
+                            </li>
+                            <li><a href="http://stackoverflow.com/questions/tagged/google-chrome-app">Stack Overflow</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Extensions
+                  <ul>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/extensions">
+                        Learn Basics
+                        </a>
+                        <ul>
+                            <li><a href="https://developer.chrome.com/extensions/overview">Overview</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/extensions/hosting_changes">Hosting Changes</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/extensions/single_purpose">Extension Quality Guidelines FAQ</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/extensions/event_pages">Event Pages</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/extensions/content_scripts">Content Scripts</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/extensions/activeTab">activeTab Permission</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/extensions/whats_new">What's New?</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/extensions/getstarted">
+                        Getting Started Tutorial
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/extensions/samples">
+                        Samples
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/extensions/tut_migration_to_manifest_v2">
+                        Develop Extensions
+                        </a>
+                        <ul>
+                            <li><a href="https://developer.chrome.com/extensions/a11y">Accessibility</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/extensions/contentSecurityPolicy">Content Security Policy</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/extensions/xhr">Cross-Origin XHR</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/extensions/tut_debugging">Debugging</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/extensions/i18n">Internationalization</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/extensions/messaging">Message Passing</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/extensions/nativeMessaging">Native Messaging</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/extensions/tut_migration_to_manifest_v2">Migrate to Manifest 2</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/extensions/tut_oauth">OAuth</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/extensions/options">Options</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/extensions/optionsV2">Options Version 2</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/extensions/hosting">
+                        Distribute Extensions
+                        </a>
+                        <ul>
+                            <li><a href="https://developer.chrome.com/extensions/hosting">Hosting</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/extensions/packaging">Packaging</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/webstore/one_time_payments">One-Time Payments</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/extensions/autoupdate">Autoupdating</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/extensions/external_extensions">Other Deployment Options</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/extensions/tut_analytics">Google Analytics</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/extensions/themes">Publishing Themes</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/extensions/api_index">
+                        Chrome Platform APIs
+                        </a>
+                        <ul>
+                            <li><a href="https://developer.chrome.com/extensions/api_index">JavaScript APIs</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/extensions/manifest">Manifest File Format</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/extensions/api_other">Web APIs</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/extensions/permission_warnings">Permission Warnings</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/extensions/permissions">Optional Permissions</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/extensions/match_patterns">Match Patterns</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/extensions/faq">
+                        Help
+                        </a>
+                        <ul>
+                            <li><a href="https://developer.chrome.com/extensions/faq">FAQ</a>
+                            </li>
+                            <li><a href="https://groups.google.com/a/chromium.org/forum/#%21forum/chromium-extensions">Google Groups</a>
+                            </li>
+                            <li><a href="http://stackoverflow.com/tags/google-chrome-extension/info">Stack Overflow</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Native Client
+                  <ul>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/native-client">
+                        Learn Basics
+                        </a>
+                        <ul>
+                            <li><a href="https://developer.chrome.com/native-client/overview">Technical Overview</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/native-client/nacl-and-pnacl">NaCl and PNaCl</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/native-client/sdk/download">
+                        Download the SDK
+                        </a>
+                        <ul>
+                            <li><a href="https://developer.chrome.com/native-client/sdk/download">Download the Native Client SDK</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/native-client/sdk/examples">Examples</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/native-client/sdk/release-notes">Release Notes</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/native-client/devguide/tutorial/tutorial-part1">
+                        Tutorial
+                        </a>
+                        <ul>
+                            <li><a href="https://developer.chrome.com/native-client/devguide/tutorial/tutorial-part1">Part 1: Simple PNaCl Web App</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/native-client/devguide/tutorial/tutorial-part2">Part 2: SDK Build System and Chrome Apps</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/native-client/cds2014">Chrome Dev Summit 2014 - Codelabs</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/native-client/devguide/devcycle/building">
+                        Development Cycle
+                        </a>
+                        <ul>
+                            <li><a href="https://developer.chrome.com/native-client/devguide/devcycle/building">Building</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/native-client/devguide/devcycle/running">Running</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/native-client/devguide/devcycle/debugging">Debugging</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/native-client/devguide/devcycle/vs-addin">Debugging with Visual Studio</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/native-client/devguide/devcycle/dynamic-loading">Dynamic Linking and Loading with GlibC</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/native-client/devguide/coding/application-structure">
+                        Coding Your Application
+                        </a>
+                        <ul>
+                            <li><a href="https://developer.chrome.com/native-client/devguide/coding/application-structure">Application Structure</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/native-client/devguide/coding/native-client-modules">Native Client Modules</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/native-client/devguide/coding/3D-graphics">3D Graphics</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/native-client/devguide/coding/audio">Audio</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/native-client/devguide/coding/file-io">File I/O</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/native-client/devguide/coding/nacl_io">The nacl_io Library</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/native-client/devguide/coding/message-system">Messaging System</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/native-client/devguide/coding/progress-events">Progress Events</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/native-client/devguide/coding/url-loading">URL Loading</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/native-client/devguide/coding/view-focus-input-events">View Change, Focus, &amp; Input Events</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/native-client/devguide/distributing">
+                        Distribute Your Apps
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/native-client/c-api">
+                        Pepper API Reference
+                        </a>
+                        <ul>
+                            <li><a href="https://developer.chrome.com/native-client/c-api">Pepper C API (Stable)</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/native-client/cpp-api">Pepper C++ API (Stable)</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/native-client/c-api-beta">Pepper C API (Beta)</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/native-client/cpp-api-beta">Pepper C++ API (Beta)</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/native-client/c-api-dev">Pepper C API (Dev)</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/native-client/cpp-api-dev">Pepper C++ API (Dev)</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/native-client/glossary">
+                        Additional Reference &amp; Versions
+                        </a>
+                        <ul>
+                            <li><a href="https://developer.chrome.com/native-client/glossary">Glossary</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/native-client/reference/ideas">Contributor Ideas</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/native-client/reference/nacl-manifest-format">Native Client Manifest (nmf) Format</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/native-client/reference/pnacl-bitcode-manual">Contents of PNaCl Bitcode Files</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/native-client/reference/pnacl-bitcode-abi">PNaCl Bitcode Reference Manual</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/native-client/reference/pnacl-undefined-behavior">PNaCl Undefined Behavior</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/native-client/reference/pnacl-c-cpp-language-support">PNaCl C/C++ Language Support</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/native-client/reference/sandbox_internals/index">Sandbox Internals</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/native-client/reference/design-docs">Design Documents</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/native-client/faq">
+                        Help
+                        </a>
+                        <ul>
+                            <li><a href="https://developer.chrome.com/native-client/faq">FAQ</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/native-client/help">Forums &amp; Issues Tracker</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/native-client/publications-and-presentations">Publications &amp; Presentations</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/native-client/community/security-contest/index">Security Contest Archive</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Store
+                  <ul>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore">
+                        Distribution Overview
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/about_webstore">
+                        What Is the Chrome Web Store?
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/overview">
+                        What Can You Publish?
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/get_started_simple">
+                        Tutorial: Getting Started
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/samples">
+                        Samples
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/branding">
+                        Branding
+                        </a>
+                        <ul>
+                            <li><a href="https://developer.chrome.com/webstore/branding">Branding Guidelines</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/webstore/images">Supplying Images</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/money">
+                        Monetizing
+                        </a>
+                        <ul>
+                            <li><a href="https://developer.chrome.com/webstore/money">Monetizing Your App</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/webstore/identify_user">Using Google Accounts</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/webstore/check_for_payment">Checking for Payment</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/webstore/one_time_payments">One-Time Payments</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/webstore/pricing">Pricing</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/publish">
+                        Publishing
+                        </a>
+                        <ul>
+                            <li><a href="https://developer.chrome.com/webstore/publish">Publishing Tutorial</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/webstore/i18n">Internationalizing Your App</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/webstore/inline_installation">Using Inline Installation</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/webstore/rating">Rating Guidelines</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/webstore/program_policies">Program Policies</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/webstore/terms">Terms of Service</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/best_practices">
+                        Help
+                        </a>
+                        <ul>
+                            <li><a href="https://developer.chrome.com/webstore/best_practices">Best Practices</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/webstore/faq">FAQ</a>
+                            </li>
+                            <li><a href="https://groups.google.com/a/chromium.org/forum/#%21forum/chromium-apps">Google Groups</a>
+                            </li>
+                            <li><a href="https://developer.chrome.com/webstore/articles">Articles</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="Index_files/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>
+      .gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://google.com/cse">
+              <input style="outline: medium none;" spellcheck="false" autocomplete="off" dir="ltr" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?" type="search">
+              <input name="cx" value="010997258251033819707:7owyldxmpkc" type="hidden">
+              <input name="ie" value="UTF-8" type="hidden">
+            <input name="oq" type="hidden"><input name="gs_l" type="hidden"></form>
+            <div id="___gcse_0"><div class="gsc-control-cse gsc-control-cse-en"><div style="visibility: hidden;" dir="ltr" class="gsc-control-wrapper-cse"><form style="display: none;" accept-charset="utf-8" class="gsc-search-box gsc-search-box-tools"><table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody><tr><td class="gsc-input"><div id="gsc-iw-id1" class="gsc-input-box"><table class="gstl_50 " id="gs_id50" style="width: 100%; padding: 0px;" cellpadding="0" cellspacing="0"><tbody><tr><td class="gsib_a" id="gs_tti50"><input spellcheck="false" dir="ltr" id="gsc-i-id1" style="width: 100%; padding: 0px; border: medium none; margin: 0px; height: auto; outline: medium none; background: url(&quot;https://www.google.com/cse/intl/en/images/google_custom_search_watermark.gif&quot;) no-repeat scroll left center rgb(255, 255, 255);" title="search" name="search" class="gsc-input" size="10" autocomplete="off" type="text"></td><td class="gsib_b"><div dir="ltr" id="gs_st50" class="gsst_b"><a style="display: none;" href="javascript:void(0)" class="gsst_a"><span id="gs_cb50" class="gscb_a">×</span></a></div></td></tr></tbody></table></div><input id="bgresponse" name="bgresponse" type="hidden"></td><td class="gsc-search-button"><input title="search" class="gsc-search-button gsc-search-button-v2" src="Index_files/search_box_icon.png" type="image"></td><td class="gsc-clear-button"><div title="clear results" class="gsc-clear-button">&nbsp;</div></td></tr></tbody></table><table class="gsc-branding" cellpadding="0" cellspacing="0"><tbody><tr><td class="gsc-branding-user-defined"></td><td class="gsc-branding-text"><div class="gsc-branding-text">powered by</div></td><td class="gsc-branding-img"><img class="gsc-branding-img" src="Index_files/small-logo.png"></td></tr></tbody></table></form><div class="gsc-results-wrapper-nooverlay"><div class="gsc-tabsAreaInvisible"><div class="gsc-tabHeader gsc-inline-block gsc-tabhActive">Custom Search</div><span class="gs-spacer"> </span></div><div class="gsc-tabsAreaInvisible"></div><div class="gsc-above-wrapper-area-invisible"><table class="gsc-above-wrapper-area-container" cellpadding="0" cellspacing="0"><tbody><tr><td class="gsc-result-info-container"><div class="gsc-result-info-invisible"></div></td><td class="gsc-orderby-container"><div class="gsc-orderby-invisible"><div class="gsc-orderby-label gsc-inline-block">Sort by:</div><div class="gsc-option-menu-container gsc-inline-block"><div class="gsc-selected-option-container gsc-inline-block"><div class="gsc-selected-option">Relevance</div><div class="gsc-option-selector"></div></div><div class="gsc-option-menu-invisible"><div class="gsc-option-menu-item gsc-option-menu-item-highlighted"><div class="gsc-option">Relevance</div></div><div class="gsc-option-menu-item"><div class="gsc-option">Date</div></div></div></div></div></td></tr></tbody></table></div><div class="gsc-adBlockInvisible"></div><div class="gsc-wrapper"><div class="gsc-adBlockInvisible"></div><div class="gsc-resultsbox-invisible"><div class="gsc-resultsRoot gsc-tabData gsc-tabdActive"><table class="gsc-resultsHeader" cellpadding="0" cellspacing="0"><tbody><tr><td class="gsc-twiddleRegionCell"><div class="gsc-twiddle"><div class="gsc-title">Web</div></div><div class="gsc-stats"></div><div class="gsc-results-selector gsc-all-results-active"><div title="show one result" class="gsc-result-selector gsc-one-result">&nbsp;</div><div title="show more results" class="gsc-result-selector gsc-more-results">&nbsp;</div><div title="show all results" class="gsc-result-selector gsc-all-results">&nbsp;</div></div></td><td class="gsc-configLabelCell"></td></tr></tbody></table><div><div class="gsc-expansionArea"></div></div></div></div></div></div></div></div></div>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article class="article-content">
+  <nav class="inline-site-toc no-permalink">
+    <section class="related">
+    <ol class="toc">
+        <li class=" toplevel">
+          <span>Devtools</span>
+          <ol class="toc">
+              <li class="">
+                <a href="https://developer.chrome.com/devtools">
+                  Learn Basics
+                </a>
+                <ol class="toc">
+                    <li class="">
+                      <a href="https://developer.chrome.com/devtools">
+                      Overview
+                      </a>
+                      <ol class="toc">
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/devtools/docs/authoring-development-workflow">
+                      Development Workflow
+                      </a>
+                      <ol class="toc">
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/devtools/docs/console">
+                      Using the Console
+                      </a>
+                      <ol class="toc">
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/devtools/docs/tips-and-tricks">
+                      Tips &amp; Tricks
+                      </a>
+                      <ol class="toc">
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/devtools/docs/videos">
+                      Additional Resources
+                      </a>
+                      <ol class="toc">
+                          <li class="">
+                            <a href="https://developer.chrome.com/devtools/docs/videos">Videos</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/devtools/docs/blog-posts">Blog Posts</a>
+                          </li>
+                          <li class="">
+                            <a href="https://groups.google.com/forum/?fromgroups#%21forum/google-chrome-developer-tools">Mailing List</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/devtools/docs/contributing">Contributing to DevTools</a>
+                          </li>
+                      </ol>
+                    </li>
+                </ol>
+              </li>
+              <li class="">
+                <a href="https://developer.chrome.com/devtools/docs/dom-and-styles">
+                  Use Tools
+                </a>
+                <ol class="toc">
+                    <li class="">
+                      <a href="https://developer.chrome.com/devtools/docs/dom-and-styles">
+                      Inspecting &amp; Tweaking
+                      </a>
+                      <ol class="toc">
+                          <li class="">
+                            <a href="https://developer.chrome.com/devtools/docs/dom-and-styles">Editing Styles and the DOM</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/devtools/docs/css-preprocessors">Working with CSS Preprocessors</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/devtools/docs/resource-panel">Managing Application Storage</a>
+                          </li>
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/devtools/docs/javascript-debugging">
+                      Debugging JavaScript
+                      </a>
+                      <ol class="toc">
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/devtools/docs/device-mode">
+                      Device Mode &amp; Mobile Emulation
+                      </a>
+                      <ol class="toc">
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/devtools/docs/remote-debugging">
+                      Remote Debugging on Android
+                      </a>
+                      <ol class="toc">
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/devtools/docs/workspaces">
+                      Saving Changes with Workspaces
+                      </a>
+                      <ol class="toc">
+                      </ol>
+                    </li>
+                </ol>
+              </li>
+              <li class="">
+                <a href="https://developer.chrome.com/devtools/docs/network">
+                  Performance &amp; Profiling
+                </a>
+                <ol class="toc">
+                    <li class="">
+                      <a href="https://developer.chrome.com/devtools/docs/network">
+                      Evaluating Network Performance
+                      </a>
+                      <ol class="toc">
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/devtools/docs/timeline">
+                      Using the Timeline
+                      </a>
+                      <ol class="toc">
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/devtools/docs/demos/too-much-layout/index">
+                      Timeline Demo: Layout Thrashing
+                      </a>
+                      <ol class="toc">
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/devtools/docs/cpu-profiling">
+                      Profiling JavaScript Performance
+                      </a>
+                      <ol class="toc">
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/devtools/docs/javascript-memory-profiling">
+                      JavaScript Memory Profiling
+                      </a>
+                      <ol class="toc">
+                          <li class="">
+                            <a href="https://developer.chrome.com/devtools/docs/javascript-memory-profiling">JavaScript Memory Profiling</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/devtools/docs/heap-profiling-summary">Demos</a>
+                          </li>
+                      </ol>
+                    </li>
+                </ol>
+              </li>
+              <li class="">
+                <a href="https://developer.chrome.com/devtools/docs/console-api">
+                  Reference
+                </a>
+                <ol class="toc">
+                    <li class="">
+                      <a href="https://developer.chrome.com/devtools/docs/console-api">
+                      Console API Reference
+                      </a>
+                      <ol class="toc">
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/devtools/docs/commandline-api">
+                      Command Line API Reference
+                      </a>
+                      <ol class="toc">
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/devtools/docs/integrating">
+                      Integrating with DevTools &amp; Chrome
+                      </a>
+                      <ol class="toc">
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/extensions/devtools">
+                      DevTools Extensions API
+                      </a>
+                      <ol class="toc">
+                          <li class="">
+                            <a href="https://developer.chrome.com/devtools/docs/sample-extensions">Sample DevTools Extensions</a>
+                          </li>
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/devtools/docs/shortcuts">
+                      Keyboard Shortcuts
+                      </a>
+                      <ol class="toc">
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/devtools/docs/settings">
+                      Settings
+                      </a>
+                      <ol class="toc">
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/devtools/docs/debugger-protocol">
+                      Remote Debugging Protocol
+                      </a>
+                      <ol class="toc">
+                          <li class="">
+                            <a href="https://developer.chrome.com/devtools/docs/debugging-clients">Showcase Debugging Protocol Clients</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/devtools/docs/protocol/1.1/index">Version 1.1 (Stable)</a>
+                          </li>
+                          <li class="">
+                            <a href="https://chromedevtools.github.io/debugger-protocol-viewer/">Tip-of-tree (Unstable)</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/devtools/docs/protocol/1.0/index">Version 1.0</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/devtools/docs/protocol/0.1/index">Version .1</a>
+                          </li>
+                      </ol>
+                    </li>
+                </ol>
+              </li>
+          </ol>
+        </li>
+        <li class="show toplevel">
+          <span>Multi-device</span>
+          <ol class="toc">
+              <li class="">
+                <a href="https://developer.chrome.com/multidevice">
+                  Getting Started
+                </a>
+                <ol class="toc">
+                    <li class="">
+                      <a href="https://developer.chrome.com/multidevice">
+                      Chrome for a Multi-Device World
+                      </a>
+                      <ol class="toc">
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/multidevice/data-compression">
+                      Data Compression Proxy
+                      </a>
+                      <ol class="toc">
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/multidevice/user-agent">
+                      User Agents
+                      </a>
+                      <ol class="toc">
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/devtools/docs/mobile-emulation">
+                      Mobile Emulation
+                      </a>
+                      <ol class="toc">
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/devtools/docs/remote-debugging">
+                      Remote Debugging
+                      </a>
+                      <ol class="toc">
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/multidevice/faq">
+                      FAQ
+                      </a>
+                      <ol class="toc">
+                      </ol>
+                    </li>
+                </ol>
+              </li>
+              <li class="">
+                <a href="https://developer.chrome.com/multidevice/android/overview">
+                  Chrome for Android
+                </a>
+                <ol class="toc">
+                    <li class="">
+                      <a href="https://developer.chrome.com/multidevice/android/overview">
+                      Overview
+                      </a>
+                      <ol class="toc">
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/multidevice/android/intents">
+                      Android Intents with Chrome
+                      </a>
+                      <ol class="toc">
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/multidevice/android/installtohomescreen">
+                      Add to Homescreen
+                      </a>
+                      <ol class="toc">
+                      </ol>
+                    </li>
+                </ol>
+              </li>
+              <li class="show">
+                <a href="https://developer.chrome.com/multidevice/webview/overview">
+                  Chrome WebView
+                </a>
+                <ol class="toc">
+                    <li class="">
+                      <a href="https://developer.chrome.com/multidevice/webview/overview">
+                      WebView for Android
+                      </a>
+                      <ol class="toc">
+                      </ol>
+                    </li>
+                    <li class="selected">
+                      <a href="https://developer.chrome.com/multidevice/webview/gettingstarted">
+                      Getting Started
+                      </a>
+                      <ol class="toc">
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/multidevice/webview/pixelperfect">
+                      Pixel-Perfect UI
+                      </a>
+                      <ol class="toc">
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/multidevice/webview/workflow">
+                      WebView Workflow
+                      </a>
+                      <ol class="toc">
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/multidevice/webview/tipsandtricks">
+                      Tips &amp; Tricks
+                      </a>
+                      <ol class="toc">
+                      </ol>
+                    </li>
+                </ol>
+              </li>
+              <li class="">
+                <a href="https://developer.chrome.com/multidevice/ios/overview">
+                  Chrome for iOS
+                </a>
+                <ol class="toc">
+                    <li class="">
+                      <a href="https://developer.chrome.com/multidevice/ios/overview">
+                      Overview
+                      </a>
+                      <ol class="toc">
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/multidevice/ios/links">
+                      Opening Links in Chrome
+                      </a>
+                      <ol class="toc">
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/multidevice/ios/case-studies">
+                      Case Studies
+                      </a>
+                      <ol class="toc">
+                          <li class="">
+                            <a href="https://developer.chrome.com/multidevice/ios/case-studies">Case Studies</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/multidevice/ios/pocket">Pocket</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/multidevice/ios/feedly">Feedly</a>
+                          </li>
+                      </ol>
+                    </li>
+                </ol>
+              </li>
+          </ol>
+        </li>
+        <li class=" toplevel">
+          <span>Platform</span>
+          <ol class="toc">
+              <li class="">
+                <a href="https://developer.chrome.com/apps/about_apps">
+                  Apps
+                </a>
+                <ol class="toc">
+                    <li class="">
+                      <a href="https://developer.chrome.com/apps/about_apps">
+                      Learn Basics
+                      </a>
+                      <ol class="toc">
+                          <li class="">
+                            <a href="https://developer.chrome.com/apps/about_apps">What Are Chrome Apps?</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/apps/first_app">Create Your First App</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/apps/app_architecture">App Architecture</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/apps/app_lifecycle">App Lifecycle</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/apps/contentSecurityPolicy">Content Security Policy</a>
+                          </li>
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/apps/app_codelab_intro">
+                      Learn with Codelab
+                      </a>
+                      <ol class="toc">
+                          <li class="">
+                            <a href="https://developer.chrome.com/apps/app_codelab_intro">Intro - Build Chrome App</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/apps/app_codelab_basics">1 - Create and run a Chrome App</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/apps/app_codelab_import_todomvc">2 - Import an existing web app</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/apps/app_codelab_alarms">3 - Add alarms and notifications</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/apps/app_codelab_webview">4 - Open external links with a webview</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/apps/app_codelab_images">5 - Add images from the web</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/apps/app_codelab_filesystem">6 - Export todos to the filesystem</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/apps/app_codelab_publish">7 - Publish your app</a>
+                          </li>
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/apps/chrome_apps_on_mobile">
+                      Run Chrome Apps on Mobile
+                      </a>
+                      <ol class="toc">
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/apps/getstarted_arc">
+                      Run Android Apps on Chrome OS
+                      </a>
+                      <ol class="toc">
+                          <li class="">
+                            <a href="https://developer.chrome.com/apps/getstarted_arc">Getting Started With ARC</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/apps/arc_playservices">Enable Play Services in Your ARC App</a>
+                          </li>
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/apps/samples">
+                      Samples
+                      </a>
+                      <ol class="toc">
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/apps/offline_apps">
+                      Develop in the Cloud
+                      </a>
+                      <ol class="toc">
+                          <li class="">
+                            <a href="https://developer.chrome.com/apps/offline_apps">Offline First</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/apps/app_external">Handling External Content</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/apps/app_storage">Storing Data</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/apps/offline_storage">Managing Offline Storage</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/apps/inform_users">Keep Users Informed</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/apps/cloudMessaging">Cloud Messaging</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/apps/nativeMessaging">Native Messaging</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/apps/richNotifications">Rich Notifications</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/apps/app_identity">User Authentication</a>
+                          </li>
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/apps/app_usb">
+                      User Low-Level System Services
+                      </a>
+                      <ol class="toc">
+                          <li class="">
+                            <a href="https://developer.chrome.com/apps/app_usb">USB</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/apps/app_serial">Serial</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/apps/app_network">Network Communications</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/apps/app_bluetooth">Bluetooth</a>
+                          </li>
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/apps/app_frameworks">
+                      MVC Architecture &amp; Frameworks
+                      </a>
+                      <ol class="toc">
+                          <li class="">
+                            <a href="https://developer.chrome.com/apps/app_frameworks">About MVC Architecture</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/apps/angular_framework">Build Apps with AngularJS</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/apps/sencha_framework">Build Apps with SenchaJS</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/apps/game_engines">Game Engines</a>
+                          </li>
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/apps/publish_app">
+                      Distribute Apps
+                      </a>
+                      <ol class="toc">
+                          <li class="">
+                            <a href="https://developer.chrome.com/apps/publish_app">Publish Your App</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/apps/google_wallet">Monetize Your App</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/webstore/one_time_payments">One-Time Payments</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/apps/analytics">Analytics</a>
+                          </li>
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/apps/api_index">
+                      Chrome Platform APIs
+                      </a>
+                      <ol class="toc">
+                          <li class="">
+                            <a href="https://developer.chrome.com/apps/api_index">JavaScript APIs</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/apps/manifest">Manifest File Format</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/apps/tags/webview">Webview Tag</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/apps/tags/appview">Appview Tag</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/apps/api_other">Web APIs</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/apps/app_deprecated">Disabled Web Features</a>
+                          </li>
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/apps/faq">
+                      Help
+                      </a>
+                      <ol class="toc">
+                          <li class="">
+                            <a href="https://developer.chrome.com/apps/faq">FAQ</a>
+                          </li>
+                          <li class="">
+                            <a href="https://groups.google.com/a/chromium.org/forum/#%21forum/chromium-apps">Google Groups</a>
+                          </li>
+                          <li class="">
+                            <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">Stack Overflow</a>
+                          </li>
+                      </ol>
+                    </li>
+                </ol>
+              </li>
+              <li class="">
+                <a href="https://developer.chrome.com/extensions">
+                  Extensions
+                </a>
+                <ol class="toc">
+                    <li class="">
+                      <a href="https://developer.chrome.com/extensions">
+                      Learn Basics
+                      </a>
+                      <ol class="toc">
+                          <li class="">
+                            <a href="https://developer.chrome.com/extensions/overview">Overview</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/extensions/hosting_changes">Hosting Changes</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/extensions/single_purpose">Extension Quality Guidelines FAQ</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/extensions/event_pages">Event Pages</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/extensions/content_scripts">Content Scripts</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/extensions/activeTab">activeTab Permission</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/extensions/whats_new">What's New?</a>
+                          </li>
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/extensions/getstarted">
+                      Getting Started Tutorial
+                      </a>
+                      <ol class="toc">
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/extensions/samples">
+                      Samples
+                      </a>
+                      <ol class="toc">
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/extensions/tut_migration_to_manifest_v2">
+                      Develop Extensions
+                      </a>
+                      <ol class="toc">
+                          <li class="">
+                            <a href="https://developer.chrome.com/extensions/a11y">Accessibility</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/extensions/contentSecurityPolicy">Content Security Policy</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/extensions/xhr">Cross-Origin XHR</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/extensions/tut_debugging">Debugging</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/extensions/i18n">Internationalization</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/extensions/messaging">Message Passing</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/extensions/nativeMessaging">Native Messaging</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/extensions/tut_migration_to_manifest_v2">Migrate to Manifest 2</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/extensions/tut_oauth">OAuth</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/extensions/options">Options</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/extensions/optionsV2">Options Version 2</a>
+                          </li>
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/extensions/hosting">
+                      Distribute Extensions
+                      </a>
+                      <ol class="toc">
+                          <li class="">
+                            <a href="https://developer.chrome.com/extensions/hosting">Hosting</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/extensions/packaging">Packaging</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/webstore/one_time_payments">One-Time Payments</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/extensions/autoupdate">Autoupdating</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/extensions/external_extensions">Other Deployment Options</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/extensions/tut_analytics">Google Analytics</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/extensions/themes">Publishing Themes</a>
+                          </li>
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/extensions/api_index">
+                      Chrome Platform APIs
+                      </a>
+                      <ol class="toc">
+                          <li class="">
+                            <a href="https://developer.chrome.com/extensions/api_index">JavaScript APIs</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/extensions/manifest">Manifest File Format</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/extensions/api_other">Web APIs</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/extensions/permission_warnings">Permission Warnings</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/extensions/permissions">Optional Permissions</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/extensions/match_patterns">Match Patterns</a>
+                          </li>
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/extensions/faq">
+                      Help
+                      </a>
+                      <ol class="toc">
+                          <li class="">
+                            <a href="https://developer.chrome.com/extensions/faq">FAQ</a>
+                          </li>
+                          <li class="">
+                            <a href="https://groups.google.com/a/chromium.org/forum/#%21forum/chromium-extensions">Google Groups</a>
+                          </li>
+                          <li class="">
+                            <a href="http://stackoverflow.com/tags/google-chrome-extension/info">Stack Overflow</a>
+                          </li>
+                      </ol>
+                    </li>
+                </ol>
+              </li>
+              <li class="">
+                <a href="https://developer.chrome.com/native-client">
+                  Native Client
+                </a>
+                <ol class="toc">
+                    <li class="">
+                      <a href="https://developer.chrome.com/native-client">
+                      Learn Basics
+                      </a>
+                      <ol class="toc">
+                          <li class="">
+                            <a href="https://developer.chrome.com/native-client/overview">Technical Overview</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/native-client/nacl-and-pnacl">NaCl and PNaCl</a>
+                          </li>
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/native-client/sdk/download">
+                      Download the SDK
+                      </a>
+                      <ol class="toc">
+                          <li class="">
+                            <a href="https://developer.chrome.com/native-client/sdk/download">Download the Native Client SDK</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/native-client/sdk/examples">Examples</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/native-client/sdk/release-notes">Release Notes</a>
+                          </li>
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/native-client/devguide/tutorial/tutorial-part1">
+                      Tutorial
+                      </a>
+                      <ol class="toc">
+                          <li class="">
+                            <a href="https://developer.chrome.com/native-client/devguide/tutorial/tutorial-part1">Part 1: Simple PNaCl Web App</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/native-client/devguide/tutorial/tutorial-part2">Part 2: SDK Build System and Chrome Apps</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/native-client/cds2014">Chrome Dev Summit 2014 - Codelabs</a>
+                          </li>
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/native-client/devguide/devcycle/building">
+                      Development Cycle
+                      </a>
+                      <ol class="toc">
+                          <li class="">
+                            <a href="https://developer.chrome.com/native-client/devguide/devcycle/building">Building</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/native-client/devguide/devcycle/running">Running</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/native-client/devguide/devcycle/debugging">Debugging</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/native-client/devguide/devcycle/vs-addin">Debugging with Visual Studio</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/native-client/devguide/devcycle/dynamic-loading">Dynamic Linking and Loading with GlibC</a>
+                          </li>
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/native-client/devguide/coding/application-structure">
+                      Coding Your Application
+                      </a>
+                      <ol class="toc">
+                          <li class="">
+                            <a href="https://developer.chrome.com/native-client/devguide/coding/application-structure">Application Structure</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/native-client/devguide/coding/native-client-modules">Native Client Modules</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/native-client/devguide/coding/3D-graphics">3D Graphics</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/native-client/devguide/coding/audio">Audio</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/native-client/devguide/coding/file-io">File I/O</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/native-client/devguide/coding/nacl_io">The nacl_io Library</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/native-client/devguide/coding/message-system">Messaging System</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/native-client/devguide/coding/progress-events">Progress Events</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/native-client/devguide/coding/url-loading">URL Loading</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/native-client/devguide/coding/view-focus-input-events">View Change, Focus, &amp; Input Events</a>
+                          </li>
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/native-client/devguide/distributing">
+                      Distribute Your Apps
+                      </a>
+                      <ol class="toc">
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/native-client/c-api">
+                      Pepper API Reference
+                      </a>
+                      <ol class="toc">
+                          <li class="">
+                            <a href="https://developer.chrome.com/native-client/c-api">Pepper C API (Stable)</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/native-client/cpp-api">Pepper C++ API (Stable)</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/native-client/c-api-beta">Pepper C API (Beta)</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/native-client/cpp-api-beta">Pepper C++ API (Beta)</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/native-client/c-api-dev">Pepper C API (Dev)</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/native-client/cpp-api-dev">Pepper C++ API (Dev)</a>
+                          </li>
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/native-client/glossary">
+                      Additional Reference &amp; Versions
+                      </a>
+                      <ol class="toc">
+                          <li class="">
+                            <a href="https://developer.chrome.com/native-client/glossary">Glossary</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/native-client/reference/ideas">Contributor Ideas</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/native-client/reference/nacl-manifest-format">Native Client Manifest (nmf) Format</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/native-client/reference/pnacl-bitcode-manual">Contents of PNaCl Bitcode Files</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/native-client/reference/pnacl-bitcode-abi">PNaCl Bitcode Reference Manual</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/native-client/reference/pnacl-undefined-behavior">PNaCl Undefined Behavior</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/native-client/reference/pnacl-c-cpp-language-support">PNaCl C/C++ Language Support</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/native-client/reference/sandbox_internals/index">Sandbox Internals</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/native-client/reference/design-docs">Design Documents</a>
+                          </li>
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/native-client/faq">
+                      Help
+                      </a>
+                      <ol class="toc">
+                          <li class="">
+                            <a href="https://developer.chrome.com/native-client/faq">FAQ</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/native-client/help">Forums &amp; Issues Tracker</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/native-client/publications-and-presentations">Publications &amp; Presentations</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/native-client/community/security-contest/index">Security Contest Archive</a>
+                          </li>
+                      </ol>
+                    </li>
+                </ol>
+              </li>
+              <li class="">
+                <a href="https://developer.chrome.com/webstore">
+                  Store
+                </a>
+                <ol class="toc">
+                    <li class="">
+                      <a href="https://developer.chrome.com/webstore">
+                      Distribution Overview
+                      </a>
+                      <ol class="toc">
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/webstore/about_webstore">
+                      What Is the Chrome Web Store?
+                      </a>
+                      <ol class="toc">
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/webstore/overview">
+                      What Can You Publish?
+                      </a>
+                      <ol class="toc">
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/webstore/get_started_simple">
+                      Tutorial: Getting Started
+                      </a>
+                      <ol class="toc">
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/webstore/samples">
+                      Samples
+                      </a>
+                      <ol class="toc">
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/webstore/branding">
+                      Branding
+                      </a>
+                      <ol class="toc">
+                          <li class="">
+                            <a href="https://developer.chrome.com/webstore/branding">Branding Guidelines</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/webstore/images">Supplying Images</a>
+                          </li>
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/webstore/money">
+                      Monetizing
+                      </a>
+                      <ol class="toc">
+                          <li class="">
+                            <a href="https://developer.chrome.com/webstore/money">Monetizing Your App</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/webstore/identify_user">Using Google Accounts</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/webstore/check_for_payment">Checking for Payment</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/webstore/one_time_payments">One-Time Payments</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/webstore/pricing">Pricing</a>
+                          </li>
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/webstore/publish">
+                      Publishing
+                      </a>
+                      <ol class="toc">
+                          <li class="">
+                            <a href="https://developer.chrome.com/webstore/publish">Publishing Tutorial</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/webstore/i18n">Internationalizing Your App</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/webstore/inline_installation">Using Inline Installation</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/webstore/rating">Rating Guidelines</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/webstore/program_policies">Program Policies</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/webstore/terms">Terms of Service</a>
+                          </li>
+                      </ol>
+                    </li>
+                    <li class="">
+                      <a href="https://developer.chrome.com/webstore/best_practices">
+                      Help
+                      </a>
+                      <ol class="toc">
+                          <li class="">
+                            <a href="https://developer.chrome.com/webstore/best_practices">Best Practices</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/webstore/faq">FAQ</a>
+                          </li>
+                          <li class="">
+                            <a href="https://groups.google.com/a/chromium.org/forum/#%21forum/chromium-apps">Google Groups</a>
+                          </li>
+                          <li class="">
+                            <a href="https://developer.chrome.com/webstore/articles">Articles</a>
+                          </li>
+                      </ol>
+                    </li>
+                </ol>
+              </li>
+          </ol>
+        </li>
+    </ol>
+    </section>
+  </nav>
+  <div itemprop="articleBody">
+    <nav class="inline-toc no-permalink">
+      <section class="sticky" id="toc">
+    <h3 class="has-permalink">Contents<a class="permalink" title="Permalink" href="#contents">#</a></h3>
+    <ol class="toc">
+      <li class="toplevel"><a data-list-item="" href="#install_android_studio">Install Android Studio</a>
+      </li>
+      <li class="toplevel"><a data-list-item="" href="#create_a_new_android_project">Create a New Android Project</a>
+      </li>
+      <li class="toplevel"><a data-list-item="" href="#add_the_webview">Add the WebView</a>
+      </li>
+      <li class="toplevel"><a data-list-item="" href="#enable_javascript">Enable JavaScript</a>
+      </li>
+      <li class="toplevel"><a class="hastoc" data-list-item="" href="#load_a_remote_url">Load a Remote URL</a>
+          <ol class="toc">
+              <li><a data-list-item="" href="#handling_navigation">Handling Navigation</a>
+              </li>
+              <li><a data-list-item="" href="#handling_the_back_button">Handling the Android Back Button</a>
+              </li>
+          </ol>
+      </li>
+      <li class="toplevel"><a data-list-item="" href="#loading_html_files_from_the_file_system">Loading HTML files from the file system</a>
+      </li>
+    </ol>
+</section>
+
+    </nav>
+
+
+
+<h1>Getting Started: WebView-based Applications for Web Developers</h1>
+
+<p>Getting started with the Android WebView is fairly simple, whether you want load 
+a remote URL or display pages stored in your app.</p>
+
+<p>This tutorial walks you through creating a new Android Project, adding a 
+WebView, loading a remote URL, and then loading a local HTML page.</p>
+
+<p><strong>Note:</strong> This tutorial assumes you're a developer with limited 
+or no experience with the Android development environment, but have some experience with Java. 
+If you're already familiar with programming for Android, you may want to refer to to 
+<a href="http://developer.android.com/guide/webapps/webview.html"> Building Web Apps in WebView</a>
+on the Android developer site instead.</p>
+
+<div class="collapsible">
+<h2 class="has-permalink" id="install_android_studio">Install Android Studio<a class="permalink" title="Permalink" href="#install_android_studio">#</a></h2>
+
+<p>This tutorial uses <a href="http://developer.android.com/sdk/installing/studio.html">Android 
+Studio</a>, the new 
+design-and-build IDE for Android. So you'll need start off by installing Android 
+Studio, as described here:</p>
+
+<p><a href="http://developer.android.com/sdk/installing/studio.html">http://developer.android.com/sdk/installing/studio.html</a></p>
+
+</div><div class="collapsible">
+<h2 class="has-permalink" id="create_a_new_android_project">Create a New Android Project<a class="permalink" title="Permalink" href="#create_a_new_android_project">#</a></h2>
+
+<p>When the installation completes, Android Studio launches and displays the 
+welcome screen.</p>
+
+<p><img src="Index_files/welcome-screen.png"> </p>
+
+<p>To create a new project:</p>
+
+<ol>
+<li> Click <strong>New Project</strong>.</li>
+<li><p>On the next page, enter your application name, package name and target SDKs, 
+and click <strong>Next</strong>.</p>
+
+<p><img src="Index_files/projectwizard1.png"> </p>
+
+<p><strong>Note:</strong> If you only intend to support the Chromium WebView 
+(rather than the old WebKit WebView) set <strong>Minimum required SDK</strong> to API 19: 
+Android 4.4 (KitKat).</p></li>
+<li><p>On the next page, you're prompted to enter an application icon. (You can 
+change the icon later, so don't worry if you don't have one right now.) When 
+you're done, click <strong>Next</strong>.</p>
+
+<p><img src="Index_files/projectwizard2.png"> </p></li>
+<li><p>The next page lets you select the main Android activity for your application. 
+For the purposes of this guide, select <strong>Blank Activity</strong> and click <strong>Next</strong>.</p>
+
+<p><img src="Index_files/projectwizard3.png"> </p>
+
+<p><strong>Note:</strong> An Android Activity can 
+be viewed as a screen of an app. In this case, the application's main activity 
+will hold the web view. If you're planning to venture further into native 
+Android development, you can find more information in the 
+<a href="http://developer.android.com/guide/components/activities.html">
+Android Activities API guide</a></p></li>
+<li><p>The next page lets you change the names for the default 
+Activity and layout. Click <strong>Finish</strong> to accept the defaults and create the project.</p>
+
+<p><img src="Index_files/projectwizard4.png"> </p>
+
+<p>You now have a new Android project. Next, to add the WebView!</p></li>
+</ol>
+
+<p><img src="Index_files/projectwizard5.png"> </p>
+
+<p><b>Note:</b> After you have your project created,
+make sure you have the KitKat SDK installed.
+Go to <b>Tools</b> &gt; <b>Android</b> &gt; <b>SDK Manager</b> and
+make sure you have <b>Android 4.4 (API 19)</b> installed.</p>
+
+</div><div class="collapsible">
+<h2 class="has-permalink" id="add_the_webview">Add the WebView<a class="permalink" title="Permalink" href="#add_the_webview">#</a></h2>
+
+<p>Android Studio will give you some boilerplate code to set up your application. Your project's 
+structure should look something like this:</p>
+
+<p><img src="Index_files/projectlayout.png"> </p>
+
+<p>A few of the more import folders are identified in the picture:</p>
+
+<ol>
+<li><code>src/main/java</code>. Android Java source code.</li>
+<li><code>src/main/res</code>. Resources used by the native application.</li>
+<li><code>src/main/res/drawable-<i>type</i></code>. Image resources used by the native 
+application.</li>
+<li><code>src/main/res/layout</code>. XML layout files that define the structure of UI 
+components.</li>
+<li><code>src/main/res/values</code>. Dimensions, strings, and other values that you might not want 
+to hard-code in your application.</li>
+<li><code>src/main/AndroidManifest.xml</code>. The manifest file defines what's included in the 
+application: activities, permissions, themes, and so on.</li>
+</ol>
+
+<p>You need to add a 
+<a href="http://developer.android.com/reference/android/webkit/WebView.html">WebView</a> to 
+the main activity's layout.</p>
+
+<ol>
+<li><p>Open the <code>activity_main.xml</code> file in the <code>src/main/res/layout</code> directory if it 
+is not already open. (You may also see a <code>fragment_main.xml</code> file. You can ignore this, 
+as it's not required for this tutorial.)</p>
+
+<p>Select the <strong>Text</strong> tab at the bottom of the of the <code>activity_main.xml</code> editor to see 
+the XML markup.</p>
+
+<p><img src="Index_files/xmllayout.png" <="" p="">
+
+</p><p>This file defines the layout for your main activity, and the <strong>Preview</strong> panes show the
+a preview of the activity. The <strong>Blank Activity</strong> layout doesn't include any children. 
+You'll need to add the WebView.</p></li>
+<li><p>In the XML pane, remove the self-closing slash from the end of the <code>FrameLayout</code> element,
+and add the &lt;WebView&gt; element and a new closing tag, as shown:</p>
+
+<pre class="prettyprint"><span class="tag">&lt;FrameLayout</span><span class="pln"> </span><span class="atn">xmlns:android</span><span class="pun">=</span><span class="atv">"http://schemas.android.com/apk/res/android"</span><span class="pln">
+     </span><span class="atn">xmlns:tools</span><span class="pun">=</span><span class="atv">"http://schemas.android.com/tools"</span><span class="pln">
+     </span><span class="atn">android:id</span><span class="pun">=</span><span class="atv">"@+id/container"</span><span class="pln">
+     </span><span class="atn">android:layout_width</span><span class="pun">=</span><span class="atv">"match_parent"</span><span class="pln">
+     </span><span class="atn">android:layout_height</span><span class="pun">=</span><span class="atv">"match_parent"</span><span class="pln">
+     </span><span class="atn">tools:context</span><span class="pun">=</span><span class="atv">".MainActivity"</span><span class="tag">&gt;</span><span class="pln">
+     tools:ignore="MergeRootFrame"&gt;
+     </span><strong><span class="pln">
+         </span><span class="tag">&lt;WebView</span><span class="pln">
+         </span><span class="atn">android:id</span><span class="pun">=</span><span class="atv">"@+id/activity_main_webview"</span><span class="pln">
+         </span><span class="atn">android:layout_width</span><span class="pun">=</span><span class="atv">"match_parent"</span><span class="pln">
+         </span><span class="atn">android:layout_height</span><span class="pun">=</span><span class="atv">"match_parent"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln">
+</span><span class="tag">&lt;/FrameLayout&gt;</span></strong></pre></li>
+<li><p>To use the WebView you need to reference it in the Activity. Open the Java 
+source file for the main activity, <code>MainActivity.java</code> in the 
+<code>src/main/java/&lt;PackageName&gt;</code> directory.</p> 
+
+<p>Add the lines shown in bold.</p> 
+
+<pre class="prettyprint"><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">MainActivity</span><span class="pln"> </span><span class="kwd">extends</span><span class="pln"> </span><span class="typ">Activity</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><strong><span class="pln">
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="typ">WebView</span><span class="pln"> mWebView</span><span class="pun">;</span><span class="pln">
+    </span></strong><span class="pln">
+    </span><span class="lit">@Override</span><span class="pln">
+    </span><span class="kwd">protected</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> onCreate</span><span class="pun">(</span><span class="typ">Bundle</span><span class="pln"> savedInstanceState</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">super</span><span class="pun">.</span><span class="pln">onCreate</span><span class="pun">(</span><span class="pln">savedInstanceState</span><span class="pun">);</span><span class="pln">
+        setContentView</span><span class="pun">(</span><span class="pln">R</span><span class="pun">.</span><span class="pln">layout</span><span class="pun">.</span><span class="pln">activity_main</span><span class="pun">);</span><span class="pln">
+        </span><strong><span class="pln">
+        mWebView </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="typ">WebView</span><span class="pun">)</span><span class="pln"> findViewById</span><span class="pun">(</span><span class="pln">R</span><span class="pun">.</span><span class="pln">id</span><span class="pun">.</span><span class="pln">activity_main_webview</span><span class="pun">);</span></strong>
+</pre>
+
+<p>The existing code in the <code>onCreate</code> method does the work of hooking up the 
+Activity with the layout. The added lines create a new member variable, 
+<code>mWebView</code>, to refer to the web view.</p> 
+
+<p>Remove the following code:</p>
+
+<pre class="prettyprint"><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">savedInstanceState </span><span class="pun">==</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    getSupportFragmentManager</span><span class="pun">().</span><span class="pln">beginTransaction</span><span class="pun">()</span><span class="pln">
+        </span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="pln">R</span><span class="pun">.</span><span class="pln">id</span><span class="pun">.</span><span class="pln">container</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">PlaceholderFragment</span><span class="pun">())</span><span class="pln">
+        </span><span class="pun">.</span><span class="pln">commit</span><span class="pun">();</span><span class="pln">
+</span><span class="pun">}</span></pre>
+
+<p>The WebView is identified by the resource ID, which is specified by this line in 
+the layout file:</p>
+
+<pre class="prettyprint"><span class="pln">android</span><span class="pun">:</span><span class="pln">id</span><span class="pun">=</span><span class="str">"@+id/activity_main_webview"</span></pre>
+
+<p>After adding the code, you'll see some warning messages in the margin of the editor.
+This is because you haven't imported the right classes for WebView. Luckily Android Studio can
+help you fill in the missing classes. The easiest way to do 
+this is click and hover over an unknown class name and wait for a popup 
+showing a "quick fix" -- in this case,
+adding an <code>import</code> statment for the <code>WebView</code> class.
+</p>
+<img src="Index_files/quick-fix-popup.png"> 
+
+<p>Press <kbd>Alt</kbd> + <kbd>Enter</kbd> (<kbd>Option</kbd> + Enter on Mac) to 
+accept the quick fix.</p>
+
+<p>WebView in hand you can move on to setting it up and and loading some juicy web 
+content.</p></li>
+</ol>
+
+</div><div class="collapsible">
+<h2 class="has-permalink" id="enable_javascript">Enable JavaScript<a class="permalink" title="Permalink" href="#enable_javascript">#</a></h2>
+
+<p>WebViews don't allow JavaScript by default. To run a web application in the web 
+view, you need to explicitly enable JavaScript by adding the following lines to 
+the <code>onCreate</code> method:</p>
+
+<pre class="prettyprint"><strong><span class="com">// Enable Javascript</span><span class="pln">
+</span><span class="typ">WebSettings</span><span class="pln"> webSettings </span><span class="pun">=</span><span class="pln"> mWebView</span><span class="pun">.</span><span class="pln">getSettings</span><span class="pun">();</span><span class="pln">
+webSettings</span><span class="pun">.</span><span class="pln">setJavaScriptEnabled</span><span class="pun">(</span><span class="kwd">true</span><span class="pun">);</span></strong>
+</pre>
+
+</div><div class="collapsible">
+<h2 class="has-permalink" id="load_a_remote_url">Load a Remote URL<a class="permalink" title="Permalink" href="#load_a_remote_url">#</a></h2>
+
+<p>If you're going to load data from a remote URL, your application needs 
+<a href="http://developer.android.com/guide/topics/security/permissions.html">permission</a> 
+to access the internet. This permission needs to be added in the <a href="http://developer.android.com/guide/topics/manifest/manifest-intro.html">application's 
+manifest 
+file</a>.</p> 
+
+<ol>
+<li><p>Open the <code>AndroidManifest.xml</code> file in the <code>src/res</code> directory. Add the line 
+in bold before the closing &lt;/manifest&gt; tag.</p>
+
+<pre class="prettyprint"><span class="pun">&lt;?</span><span class="pln">xml version</span><span class="pun">=</span><span class="str">"1.0"</span><span class="pln"> encoding</span><span class="pun">=</span><span class="str">"utf-8"</span><span class="pun">?&gt;</span><span class="pln">
+</span><span class="tag">&lt;manifest</span><span class="pln"> ...</span><span class="tag">&gt;</span><span class="pln">
+...
+&nbsp;
+    </span><span class="tag">&lt;/application&gt;</span><span class="pln">
+    </span><strong><span class="pln">
+    </span><span class="tag">&lt;uses-permission</span><span class="pln"> </span><span class="atn">android:name</span><span class="pun">=</span><span class="atv">"android.permission.INTERNET"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln">
+    </span></strong><span class="pln">
+</span><span class="tag">&lt;/manifest&gt;</span></pre></li>
+<li><p>The next step is to call the <code>loadUrl</code> method on the webview. Add the following 
+line to the end of the <code>onCreate</code> method.</p>
+
+<code><strong>mWebView.loadUrl("<a href="http://beta.html5test.com/">http://beta.html5test.com/</a>");</strong></code>
+
+<p>Now try running the project. If you don't have a device handy, you can create an emulator
+(AVD or Android Virtual Device) by going to <strong>Tools</strong> &gt;
+<strong>Android</strong> &gt; <strong>AVD Manager</strong>.</p>
+
+<img src="Index_files/html5test.jpg" alt=""> 
+</li></ol>
+
+<p><strong>Note:</strong> To detect when a URL has started and finished loading,
+use 
+<a href="http://developer.android.com/reference/android/webkit/WebViewClient.html#onPageStarted%28android.webkit.WebView,%20java.lang.String,%20android.graphics.Bitmap%29">
+<code>WebViewClient.onPageStarted</code></a> and 
+<a href="http://developer.android.com/reference/android/webkit/WebViewClient.html#onPageFinished%28android.webkit.WebView,%20java.lang.String%29">
+<code>WebViewClient.onPageFinished</code>.</a>
+</p>
+
+<h3 class="has-permalink" id="handling_navigation">Handling Navigation<a class="permalink" title="Permalink" href="#handling_navigation">#</a></h3>
+
+<p>Now try changing the URL you're loading to <code>http://www.html5rocks.com/</code> and rerun your application.
+You'll notice something strange.</p>
+
+<p>If you run the application now with a site that has a redirect like <code>html5rocks.com</code>, 
+your app ends up opening the site in a browser on 
+the device, not in your WebView -- probably not what you expected. This is 
+because of the way the WebView handles navigation events.</p>
+
+<p>Here's the sequence of events:</p>
+
+<ol>
+<li>The WebView tries to load the original URL from the remote server, and gets a 
+redirect to a new URL.</li>
+<li>The WebView checks if the system can handle a view intent for the URL, if so 
+the system handles the URL navigation, otherwise the WebView will navigate 
+internally (i.e. the user has no browser installed on their device).</li>
+<li>The system picks the user's preferred application for handling an <code>http://</code> URL 
+scheme -- that is, the user's default browser. If you have more than one browser installed,
+you may see a dialog at this point.</li>
+</ol>
+
+<img src="Index_files/browser-selection.png" alt="browser selection dialog" width="482"> 
+
+<p>If you're using a WebView inside an Android application to display some simple 
+web content (for example, a help page), this may be exactly what you want to do. 
+However, for more sophisticated applications, you may want to handle the 
+navigation links yourself.</p>
+
+<p>To handle navigation inside the WebView you need to override the WebView's <code>WebViewClient</code>, 
+which handles various events generated by the WebView. You can use it to 
+control how the WebView handles link clicks and page redirects.</p>
+
+<p>The default implementation of <code>WebViewClient</code> makes <strong>any</strong> URL open in the WebView:</p>
+
+<pre class="prettyprint"><strong><span class="com">// Force links and redirects to open in the WebView instead of in a browser</span><span class="pln">
+mWebView</span><span class="pun">.</span><span class="pln">setWebViewClient</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">WebViewClient</span><span class="pun">());</span></strong></pre>
+
+<p>This is a good step forward, but what if you want to handle links for your site 
+only, while opening other URLs in a browser?</p>
+
+<p>To achieve this you need to extend the <code>WebViewClient</code> class and implement the 
+<code>shouldOverrideUrlLoading</code> method. This method is called whenever the WebView 
+tries to navigate to a different URL. If it returns false, the WebView opens the 
+URL itself. (The default implementation <em>always</em> returns false, which is why it 
+works in the previous example.)</p>
+
+<p>Create a new class:</p>
+
+<ol>
+  <li>Right-click the package name of your app and select <strong>New</strong> &gt; <strong>Java Class</strong>
+  <img src="Index_files/new-java-class.png"></li>
+  <li>Enter <code>MyAppWebViewClient</code> as the class name and click <strong>OK</strong></li> 
+  <li><p>In the new <code>MyAppWebViewClient.java</code> file, add the following code (changes
+    shown in bold):</p>
+
+<pre class="prettyprint"><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">MyAppWebViewClient</span><span class="pln"> </span><strong><span class="kwd">extends</span><span class="pln"> </span><span class="typ">WebViewClient</span></strong><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><strong><span class="pln">
+        </span><span class="lit">@Override</span><span class="pln">
+        </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">boolean</span><span class="pln"> shouldOverrideUrlLoading</span><span class="pun">(</span><span class="typ">WebView</span><span class="pln"> view</span><span class="pun">,</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> url</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="kwd">if</span><span class="pun">(</span><span class="typ">Uri</span><span class="pun">.</span><span class="pln">parse</span><span class="pun">(</span><span class="pln">url</span><span class="pun">).</span><span class="pln">getHost</span><span class="pun">().</span><span class="pln">endsWith</span><span class="pun">(</span><span class="str">"html5rocks.com"</span><span class="pun">))</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">;</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+            &nbsp;
+            </span><span class="typ">Intent</span><span class="pln"> intent </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Intent</span><span class="pun">(</span><span class="typ">Intent</span><span class="pun">.</span><span class="pln">ACTION_VIEW</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Uri</span><span class="pun">.</span><span class="pln">parse</span><span class="pun">(</span><span class="pln">url</span><span class="pun">));</span><span class="pln">
+            view</span><span class="pun">.</span><span class="pln">getContext</span><span class="pun">().</span><span class="pln">startActivity</span><span class="pun">(</span><span class="pln">intent</span><span class="pun">);</span><span class="pln">
+            </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">;</span><span class="pln">
+        </span><span class="pun">}</span></strong><span class="pln">
+    </span><span class="pun">}</span></pre>
+
+    <p>The new code defines <code>MyAppWebViewClient</code> as a subclass of <code>WebViewClient</code> and 
+    implements the <code>shouldOverrideUrlLoading</code> method.</p>
+
+    <p>The <code>shouldOverrideUrlLoading</code> method is called whenever the WebView is about to load a URL.
+    This implementation checks for the String "html5rocks.com" at the end of the 
+    host name of the URL. If the string exists, the method returns
+    false, which tells the platform <strong>not</strong> to override the URL, but to load it in the 
+    WebView.</p> 
+
+    <p>For any other hostname, the method makes a request to the system to open the URL. It does 
+    this by creating a new Android 
+    <a href="http://developer.android.com/reference/android/content/Intent.html">Intent</a> and using it
+    to launch a new activity. Returning true at the end of the method  prevents the URL from 
+    being loaded into the WebView.</p></li>
+  <li><p>To use your new custom 
+    <a href="http://developer.android.com/reference/android/webkit/WebViewClient.html">WebViewClient</a>, add
+    the following lines to your <code>MainActivity</code> class:</p>
+    
+    <pre class="prettyprint"><strong><span class="com">// Stop local links and redirects from opening in browser instead of WebView</span><span class="pln">
+    mWebView</span><span class="pun">.</span><span class="pln">setWebViewClient</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">MyAppWebViewClient</span><span class="pun">());</span><span class="pln">
+    </span></strong></pre>
+    
+    <p>Now, a user can click any of the HTML5Rocks links and stay within the app, but 
+    links to external sites are opened in a browser.</p></li>
+</ol>
+
+<h3 class="has-permalink" id="handling_the_back_button">Handling the Android Back Button<a class="permalink" title="Permalink" href="#handling_the_back_button">#</a></h3>
+
+<p>As you start playing around and navigating the awesome HTML5Rocks articles, 
+hitting the back button on Android exits the application, even though you've 
+explored a few pages of the site.</p>
+
+<p>WebView has a method <code>canGoBack</code> which tells you if there is anything on the 
+page stack that can be popped. All you need to do is detect a back button press 
+and determine if you should step back through the WebView's history or allow the platform 
+to determine the correct behaviour. Inside your MainActivity class, add the 
+following method (in bold):</p>
+
+<pre class="prettyprint"><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">MainActivity</span><span class="pln"> </span><span class="kwd">extends</span><span class="pln"> </span><span class="typ">Activity</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+   
+ </span><span class="kwd">private</span><span class="pln"> </span><span class="typ">WebView</span><span class="pln"> mWebView</span><span class="pun">;</span><span class="pln">
+
+ </span><span class="lit">@Override</span><span class="pln">
+ </span><span class="kwd">protected</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> onCreate</span><span class="pun">(</span><span class="typ">Bundle</span><span class="pln"> savedInstanceState</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+     </span><span class="pun">...</span><span class="pln">
+ </span><span class="pun">}</span><span class="pln">
+   
+</span><strong><span class="pln">    </span><span class="lit">@Override</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> onBackPressed</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">mWebView</span><span class="pun">.</span><span class="pln">canGoBack</span><span class="pun">())</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            mWebView</span><span class="pun">.</span><span class="pln">goBack</span><span class="pun">();</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="kwd">super</span><span class="pun">.</span><span class="pln">onBackPressed</span><span class="pun">();</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span></strong><span class="pln">
+
+    </span><span class="lit">@Override</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">boolean</span><span class="pln"> onCreateOptionsMenu</span><span class="pun">(</span><span class="typ">Menu</span><span class="pln"> menu</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+       </span><span class="pun">...</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    
+</span><span class="pun">}</span></pre>
+
+</div><div class="collapsible">
+<h2 class="has-permalink" id="loading_html_files_from_the_file_system">Loading HTML files from the file system<a class="permalink" title="Permalink" href="#loading_html_files_from_the_file_system">#</a></h2>
+
+<p>A big advantage of using a WebView inside an installable application is that you 
+can store assets inside the app. This lets your app work offline and 
+improves load times, since the WebView can retrieve assets directly from the local 
+file system.</p>
+
+<p>To store files such as HTML, JavaScript, and CSS locally, put them in the 
+assets directory. This is a reserved directory that Android uses for raw 
+files that your app may need access to (i.e. files it knows it should minimise 
+or compress).</p>
+
+<p>In your project, create the <code>assets</code> directory in main (<code>src/main/assets</code>).</p>
+
+<p>Generally it's good practice to keep your web files in a subdirectory, so create 
+a www directory and put all your web content in it.</p>
+
+<p><strong>Note:</strong> Absolute paths do not work in the WebView when 
+referring to other files, such as CSS and JavaScript. So make sure you make all references 
+relative, instead of absolute (for example, instead of  "/pages/somelink.html", use 
+"./pages/somelink.html").</p>
+
+<p>Once you have everything in your assets directory, it's as simple as loading in 
+the appropriate file:</p>
+
+<pre class="prettyprint"><strong><span class="pln">mWebView</span><span class="pun">.</span><span class="pln">loadUrl</span><span class="pun">(</span><span class="str">"file:///android_asset/www/index.html"</span><span class="pun">);</span></strong>
+</pre>
+
+<p>You'll want to tweak the <code>shouldOverrideUrlLoading</code> method so it opens a browser 
+for non-local pages:</p>
+
+<pre class="prettyprint"><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">MyAppWebViewClient</span><span class="pln"> </span><span class="kwd">extends</span><span class="pln"> </span><span class="typ">WebViewClient</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="lit">@Override</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">boolean</span><span class="pln"> shouldOverrideUrlLoading</span><span class="pun">(</span><span class="typ">WebView</span><span class="pln"> view</span><span class="pun">,</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> url</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><strong><span class="kwd">if</span><span class="pun">(</span><span class="typ">Uri</span><span class="pun">.</span><span class="pln">parse</span><span class="pun">(</span><span class="pln">url</span><span class="pun">).</span><span class="pln">getHost</span><span class="pun">().</span><span class="pln">length</span><span class="pun">()</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></strong><span class="pln">
+            </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">;</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+
+        </span><span class="typ">Intent</span><span class="pln"> intent </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Intent</span><span class="pun">(</span><span class="typ">Intent</span><span class="pun">.</span><span class="pln">ACTION_VIEW</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Uri</span><span class="pun">.</span><span class="pln">parse</span><span class="pun">(</span><span class="pln">url</span><span class="pun">));</span><span class="pln">
+        view</span><span class="pun">.</span><span class="pln">getContext</span><span class="pun">().</span><span class="pln">startActivity</span><span class="pun">(</span><span class="pln">intent</span><span class="pun">);</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+</span><span class="pun">}</span></pre>
+
+<p>Now you are set to build a great WebView app!</p>
+
+<p>For tips on getting the visuals just right, see <a href="https://developer.chrome.com/multidevice/webview/pixelperfect">Pixel-Perfect UI in the WebView</a>.</p>
+
+<p>If you run into trouble, the Chrome DevTools are your friends. See <a href="https://developer.chrome.com/devtools/docs/remote-debugging">Remote Debugging on Android</a> to get started.</p>
+
+</div>
+    
+    <footer id="cc-info">
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">Content available under the <a href="http://creativecommons.org/licenses/by/3.0/">CC-By 3.0 license</a></p>
+    </footer>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://www.google.com/">Google</a><a href="https://developers.google.com/site-terms">Terms of Service</a><a href="http://www.google.com/intl/en/privacy/">Privacy Policy</a><a href="http://crbug.com/new" data-feedback="">Report a content bug</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: none repeat scroll 0% 0% transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 70px; height: 15px;"><iframe title="+1" data-gapiattached="true" src="Index_files/fastbutton.html" name="I0_1430128397969" id="I0_1430128397969" vspace="0" tabindex="0" style="position: static; top: 0px; width: 70px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 15px;" scrolling="no" marginwidth="0" marginheight="0" hspace="0" frameborder="0" width="100%"></iframe></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+GoogleChromeDevelopers?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter">Add us on <span class="element-invisible">Google+</span><img src="Index_files/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+    <script src="Index_files/fatnav.js"></script>
+    <script src="Index_files/article.js"></script>
+    <script src="Index_files/prettify.js"></script>
+    <script src="Index_files/search.js"></script>
+    <script src="Index_files/api.js"></script>
+    <script src="Index_files/site.js"></script>
+  
+
+<iframe tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;" src="Index_files/postmessageRelay.html" id="oauth2relay900248471" name="oauth2relay900248471"></iframe><table class="gstl_50 gssb_c" style="width: 2px; display: none; top: 3px; position: absolute; left: -1px;" cellpadding="0" cellspacing="0"><tbody><tr><td class="gssb_f"></td><td style="width: 100%;" class="gssb_e"></td></tr></tbody></table><table class="gstl_51 gssb_c" style="width: 100%; display: none; top: -1px; position: absolute; left: 0px;" cellpadding="0" cellspacing="0"><tbody><tr><td class="gssb_f"></td><td style="width: 100%;" class="gssb_e"></td></tr></tbody></table></body></html>

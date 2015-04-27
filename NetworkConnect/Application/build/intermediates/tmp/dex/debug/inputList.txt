@@ -1,0 +1,6 @@
+/home/imrokraft/AndroidStudioProjects/NetworkConnect/Application/build/intermediates/classes/debug
+/home/imrokraft/AndroidStudioProjects/NetworkConnect/Application/build/intermediates/pre-dexed/debug/support-annotations-21.0.2-15612cc5f723a783d2c6f4b48a375efea4100c26.jar
+/home/imrokraft/AndroidStudioProjects/NetworkConnect/Application/build/intermediates/pre-dexed/debug/classes-d32e7d70ed6ed7f40245761b30feddc20825bd3f.jar
+/home/imrokraft/AndroidStudioProjects/NetworkConnect/Application/build/intermediates/pre-dexed/debug/classes-3fbbfadd4570ddc4420f68c5c7d747c1cf824523.jar
+/home/imrokraft/AndroidStudioProjects/NetworkConnect/Application/build/intermediates/pre-dexed/debug/internal_impl-21.0.2-ac0d97dab31e1d3d90bce70cbef96ae662161783.jar
+/home/imrokraft/AndroidStudioProjects/NetworkConnect/Application/build/intermediates/pre-dexed/debug/classes-caf1a1a0d5fcd4dfadd73ae4d6f56ae15cba6d62.jar

@@ -1,0 +1,52 @@
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.net.Socket;
+
+
+public class SmtpClient {
+
+	public static void main(String[] args) {
+		Socket smtpSocket=null;
+		DataOutputStream os=null;
+		DataInputStream is=null;
+		try{
+			smtpSocket =new Socket("localhost", 9999);
+			os=new DataOutputStream(smtpSocket.getOutputStream());
+			is=new DataInputStream(smtpSocket.getInputStream());
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+
+		if(smtpSocket!=null&&os!=null&&is!=null)
+		{
+			try
+			{
+				os.writeBytes("HELO/n");
+				os.writeBytes("Mail From");
+				os.writeBytes("RCTP To");
+				os.writeBytes("Data/n");
+				os.writeBytes("From");
+				os.writeBytes("Hi There");
+				os.writeBytes("QUIT");
+				String responseLine;
+
+				while((responseLine=is.readLine()).length()>0){
+					System.out.println("server:"+responseLine);
+					if (responseLine.indexOf("Ok") != -1) {
+						break;
+					}
+				}
+				os.flush();
+				os.close();
+				is.close();
+				smtpSocket.close();
+
+			}catch(Exception e){
+				e.printStackTrace();
+
+			}
+		}
+
+	}
+
+}

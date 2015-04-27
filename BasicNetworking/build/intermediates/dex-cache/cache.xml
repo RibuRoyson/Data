@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/imrokraft/AndroidStudioProjects/BasicNetworking/Application/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.2/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="d1bf02de1c56d942e7a9d093b8610ba1ef4128e3">
+        <dex dex="/home/imrokraft/AndroidStudioProjects/BasicNetworking/Application/build/intermediates/pre-dexed/debug/classes-a1c7d2d79e8316952da7049f322439fe2fe5c103.jar" />
+    </item>
+    <item
+        jar="/home/imrokraft/AndroidStudioProjects/BasicNetworking/Application/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.2/libs/internal_impl-21.0.2.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="962e8b12569c56dbdcf8367eb4eac8bb129cd18f">
+        <dex dex="/home/imrokraft/AndroidStudioProjects/BasicNetworking/Application/build/intermediates/pre-dexed/debug/internal_impl-21.0.2-df1de559386b303bc901d42dc1bf52841c18dfcf.jar" />
+    </item>
+    <item
+        jar="/home/imrokraft/android-sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.2/support-annotations-21.0.2.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="99373741f99a0556ee293c41e8faa1ca3ae8a4e6">
+        <dex dex="/home/imrokraft/AndroidStudioProjects/BasicNetworking/Application/build/intermediates/pre-dexed/debug/support-annotations-21.0.2-15612cc5f723a783d2c6f4b48a375efea4100c26.jar" />
+    </item>
+
+</items>
