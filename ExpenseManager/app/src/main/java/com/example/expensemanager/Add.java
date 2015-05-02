@@ -40,8 +40,6 @@ public class Add extends Activity implements android.view.View.OnClickListener {
         dat = (Button) findViewById(R.id.datebtn);
         save = (Button) findViewById(R.id.save);
         show = (Button) findViewById(R.id.show);
-        time = (EditText) findViewById(R.id.timetxt);
-        date = (EditText) findViewById(R.id.datetxt);
         expen = (EditText) findViewById(R.id.exp);
         descpt = (EditText) findViewById(R.id.desc);
         tim.setOnClickListener(this);
@@ -54,6 +52,7 @@ public class Add extends Activity implements android.view.View.OnClickListener {
         val.add("Dress");
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, val);
         sp.setAdapter(adapter);
+
         sp.setOnItemSelectedListener(new OnItemSelectedListener() {
 
             @Override
@@ -155,6 +154,7 @@ public class Add extends Activity implements android.view.View.OnClickListener {
         if (v == show) {
             Intent inc = new Intent(Add.this, Viewdb.class);
             startActivity(inc);
+            Add.this.finish();
         }
     }
 

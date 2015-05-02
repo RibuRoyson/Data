@@ -15,7 +15,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="Enter the id "
-            android:textColor="#2AEC07"
+
             android:gravity="center"
             android:layout_weight="0.40" />
 

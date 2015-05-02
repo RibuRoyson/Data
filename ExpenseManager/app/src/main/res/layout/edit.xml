@@ -211,14 +211,25 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        android:layout_weight="0.50">
+        android:layout_weight="0.50"
+        android:weightSum="1.0">
 
         <ImageButton
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:src="@drawable/pluss"
             android:onClick="plus"
-            android:background="#6CAABA"/>
+            android:background="#6CAABA"
+            android:layout_weight="0.5"
+            android:layout_marginRight="3.5dp"/>
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/del"
+            android:onClick="delete"
+            android:background="#6CAABA"
+            android:layout_weight="0.5"
+            android:layout_marginLeft="3.5dp"/>
 
         </LinearLayout>
 

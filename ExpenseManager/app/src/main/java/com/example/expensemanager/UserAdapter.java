@@ -1,7 +1,10 @@
 package com.example.expensemanager;
 
 import android.content.Context;
+import android.content.Intent;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -25,13 +28,14 @@ public class UserAdapter extends ArrayAdapter<details> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         return getCustomView(position, convertView, parent);
+
     }
 
     @Override
     public View getDropDownView(int position, View convertView, ViewGroup parent) {
         return getCustomView(position, convertView, parent);
     }
-    private View getCustomView(final int position, View convertView, ViewGroup parent) {
+    private View getCustomView(final int position, View convertView, final ViewGroup parent) {
         if (convertView == null) {
             LayoutInflater mlayoutInflater = LayoutInflater.from(myContext);
             convertView = mlayoutInflater.inflate(R.layout.list_item, parent, false);
@@ -48,7 +52,44 @@ public class UserAdapter extends ArrayAdapter<details> {
         tim.setText(userslist.get(position).getTime1());
         dat.setText(userslist.get(position).getDate1());
         id.setText(userslist.get(position).getId());
+
+//        convertView.setOnLongClickListener(new View.OnLongClickListener() {
+//            @Override
+//            public boolean onLongClick(View v) {
+//                new View.OnCreateContextMenuListener() {
+//                    @Override
+//                    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+//                        onCreateContextMenu(menu, v, menuInfo);
+//                        MenuInflater menuinflater=new MenuInflater(getContext());
+//                        menuinflater.inflate(R.menu.editdel,menu);
+//                    }
+//
+//                };
+//                return false;
+//            }
+//        });
+
+
+
+        convertView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                Intent i = new Intent(getContext(),EditData.class);
+                i.putExtra("id",userslist.get(position).getId());
+                i.putExtra("expense", userslist.get(position).getExpense());
+                i.putExtra("cat", userslist.get(position).getCat());
+                i.putExtra("description", userslist.get(position).getDescription());
+                i.putExtra("time",userslist.get(position).getTime1());
+                i.putExtra("date",userslist.get(position).getDate1());
+                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                myContext.startActivity(i);
+            }
+        });
         return convertView;
     }
+
+
 }
 

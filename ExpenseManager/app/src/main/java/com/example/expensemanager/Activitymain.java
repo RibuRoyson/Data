@@ -1,34 +1,30 @@
 package com.example.expensemanager;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.View;
-import android.widget.ImageButton;
 
-public class Activitymain extends Activity {
-    ImageButton add;
-    ImageButton show;
-    ImageButton edit;
-    ImageButton et;
+public class Activitymain extends ActionBarActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main1);
-
     }
 
     public void adddatas(View v) {
         Intent aa = new Intent(getApplicationContext(), Add.class);
         startActivity(aa);
+
     }
 
     public void editdatas(View v) {
-        Intent ac = new Intent(getApplicationContext(), Edit.class);
+        Intent ac = new Intent(getApplicationContext(),Showresult.class);
         startActivity(ac);
     }
 
@@ -54,7 +50,7 @@ public class Activitymain extends Activity {
                         System.exit(0);
                     }
                 })
-                .setIcon(getResources().getDrawable(R.drawable.expense))
+                .setIcon(getResources().getDrawable(R.drawable.exit))
                 .show();
 
 //        final Dialog dialog=new Dialog(Activitymain.this);

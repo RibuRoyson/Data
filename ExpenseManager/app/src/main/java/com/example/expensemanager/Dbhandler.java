@@ -63,8 +63,7 @@ public class Dbhandler extends SQLiteOpenHelper {
             Cursor c = null;
             c = db.rawQuery("select * from " + TB_name, null);
             if (c != null) {
-                if (c.moveToFirst()) ;
-                {
+                if (c.moveToFirst()) {
                     do {
                         int cc = c.getCount();
                         String exp = c.getString(c.getColumnIndex("expense"));
@@ -336,17 +335,23 @@ public class Dbhandler extends SQLiteOpenHelper {
         return c;
     }
 
-    public void updateDetails(String expe, String cat, String desc, String tim, String dat, String id1) {
-        db = getWritableDatabase();
-        ContentValues cv = new ContentValues();
-        cv.put("expense", expe);
-        cv.put("cat", cat);
-        cv.put("description", desc);
-        cv.put("time", tim);
-        cv.put("date", dat);
-        String where = "id=?";
-        String[] whereArgs = {id1};
-        db.update(TB_name, cv, where, whereArgs);
+    public void updateDetails(details d,String id1 ) {
+        if (Integer.parseInt(id1) >= 0) {
+            db = getWritableDatabase();
+            ContentValues cv = new ContentValues();
+            cv.put("expense", d.getExpense());
+            cv.put("cat", d.getCat());
+            cv.put("description", d.getDescription());
+            cv.put("time", d.getTime1());
+            cv.put("date", d.getDate1());
+            String where = "id=?";
+            String[] whereArgs = {id1};
+            db.update(TB_name, cv, where, whereArgs);
+        }
+        else
+        {
+            insertdata(d);
+        }
     }
 
     public void deletedetails(String idd) {
@@ -374,15 +379,15 @@ public class Dbhandler extends SQLiteOpenHelper {
     }
 
 
-    public ArrayList<String> monthWiseData(int x) {
-        ArrayList<String> results = new ArrayList<String>();
+    public ArrayList<details> monthWiseData(int x) {
+        ArrayList<details> results = new ArrayList<details>();
         SQLiteDatabase db = this.getReadableDatabase();
         try {
             Cursor c = null;
             //int i=x;
             String val = String.valueOf(x).toString();
             Log.e("monthvalue", val);
-            String[] columns = {"id", "expense", "cat", "description", "time", "date"};
+            String[] columns = {"id", "expense", "cat", "description", "time", "date", "day", "month", "year"};
             String selection = "month=?";
             String[] selectionArgs = {val};
             c = db.query(TB_name, columns, selection, selectionArgs, null, null, null);
@@ -390,13 +395,16 @@ public class Dbhandler extends SQLiteOpenHelper {
             if (c != null) {
                 if (c.moveToFirst()) {
                     do {
-                        int exp = c.getInt(c.getColumnIndex("expense"));
+                        String exp = c.getString(c.getColumnIndex("expense"));
                         String cat = c.getString(c.getColumnIndex("cat"));
                         String des = c.getString(c.getColumnIndex("description"));
                         String tim = c.getString(c.getColumnIndex("time"));
                         String dat = c.getString(c.getColumnIndex("date"));
                         String id = c.getString(c.getColumnIndex("id"));
-                        results.add("Id:" + id + "\nExpense" + exp + "\nCategory" + cat + "\nDescription:" + des + "\nTime:" + tim);
+                        int d = c.getInt(c.getColumnIndex("day"));
+                        int m = c.getInt(c.getColumnIndex("month"));
+                        int y = c.getInt(c.getColumnIndex("year"));
+                        results.add(new details(id,exp, cat, des, tim,dat,d,m,y));
                     } while (c.moveToNext());
                 }
             } else {

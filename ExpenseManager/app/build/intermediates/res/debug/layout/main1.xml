@@ -167,10 +167,11 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Edit"
+                android:text="Settings"
                 android:gravity="center"
                 android:textColor="#ffffff"
-                android:background="#000000"/>
+                android:background="#000000"
+                android:id="@+id/settings" />
 
         </LinearLayout>
 

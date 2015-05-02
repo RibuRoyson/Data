@@ -2,32 +2,32 @@
 <items version="2" >
 
     <item
-        jar="/home/imrokraft/AndroidStudioProjects/ExpenseManager/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jar="/home/imrokraft/AndroidStudioProjects/ExpenseManager/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.0/classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
-        <dex dex="/home/imrokraft/AndroidStudioProjects/ExpenseManager/app/build/intermediates/pre-dexed/debug/classes-49d197076e588d680156d6391f02a0187a232d42.jar" />
+        sha1="eeebabdfd8203f6ab639ccea4ffa1f20e1adee3a">
+        <dex dex="/home/imrokraft/AndroidStudioProjects/ExpenseManager/app/build/intermediates/pre-dexed/debug/classes-fd0863a1dbdbc61526ad6d8dd5eeee1b6868bfdf.jar" />
     </item>
     <item
-        jar="/home/imrokraft/AndroidStudioProjects/ExpenseManager/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
+        jar="/home/imrokraft/AndroidStudioProjects/ExpenseManager/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.0/libs/internal_impl-22.1.0.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
-        <dex dex="/home/imrokraft/AndroidStudioProjects/ExpenseManager/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-58e3ee566420e06b2dd0ffddecd5a56bb7b9c85e.jar" />
+        sha1="025cb89f2896c63200ff4c2e6c467a95691d880a">
+        <dex dex="/home/imrokraft/AndroidStudioProjects/ExpenseManager/app/build/intermediates/pre-dexed/debug/internal_impl-22.1.0-8cf515153913da5d355841c1370be3aab8d1fbb7.jar" />
     </item>
     <item
-        jar="/home/imrokraft/AndroidStudioProjects/ExpenseManager/app/build/intermediates/exploded-aar/com.android.support/gridlayout-v7/21.0.3/classes.jar"
+        jar="/home/imrokraft/android-sdk/extras/android/m2repository/com/android/support/support-annotations/22.1.0/support-annotations-22.1.0.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="2e8c06a7aad26ba8d2d5cab8134556594fe36856">
-        <dex dex="/home/imrokraft/AndroidStudioProjects/ExpenseManager/app/build/intermediates/pre-dexed/debug/classes-0a801e6230fc15b1c2c2205c24caa929d88fa808.jar" />
+        sha1="281bc6c58ecb3644c23fbc5ee0452019f67b4d5d">
+        <dex dex="/home/imrokraft/AndroidStudioProjects/ExpenseManager/app/build/intermediates/pre-dexed/debug/support-annotations-22.1.0-c61485acad704547e260311239d494625285b967.jar" />
     </item>
     <item
-        jar="/home/imrokraft/android-sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
+        jar="/home/imrokraft/AndroidStudioProjects/ExpenseManager/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
-        <dex dex="/home/imrokraft/AndroidStudioProjects/ExpenseManager/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-4278463a0fb7efaeeed0ec95bfd6a56a96087ac5.jar" />
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="/home/imrokraft/AndroidStudioProjects/ExpenseManager/app/build/intermediates/pre-dexed/debug/classes-362dcf964d6c4d017385d77e4ed42d96ecc9eb9d.jar" />
     </item>
 
 </items>

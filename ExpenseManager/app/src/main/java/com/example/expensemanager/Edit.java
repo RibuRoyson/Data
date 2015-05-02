@@ -59,24 +59,24 @@ public class Edit extends Activity {
 
     }
 
-    public void updatedata(View v) {
-        Dbhandler dbh = new Dbhandler(this);
-
-        ex = et1.getText().toString();
-        cat = et2.getText().toString();
-        des = et3.getText().toString();
-        tim = et4.getText().toString();
-        dat = et5.getText().toString();
-        id = et6.getText().toString();
-        dbh.updateDetails(ex, cat, des, tim, dat, id);
-        Toast.makeText(getApplicationContext(), "Updated", Toast.LENGTH_LONG).show();
-        et1.setText("");
-        et2.setText("");
-        et3.setText("");
-        et4.setText("");
-        et5.setText("");
-        et6.setText("");
-    }
+//    public void updatedata(View v) {
+//        Dbhandler dbh = new Dbhandler(this);
+//
+//        ex = et1.getText().toString();
+//        cat = et2.getText().toString();
+//        des = et3.getText().toString();
+//        tim = et4.getText().toString();
+//        dat = et5.getText().toString();
+//        id = et6.getText().toString();
+//        dbh.updateDetails(ex, cat, des, tim, dat, id);
+//        Toast.makeText(getApplicationContext(), "Updated", Toast.LENGTH_LONG).show();
+//        et1.setText("");
+//        et2.setText("");
+//        et3.setText("");
+//        et4.setText("");
+//        et5.setText("");
+//        et6.setText("");
+//    }
 
     public void viewdata(View v) {
         Intent incr = new Intent(getApplicationContext(), Viewdb.class);
@@ -87,24 +87,11 @@ public class Edit extends Activity {
         Intent in = new Intent(getApplicationContext(), Showresult.class);
         startActivity(in);
     }
+public void delete(View v)
+{
+    Intent inc = new Intent(getApplicationContext(), Delete.class);
+    startActivity(inc);
+}
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // TODO Auto-generated method stub
-        getMenuInflater().inflate(R.menu.delete, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // TODO Auto-generated method stub
-        switch (item.getItemId()) {
-            case R.id.del:
-                Intent inc = new Intent(getApplicationContext(), Delete.class);
-                startActivity(inc);
-                break;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 
 }

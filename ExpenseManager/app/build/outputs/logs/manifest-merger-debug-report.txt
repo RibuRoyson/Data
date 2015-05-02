@@ -15,9 +15,9 @@ ADDED from AndroidManifest.xml:2:1
 		ADDED from AndroidManifest.xml:2:11
 uses-sdk
 ADDED from AndroidManifest.xml:7:5
-MERGED from com.android.support:gridlayout-v7:21.0.3:15:5
-MERGED from com.android.support:support-v4:21.0.3:15:5
-MERGED from com.android.support:support-v4:21.0.3:15:5
+MERGED from com.android.support:support-v4:22.1.0:20:5
+MERGED from com.android.support:appcompat-v7:21.0.3:15:5
+MERGED from com.android.support:support-v4:22.1.0:20:5
 	android:targetSdkVersion
 		ADDED from AndroidManifest.xml:9:9
 		INJECTED from AndroidManifest.xml:0:0
@@ -40,9 +40,9 @@ ADDED from AndroidManifest.xml:10:5
 		ADDED from AndroidManifest.xml:14:9
 application
 ADDED from AndroidManifest.xml:17:5
-MERGED from com.android.support:gridlayout-v7:21.0.3:16:5
-MERGED from com.android.support:support-v4:21.0.3:16:5
-MERGED from com.android.support:support-v4:21.0.3:16:5
+MERGED from com.android.support:support-v4:22.1.0:22:5
+MERGED from com.android.support:appcompat-v7:21.0.3:16:5
+MERGED from com.android.support:support-v4:22.1.0:22:5
 	android:label
 		ADDED from AndroidManifest.xml:20:9
 	android:allowBackup
@@ -74,60 +74,64 @@ ADDED from AndroidManifest.xml:30:17
 activity#com.example.expensemanager.Activitymain
 ADDED from AndroidManifest.xml:33:9
 	android:label
+		ADDED from AndroidManifest.xml:36:13
+	android:theme
 		ADDED from AndroidManifest.xml:35:13
 	android:name
 		ADDED from AndroidManifest.xml:34:13
 activity#com.example.expensemanager.Viewdb
-ADDED from AndroidManifest.xml:39:9
+ADDED from AndroidManifest.xml:40:9
 	android:label
+		ADDED from AndroidManifest.xml:42:13
+	android:name
 		ADDED from AndroidManifest.xml:41:13
-	android:name
-		ADDED from AndroidManifest.xml:40:13
 activity#com.example.expensemanager.Showresult
-ADDED from AndroidManifest.xml:44:9
+ADDED from AndroidManifest.xml:45:9
 	android:label
+		ADDED from AndroidManifest.xml:47:13
+	android:name
 		ADDED from AndroidManifest.xml:46:13
-	android:name
-		ADDED from AndroidManifest.xml:45:13
 activity#com.example.expensemanager.Add
-ADDED from AndroidManifest.xml:49:9
+ADDED from AndroidManifest.xml:50:9
 	android:label
+		ADDED from AndroidManifest.xml:52:13
+	android:name
 		ADDED from AndroidManifest.xml:51:13
-	android:name
-		ADDED from AndroidManifest.xml:50:13
-activity#com.example.expensemanager.Edit
-ADDED from AndroidManifest.xml:54:9
+activity#com.example.expensemanager.EditData
+ADDED from AndroidManifest.xml:55:9
 	android:label
+		ADDED from AndroidManifest.xml:57:13
+	android:name
 		ADDED from AndroidManifest.xml:56:13
-	android:name
-		ADDED from AndroidManifest.xml:55:13
 activity#com.example.expensemanager.Show
-ADDED from AndroidManifest.xml:59:9
+ADDED from AndroidManifest.xml:60:9
 	android:label
+		ADDED from AndroidManifest.xml:62:13
+	android:name
 		ADDED from AndroidManifest.xml:61:13
-	android:name
-		ADDED from AndroidManifest.xml:60:13
 activity#com.example.expensemanager.Bycat
-ADDED from AndroidManifest.xml:64:9
+ADDED from AndroidManifest.xml:65:9
 	android:label
+		ADDED from AndroidManifest.xml:67:13
+	android:name
 		ADDED from AndroidManifest.xml:66:13
-	android:name
-		ADDED from AndroidManifest.xml:65:13
 activity#com.example.expensemanager.Delete
-ADDED from AndroidManifest.xml:69:9
+ADDED from AndroidManifest.xml:70:9
 	android:label
+		ADDED from AndroidManifest.xml:72:13
+	android:name
 		ADDED from AndroidManifest.xml:71:13
-	android:name
-		ADDED from AndroidManifest.xml:70:13
 activity#com.example.expensemanager.Monthwise
-ADDED from AndroidManifest.xml:74:9
+ADDED from AndroidManifest.xml:75:9
 	android:label
+		ADDED from AndroidManifest.xml:78:13
+	android:theme
+		ADDED from AndroidManifest.xml:77:13
+	android:name
 		ADDED from AndroidManifest.xml:76:13
-	android:name
-		ADDED from AndroidManifest.xml:75:13
 activity#com.example.expensemanager.Aboutus
-ADDED from AndroidManifest.xml:79:9
+ADDED from AndroidManifest.xml:81:9
 	android:label
-		ADDED from AndroidManifest.xml:81:13
+		ADDED from AndroidManifest.xml:83:13
 	android:name
-		ADDED from AndroidManifest.xml:80:13
+		ADDED from AndroidManifest.xml:82:13
