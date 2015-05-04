@@ -39,36 +39,31 @@
         </activity>
         <activity
             android:name="com.example.expensemanager.Viewdb"
+            android:theme="@style/AppTheme"
             android:label="@string/app_name"
             >
         </activity>
         <activity
             android:name="com.example.expensemanager.Showresult"
+            android:theme="@style/AppTheme"
             android:label="@string/app_name"
             >
         </activity>
         <activity
             android:name="com.example.expensemanager.Add"
+            android:theme="@style/AppTheme"
             android:label="@string/app_name"
             >
         </activity>
         <activity
             android:name="com.example.expensemanager.EditData"
-            android:label="@string/app_name"
-            >
-        </activity>
-        <activity
-            android:name="com.example.expensemanager.Show"
+            android:theme="@style/AppTheme"
             android:label="@string/app_name"
             >
         </activity>
         <activity
             android:name="com.example.expensemanager.Bycat"
-            android:label="@string/app_name"
-            >
-        </activity>
-        <activity
-            android:name="com.example.expensemanager.Delete"
+            android:theme="@style/AppTheme"
             android:label="@string/app_name"
             >
         </activity>
@@ -80,6 +75,7 @@
         </activity>
         <activity
             android:name="com.example.expensemanager.Aboutus"
+            android:theme="@style/AppTheme"
             android:label="@string/app_name"/>
     </application>
 

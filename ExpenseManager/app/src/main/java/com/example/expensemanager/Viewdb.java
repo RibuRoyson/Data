@@ -1,10 +1,10 @@
 package com.example.expensemanager;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.ContextMenu;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
@@ -26,8 +26,12 @@ public class Viewdb extends Activity {
         Dbhandler dbh = new Dbhandler(getApplicationContext());
         userslist=dbh.resultdata();
         myuser = new UserAdapter(getApplicationContext(), userslist);
-        lv.setAdapter(myuser);
+        if (myuser.isEmpty() == true) {
+            Toast.makeText(Viewdb.this, "Sorry No Entry!!", Toast.LENGTH_LONG).show();
+        }else {
 
+            lv.setAdapter(myuser);
+        }
 //        registerForContextMenu(lv);
         dbh.close();
   }
@@ -46,12 +50,12 @@ public class Viewdb extends Activity {
 //      super.onCreateContextMenu(menu, v, menuInfo);
         getMenuInflater().inflate(R.menu.editdel,menu);
         Toast.makeText(getApplicationContext(),"Menu Created",Toast.LENGTH_SHORT).show();
-        System.out.println("\n\n----------------------\n"+"menu created"+"\n\n--------------------------------");
+        System.out.println("\n\n----------------------\n" + "menu created" + "\n\n--------------------------------");
     }
 
     @Override
     public boolean onContextItemSelected(MenuItem item) {
-        System.out.println("\n\n----------------------\n"+"menu selected"+"\n\n--------------------------------");
+        System.out.println("\n\n----------------------\n" + "menu selected" + "\n\n--------------------------------");
 
         switch(item.getItemId())
         {
@@ -75,6 +79,15 @@ public class Viewdb extends Activity {
         }
 
         return true;
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return super.onOptionsItemSelected(item);
     }
 }
 

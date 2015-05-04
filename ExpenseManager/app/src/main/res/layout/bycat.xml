@@ -25,6 +25,7 @@
            android:layout_marginTop="20dp"
             android:layout_weight="0.30"
             android:text="Drinks"
+            android:onClick="drinks"
             android:textColor="#C00808" />
 
         <Button
@@ -34,6 +35,7 @@
             android:layout_marginTop="20dp"
             android:layout_weight="0.30"
             android:text="Cloth"
+            android:onClick="cloth"
             android:textColor="#C00808" />
 
         <Button
@@ -43,6 +45,7 @@
             android:layout_marginTop="20dp"
             android:layout_weight="0.30"
             android:text="Food"
+            android:onClick="food"
             android:textColor="#C00808" />
 
         <View
@@ -60,20 +63,14 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        android:weightSum="2.4"
+        android:weightSum="2.1"
         android:layout_weight="0.1">
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:text="Id"
-            android:layout_weight="0.3"
-            android:gravity="start|bottom"
-            android:textStyle="bold"
-            />
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="Expense"
+            android:textColor="#085D8C"
             android:layout_weight="0.5"
             android:gravity="start|bottom"
             android:textStyle="bold"
@@ -85,6 +82,7 @@
             android:text="Description"
             android:layout_weight="0.7"
             android:gravity="start|bottom"
+            android:textColor="#085D8C"
             android:textStyle="bold"
             />
         <TextView
@@ -92,6 +90,7 @@
             android:layout_height="match_parent"
             android:text="Time"
             android:layout_weight="0.5"
+            android:textColor="#085D8C"
             android:gravity="start|bottom"
             android:textStyle="bold"
             />
@@ -100,6 +99,7 @@
             android:layout_height="match_parent"
             android:text="Date"
             android:layout_weight="0.4"
+            android:textColor="#085D8C"
             android:gravity="start|bottom"
             android:textStyle="bold"
             />

@@ -19,6 +19,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.40"
             android:gravity="center|end"
+            android:textColor="#085D8C"
             android:text="Expense:"
             android:textAppearance="?android:attr/textAppearanceMedium"
             />
@@ -27,6 +28,7 @@
             android:id="@+id/expet"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:textColor="#ffffff"
             android:layout_weight="0.60"
             android:ems="10" />
     </LinearLayout>
@@ -45,6 +47,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.40"
             android:gravity="center|end"
+            android:textColor="#085D8C"
             android:text="Category:"
             android:textAppearance="?android:attr/textAppearanceMedium"
             />
@@ -53,6 +56,7 @@
             android:id="@+id/catet"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:textColor="#ffffff"
             android:layout_weight="0.60"
             android:ems="10" />
     </LinearLayout>
@@ -71,6 +75,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.40"
             android:gravity="center|end"
+            android:textColor="#085D8C"
             android:text="Description:"
             android:textAppearance="?android:attr/textAppearanceMedium"
             />
@@ -79,6 +84,7 @@
             android:id="@+id/deset"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:textColor="#ffffff"
             android:layout_weight="0.60"
             android:ems="10" />
     </LinearLayout>
@@ -88,6 +94,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.50"
+
         android:orientation="horizontal"
         android:weightSum="1.0" >
 
@@ -97,6 +104,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.40"
             android:gravity="center|end"
+            android:textColor="#085D8C"
             android:text="Time:"
             android:textAppearance="?android:attr/textAppearanceMedium"
             />
@@ -105,6 +113,7 @@
             android:id="@+id/timeet"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:textColor="#ffffff"
             android:layout_weight="0.60"
             android:ems="10" />
     </LinearLayout>
@@ -124,6 +133,7 @@
             android:layout_weight="0.40"
             android:gravity="center|end"
             android:text="Date:"
+            android:textColor="#085D8C"
             android:textAppearance="?android:attr/textAppearanceMedium"
             />
 
@@ -131,6 +141,7 @@
             android:id="@+id/dateet"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:textColor="#ffffff"
             android:layout_weight="0.60"
             android:ems="10" />
     </LinearLayout>
@@ -150,6 +161,7 @@
             android:text="Update"
             android:layout_weight="0.5"
             android:layout_gravity="bottom"
+            android:textColor="#C00808"
             android:onClick="updateclick"/>
         <Button
             android:layout_width="0dp"
@@ -157,6 +169,7 @@
             android:text="Delete"
             android:layout_weight="0.5"
             android:layout_gravity="bottom"
+            android:textColor="#C00808"
             android:onClick="deleteclick"/>
 
         </LinearLayout>
@@ -173,6 +186,7 @@
     <Button
        android:layout_width="0dp"
        android:layout_height="wrap_content"
+        android:textColor="#C00808"
        android:text="View"
         android:onClick="viewdb"
         android:layout_weight="0.4"/>

@@ -1,10 +1,10 @@
 package com.example.expensemanager;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 public class Activitymain extends ActionBarActivity {
@@ -14,7 +14,7 @@ public class Activitymain extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main1);
+        setContentView(R.layout.activitymain);
     }
 
     public void adddatas(View v) {
@@ -33,50 +33,7 @@ public class Activitymain extends ActionBarActivity {
         startActivity(in);
     }
 
-    public void exit(View v) {
-        new AlertDialog.Builder(this)
-                .setTitle("Expense Manager")
-                .setMessage("Are you Sure?")
-                .setPositiveButton("No", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                })
-                .setNegativeButton("Yes", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Activitymain.this.finish();
-                        System.exit(0);
-                    }
-                })
-                .setIcon(getResources().getDrawable(R.drawable.exit))
-                .show();
 
-//        final Dialog dialog=new Dialog(Activitymain.this);
-//        dialog.setContentView(R.layout.new1);
-//        dialog.setTitle("Expense Manager");
-//        TextView text=(TextView)dialog.findViewById(R.id.textView);
-//        text.setText("Are you sure?");
-//        ImageView image=(ImageView)dialog.findViewById(R.id.imageView);
-//        image.setImageResource(R.drawable.expense);
-//        Button diabutton=(Button)dialog.findViewById(R.id.button2);
-//        diabutton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Activitymain.this.finish();
-//                System.exit(0);
-//            }
-//        });
-//        Button b2=(Button)dialog.findViewById(R.id.button3);
-//        b2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                dialog.cancel();
-//            }
-//        });
-//        dialog.show();
-    }
     public void showmonth(View v)
     {
         Intent incc = new Intent(getApplicationContext(), Monthwise.class);
@@ -87,10 +44,16 @@ public class Activitymain extends ActionBarActivity {
         Intent inc = new Intent(getApplicationContext(), Bycat.class);
         startActivity(inc);
     }
-    public void aboutus(View v)
-    {
-        Intent inccc = new Intent(getApplicationContext(), Aboutus.class);
-        startActivity(inccc);
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main,menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return super.onOptionsItemSelected(item);
+    }
 }
+

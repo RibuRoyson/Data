@@ -36,7 +36,7 @@ public class UserAdaptercat extends ArrayAdapter<details> {
             LayoutInflater mlayoutInflater = LayoutInflater.from(myContext);
             convertView = mlayoutInflater.inflate(R.layout.list_itemcat, parent, false);
         }
-        TextView id=(TextView) convertView.findViewById(R.id.textid1);
+
         TextView expen = (TextView) convertView.findViewById(R.id.textexp2);
 
         TextView desc = (TextView) convertView.findViewById(R.id.textdes4);
@@ -46,7 +46,7 @@ public class UserAdaptercat extends ArrayAdapter<details> {
         desc.setText(userslist.get(position).getDescription());
         tim.setText(userslist.get(position).getTime1());
         dat.setText(userslist.get(position).getDate1());
-        id.setText(userslist.get(position).getId());
+
         return convertView;
     }
 }
