@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/a4"
+    android:orientation="vertical"
+    android:weightSum="1.0"
+   >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:orientation="horizontal"
+    android:weightSum="1.0"
+    android:layout_weight="0.3">
+    <Button
+        android:id="@+id/totalbut"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Total Expense" 
+        android:onClick="totalclick"
+         android:textColor="#C00808"
+        android:layout_weight="0.3"
+        android:layout_gravity="center"/>
+    <View
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.4"/>
+
+    <TextView
+        android:id="@+id/totv"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:textColor="#000000"
+        android:layout_weight="0.3"
+        android:text=""
+
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="0.3"
+        android:weightSum="1.0">
+    <Button
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/curtotal"
+        android:text="Month Expense"
+        android:layout_weight="0.3"
+        android:onClick="monthclick"
+        android:layout_gravity="center"
+         android:textColor="#C00808"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.4"/>
+
+    <TextView
+        android:id="@+id/monthv"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:text=""
+        android:gravity="center"
+        android:textSize="30sp"
+        android:textColor="#000000"
+        android:layout_weight="0.3"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="0.3"
+        android:weightSum="1.0">
+        <Button
+            android:id="@+id/selectmnth"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Select Month"
+            android:layout_weight="0.3"
+
+            android:layout_gravity="center"
+            android:textColor="#C00808"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.4"/>
+
+        <TextView
+            android:id="@+id/monthtotal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text=""
+            android:textColor="#000000"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:layout_weight="0.3"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+  </LinearLayout>
+
+
+    </LinearLayout>
