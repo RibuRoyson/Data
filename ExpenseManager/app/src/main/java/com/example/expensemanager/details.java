@@ -9,10 +9,11 @@ public class details {
     String cat, description, date1, time1;
     String expense,id;
 
+
     int dy, mn, yr;
         details(String id,String expense, String cat, String description,String time1, String date1,int dy,int mn,int yr) {
         this.id=id;
-        this.expense = expense;
+        this.expense=expense;
         this.cat = cat;
         this.description = description;
         this.time1 = time1;

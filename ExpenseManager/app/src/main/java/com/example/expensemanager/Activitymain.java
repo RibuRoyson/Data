@@ -1,6 +1,8 @@
 package com.example.expensemanager;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -15,6 +17,11 @@ public class Activitymain extends ActionBarActivity {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activitymain);
+        android.support.v7.app.ActionBar ab = getSupportActionBar();
+        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#0F62A6"));
+        ab.setBackgroundDrawable(colorDrawable);
+//        ab.setIcon(R.drawable.expense);
+
     }
 
     public void adddatas(View v) {
@@ -43,6 +50,11 @@ public class Activitymain extends ActionBarActivity {
     {
         Intent inc = new Intent(getApplicationContext(), Bycat.class);
         startActivity(inc);
+    }
+    public void settings(View v)
+    {
+        Intent incn = new Intent(getApplicationContext(), Sampletotalmonth.class);
+        startActivity(incn);
     }
 
     @Override

@@ -1,0 +1,10 @@
+# incremental data. DO NOT EDIT.
+# format is <lastModified> <length> <SHA-1> <path>
+# Encoding is UTF-8
+1373048693000 1820 84ffcbfd8ff5c08e8bc84779fdb5d6c3600168e0 /Users/jep/AndroidStudioProjects/holographlibrary/HoloGraphLibrary/src/com/echo/holographlibrary/Line.java
+1373048693000 6505 1ee885d22f2aed27381f15218426793086a84581 /Users/jep/AndroidStudioProjects/holographlibrary/HoloGraphLibrary/src/com/echo/holographlibrary/BarGraph.java
+1373048693000 1851 f510b04a97b2fef9c0b3f1cbb73c61f82b9455fe /Users/jep/AndroidStudioProjects/holographlibrary/HoloGraphLibrary/src/com/echo/holographlibrary/PieSlice.java
+1373048693000 1633 c8a1b5a9f5dc5cab47f7d31f2b98f53a2438020b /Users/jep/AndroidStudioProjects/holographlibrary/HoloGraphLibrary/src/com/echo/holographlibrary/LinePoint.java
+1373048693000 11125 8f6eacc762445d78b63b86cbd030ab3cfe44978f /Users/jep/AndroidStudioProjects/holographlibrary/HoloGraphLibrary/src/com/echo/holographlibrary/LineGraph.java
+1373048693000 5896 628c267beafa5c778853aecc57d1b7da02d6b66b /Users/jep/AndroidStudioProjects/holographlibrary/HoloGraphLibrary/src/com/echo/holographlibrary/PieGraph.java
+1373048693000 1826 78b6f3f711f36afc18a24cf5a009af820dda58ae /Users/jep/AndroidStudioProjects/holographlibrary/HoloGraphLibrary/src/com/echo/holographlibrary/Bar.java

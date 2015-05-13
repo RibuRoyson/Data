@@ -1,17 +1,18 @@
 package com.example.expensemanager;
 
-import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -19,10 +20,9 @@ import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
-import java.util.ArrayList;
 import java.util.Calendar;
 
-public class Add extends Activity implements android.view.View.OnClickListener {
+public class Add extends ActionBarActivity implements android.view.View.OnClickListener {
     Spinner sp;
     Button tim, dat, save, show;
     EditText time, date, expen, descpt;
@@ -35,7 +35,9 @@ public class Add extends Activity implements android.view.View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.addnew);
-
+        android.support.v7.app.ActionBar ab = getSupportActionBar();
+        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#0F62A6"));
+        ab.setBackgroundDrawable(colorDrawable);
         sp = (Spinner) findViewById(R.id.spinner1);
         tim = (Button) findViewById(R.id.timebtn);
         dat = (Button) findViewById(R.id.datebtn);
@@ -47,13 +49,13 @@ public class Add extends Activity implements android.view.View.OnClickListener {
         dat.setOnClickListener(this);
         save.setOnClickListener(this);
         show.setOnClickListener(this);
-        ArrayList<String> val = new ArrayList<String>();
-        val.add("Food");
-        val.add("Drinks");
-        val.add("Dress");
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, val);
-        sp.setAdapter(adapter);
+        String [] items={"Drinks","Dress","Food","Others","Personal","Utilities"};
+        CustomArrayAdapter<String> myadapter= new CustomArrayAdapter<String>(this,items);
+//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, val);
 
+//        sp.setPrompt("Select");
+        sp.setAdapter(myadapter);
+        sp.setPrompt("Select an Item");
         sp.setOnItemSelectedListener(new OnItemSelectedListener() {
 
             @Override
@@ -73,12 +75,7 @@ public class Add extends Activity implements android.view.View.OnClickListener {
         });
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
+
 
     @Override
     public void onClick(View v) {
@@ -130,7 +127,8 @@ public class Add extends Activity implements android.view.View.OnClickListener {
         }
         if (v == save) {
             Log.e("reached", "save");
-            expense = expen.getText().toString();
+            expense=expen.getText().toString();
+
             des = descpt.getText().toString();
             time1 = tim.getText().toString();
             date1 = dat.getText().toString();
@@ -159,9 +157,15 @@ public class Add extends Activity implements android.view.View.OnClickListener {
         }
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         return super.onOptionsItemSelected(item);
     }
+
 }

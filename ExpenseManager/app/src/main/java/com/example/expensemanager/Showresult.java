@@ -1,7 +1,9 @@
 package com.example.expensemanager;
 
-import android.app.Activity;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.Menu;
@@ -11,8 +13,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Showresult extends Activity {
-    TextView tv,tv1, mnth;
+public class Showresult extends ActionBarActivity {
+    TextView tv,tv1, mnth,rs,rs1,rs2;
     int i = 0;
     String length;
     String results;
@@ -24,23 +26,31 @@ public class Showresult extends Activity {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         setContentView(R.layout.showresult);
+        android.support.v7.app.ActionBar ab = getSupportActionBar();
+        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#0F62A6"));
+        ab.setBackgroundDrawable(colorDrawable);
         Button b1=(Button)findViewById(R.id.selectmnth);
         registerForContextMenu(b1);
         tv=(TextView)findViewById(R.id.monthtotal);
+        rs2=(TextView)findViewById(R.id.rupees3);
   }
     public void totalclick(View v)
     {
         tv1 = (TextView) findViewById(R.id.totv);
+        rs=(TextView)findViewById(R.id.rupees);
         dbh = new Dbhandler(Showresult.this);
         int x = dbh.total();
         tv1.setText("" + x);
+        rs.setText("\u20B9"+".");
     }
     public void monthclick(View v)
     {
         mnth = (TextView) findViewById(R.id.monthv);
+        rs1=(TextView)findViewById(R.id.rupees2);
         dbh = new Dbhandler(Showresult.this);
         int y = dbh.totalmnth();
         mnth.setText("" + y);
+        rs1.setText("\u20B9"+".");
     }
 
     @Override
@@ -63,6 +73,7 @@ public class Showresult extends Activity {
                 }
                 else {
                     tv.setText(results);
+                    rs2.setText("\u20B9"+".");
                 }
                 break;
             }
@@ -76,6 +87,7 @@ public class Showresult extends Activity {
                     Toast.makeText(Showresult.this, "Database Empty", Toast.LENGTH_LONG).show();
                 } else {
                     tv.setText(results);
+                    rs2.setText("\u20B9"+".");
                 }
                 break;
             }
@@ -84,13 +96,8 @@ public class Showresult extends Activity {
                 dbh = new Dbhandler(getApplicationContext());
                 results = String.valueOf(dbh.monthtotal(i));
                 tv.setText(results);
-//              length = results.size();
-//                Log.e("arraylist length", "" + length);
-//                if (length == "") {
-//                    Toast.makeText(Showresult.this, "Database Empty", Toast.LENGTH_LONG).show();
-//                } else {
-//                    tv.setText(results);
-//                }
+                rs2.setText("\u20B9"+".");
+
                 break;
             }
             case R.id.apr: {
@@ -98,13 +105,8 @@ public class Showresult extends Activity {
                 Dbhandler dbh = new Dbhandler(getApplicationContext());
                 results = String.valueOf(dbh.monthtotal(i));
                 tv.setText(results);
-//              length = results.size();
-//                Log.e("arraylist length", "" + length);
-//                if (length == "") {
-//                    Toast.makeText(Showresult.this, "Database Empty", Toast.LENGTH_LONG).show();
-//                } else {
-//                    tv.setText(results);
-//                }
+                rs2.setText("\u20B9"+".");
+
                 break;
             }
             case R.id.may: {
@@ -112,13 +114,8 @@ public class Showresult extends Activity {
                 dbh = new Dbhandler(getApplicationContext());
                 results = String.valueOf(dbh.monthtotal(i));
                 tv.setText(results);
-//              length = results.size();
-//                Log.e("arraylist length", "" + length);
-//                if (length == "") {
-//                    Toast.makeText(Showresult.this, "Database Empty", Toast.LENGTH_LONG).show();
-//                } else {
-//                    tv.setText(results);
-//                }
+                rs2.setText("\u20B9"+".");
+
                 break;
             }
             case R.id.jun: {
@@ -126,13 +123,8 @@ public class Showresult extends Activity {
                  dbh = new Dbhandler(getApplicationContext());
                 results = String.valueOf(dbh.monthtotal(i));
                 tv.setText(results);
-//              length = results.size();
-//                Log.e("arraylist length", "" + length);
-//                if (length == "") {
-//                    Toast.makeText(Showresult.this, "Database Empty", Toast.LENGTH_LONG).show();
-//                } else {
-//                    tv.setText(results);
-//                }
+                rs2.setText("\u20B9"+".");
+
                 break;
             }
             case R.id.jul: {
@@ -140,13 +132,8 @@ public class Showresult extends Activity {
                 dbh = new Dbhandler(getApplicationContext());
                 results = String.valueOf(dbh.monthtotal(i));
                 tv.setText(results);
-//              length = results.size();
-//                Log.e("arraylist length", "" + length);
-//                if (length == "") {
-//                    Toast.makeText(Showresult.this, "Database Empty", Toast.LENGTH_LONG).show();
-//                } else {
-//                    tv.setText(results);
-//                }
+                rs2.setText("\u20B9"+".");
+
                 break;
             }
             case R.id.aug: {
@@ -154,13 +141,8 @@ public class Showresult extends Activity {
                 dbh = new Dbhandler(getApplicationContext());
                 results = String.valueOf(dbh.monthtotal(i));
                 tv.setText(results);
-//              length = results.size();
-//                Log.e("arraylist length", "" + length);
-//                if (length == "") {
-//                    Toast.makeText(Showresult.this, "Database Empty", Toast.LENGTH_LONG).show();
-//                } else {
-//                    tv.setText(results);
-//                }
+                rs2.setText("\u20B9"+".");
+
                 break;
             }
             case R.id.sep: {
@@ -168,13 +150,8 @@ public class Showresult extends Activity {
                  dbh = new Dbhandler(getApplicationContext());
                 results = String.valueOf(dbh.monthtotal(i));
                 tv.setText(results);
-//              length = results.size();
-//                Log.e("arraylist length", "" + length);
-//                if (length == "") {
-//                    Toast.makeText(Showresult.this, "Database Empty", Toast.LENGTH_LONG).show();
-//                } else {
-//                    tv.setText(results);
-//                }
+                rs2.setText("\u20B9"+".");
+
                 break;
             }
             case R.id.oct: {
@@ -182,13 +159,8 @@ public class Showresult extends Activity {
                 dbh = new Dbhandler(getApplicationContext());
                 results = String.valueOf(dbh.monthtotal(i));
                 tv.setText(results);
-//              length = results.size();
-//                Log.e("arraylist length", "" + length);
-//                if (length == "") {
-//                    Toast.makeText(Showresult.this, "Database Empty", Toast.LENGTH_LONG).show();
-//                } else {
-//                    tv.setText(results);
-//                }
+                rs2.setText("\u20B9"+".");
+
                 break;
             }
             case R.id.nov: {
@@ -196,13 +168,8 @@ public class Showresult extends Activity {
                 dbh = new Dbhandler(getApplicationContext());
                 results = String.valueOf(dbh.monthtotal(i));
                 tv.setText(results);
-//              length = results.size();
-//                Log.e("arraylist length", "" + length);
-//                if (length == "") {
-//                    Toast.makeText(Showresult.this, "Database Empty", Toast.LENGTH_LONG).show();
-//                } else {
-//                    tv.setText(results);
-//                }
+                rs2.setText("\u20B9"+".");
+
                 break;
             }
             case R.id.dec: {
@@ -212,6 +179,8 @@ public class Showresult extends Activity {
                 try {
                     if (results != null) {
                         tv.setText(results);
+                        rs2.setText("\u20B9"+".");
+                        break;
                     } else {
                         Toast.makeText(getApplicationContext(), "No Entry", Toast.LENGTH_SHORT).show();
                     }
@@ -219,19 +188,14 @@ public class Showresult extends Activity {
                 {
                     e.printStackTrace();
                 }
-//                Log.e("arraylist length", "" + length);
-//                if (length == null) {
-//                    Toast.makeText(Showresult.this, "Database Empty", Toast.LENGTH_LONG).show();
-//                } else {
-//                    tv.setText(results);
-//                }
-//                break;
+
             }
         }
         return super.onContextItemSelected(item);
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main,menu);
         return super.onCreateOptionsMenu(menu);
     }
 

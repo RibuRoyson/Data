@@ -2,9 +2,7 @@ package com.example.expensemanager;
 
 import android.content.Context;
 import android.content.Intent;
-import android.view.ContextMenu;
 import android.view.LayoutInflater;
-import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -28,9 +26,7 @@ public class UserAdapter extends ArrayAdapter<details> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         return getCustomView(position, convertView, parent);
-
     }
-
     @Override
     public View getDropDownView(int position, View convertView, ViewGroup parent) {
         return getCustomView(position, convertView, parent);

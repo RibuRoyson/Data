@@ -1,5 +1,7 @@
 package com.example.expensemanager;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
@@ -8,6 +10,7 @@ import android.view.ContextMenu.ContextMenuInfo;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,8 +30,15 @@ public class Monthwise extends ActionBarActivity {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         setContentView(R.layout.monthwise);
-        tv = (TextView) findViewById(R.id.text1);
-        registerForContextMenu(tv);
+        android.support.v7.app.ActionBar ab = getSupportActionBar();
+        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#0F62A6"));
+        ab.setBackgroundDrawable(colorDrawable);
+        Button monbut=(Button)findViewById(R.id.monbut);
+//        Spinner spinmon=(Spinner)findViewById(R.id.spinmon);
+//        String [] items={"Select Month"};
+//        CustomArrayAdapter<String> myadapter= new CustomArrayAdapter<String>(this,items);
+//        spinmon.setAdapter(myadapter);
+        registerForContextMenu(monbut);
         lvv = (ListView) findViewById(R.id.list1);
 
 
@@ -210,6 +220,7 @@ public class Monthwise extends ActionBarActivity {
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main,menu);
         return super.onCreateOptionsMenu(menu);
     }
 

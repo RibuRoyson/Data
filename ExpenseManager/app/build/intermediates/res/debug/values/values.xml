@@ -164,6 +164,7 @@
     <string name="action_settings">Settings</string>
     <string name="app_name">ExpenseManager</string>
     <string name="hello_world">Hello world!</string>
+    <string name="select">Select</string>
     <!-- From: file:/home/imrokraft/AndroidStudioProjects/ExpenseManager/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppBaseTheme" parent="Theme.AppCompat.Light">

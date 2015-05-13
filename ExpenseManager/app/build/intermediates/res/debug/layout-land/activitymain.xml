@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/linear1"
+    android:orientation="vertical"
+    android:weightSum="3.0"
+    android:background="@drawable/a4">
+
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.0"
+            android:orientation="horizontal"
+            android:id="@+id/linear2"
+            android:weightSum="2.0" >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0"
+                android:onClick="adddatas"
+                android:orientation="vertical"
+                android:weightSum="1.0"
+                >
+
+                <ImageView
+                    android:id="@+id/imageview01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+
+                    android:src="@drawable/addentry"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.7"
+                    android:padding="10dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+
+                    android:text="Add"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.3"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0"
+                android:orientation="vertical"
+                android:onClick="editdatas"
+                android:weightSum="1.0">
+                <ImageView
+                    android:id="@+id/imageview02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.7"
+                    android:layout_gravity="center"
+                    android:src="@drawable/sum"
+                    android:padding="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.3"
+                    android:layout_gravity="center"
+                    android:text="Total"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.0"
+                android:orientation="horizontal"
+                android:id="@+id/linear3"
+
+                android:weightSum="2.0" >
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    android:onClick="viewdatas"
+                    android:orientation="vertical"
+                    android:weightSum="1.0">
+                    <ImageView
+                        android:id="@+id/imageview10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.7"
+                        android:layout_gravity="center"
+
+                        android:src="@drawable/editnew"
+                        android:padding="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.3"
+                        android:layout_gravity="center"
+
+                        android:text="View/Edit"
+                        android:textColor="#000000"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    android:orientation="vertical"
+                    android:weightSum="1.0">
+                    <ImageView
+                        android:id="@+id/imageview11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.7"
+                        android:layout_gravity="center"
+                        android:src="@drawable/calender"
+                        android:onClick="showmonth"
+                        android:padding="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center"
+                        android:text="Show by Month"
+                        android:layout_weight="0.3"
+                        android:textColor="#000000"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.0"
+
+            android:orientation="horizontal"
+            android:weightSum="2.0" >
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0"
+                android:orientation="vertical"
+                android:weightSum="1.0">
+                <ImageView
+                    android:id="@+id/imageview20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.7"
+                    android:layout_gravity="center"
+
+                    android:src="@drawable/category"
+                    android:onClick="showcat"
+                    android:padding="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.3"
+                    android:layout_gravity="center"
+
+                    android:text="Show by Category"
+                    android:textColor="#000000"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0"
+                android:orientation="vertical"
+                android:weightSum="1.0">
+                <ImageView
+                    android:id="@+id/imageview21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.7"
+                    android:layout_gravity="center"
+                    android:src="@drawable/settings"
+                    android:padding="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.3"
+                    android:layout_gravity="center"
+                    android:text="Settings"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+
+<!-- From: file:/home/imrokraft/AndroidStudioProjects/ExpenseManager/app/src/main/res/layout-land/activitymain.xml -->

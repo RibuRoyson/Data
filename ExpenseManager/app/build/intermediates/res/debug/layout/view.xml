@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/abcd"
+    android:background="@drawable/a4"
     android:orientation="vertical"
      >
     <LinearLayout
@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:text="Id"
             android:layout_weight="0.3"
-            android:textColor="#085D8C"
+            android:textColor="#000000"
             android:gravity="center"
             android:textStyle="bold"
            />
@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:text="Expense"
             android:layout_weight="0.5"
-            android:textColor="#085D8C"
+            android:textColor="#000000"
             android:gravity="center"
             android:textStyle="bold"
             />
@@ -34,14 +34,14 @@
             android:layout_height="wrap_content"
             android:text="Category"
             android:layout_weight="0.6"
-            android:textColor="#085D8C"
+            android:textColor="#000000"
             android:gravity="center"
             android:textStyle="bold"
             />
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textColor="#085D8C"
+            android:textColor="#000000"
             android:text="Description"
             android:layout_weight="0.7"
             android:gravity="center"
@@ -50,7 +50,7 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textColor="#085D8C"
+            android:textColor="#000000"
             android:text="Time"
             android:layout_weight="0.4"
             android:gravity="center"
@@ -59,7 +59,7 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textColor="#085D8C"
+            android:textColor="#000000"
             android:text="Date"
             android:layout_weight="0.5"
             android:gravity="center"

@@ -2,8 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/abcd"
-    android:weightSum="7.0"
+    android:background="@drawable/a4"
+    android:weightSum="5.0"
     >
     <LinearLayout
         android:id="@+id/tableRow3"
@@ -19,7 +19,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.40"
             android:gravity="center|end"
-            android:textColor="#085D8C"
+            android:textColor="#000000"
             android:text="Expense:"
             android:textAppearance="?android:attr/textAppearanceMedium"
             />
@@ -47,7 +47,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.40"
             android:gravity="center|end"
-            android:textColor="#085D8C"
+            android:textColor="#000000"
             android:text="Category:"
             android:textAppearance="?android:attr/textAppearanceMedium"
             />
@@ -75,7 +75,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.40"
             android:gravity="center|end"
-            android:textColor="#085D8C"
+            android:textColor="#000000"
             android:text="Description:"
             android:textAppearance="?android:attr/textAppearanceMedium"
             />
@@ -104,7 +104,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.40"
             android:gravity="center|end"
-            android:textColor="#085D8C"
+            android:textColor="#000000"
             android:text="Time:"
             android:textAppearance="?android:attr/textAppearanceMedium"
             />
@@ -133,7 +133,7 @@
             android:layout_weight="0.40"
             android:gravity="center|end"
             android:text="Date:"
-            android:textColor="#085D8C"
+            android:textColor="#000000"
             android:textAppearance="?android:attr/textAppearanceMedium"
             />
 
@@ -155,11 +155,15 @@
         android:layout_weight="0.50"
         android:orientation="horizontal"
         android:weightSum="1.0">
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.1"/>
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Update"
-            android:layout_weight="0.5"
+            android:layout_weight="0.4"
             android:layout_gravity="bottom"
             android:textColor="#C00808"
             android:onClick="updateclick"/>
@@ -167,10 +171,14 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Delete"
-            android:layout_weight="0.5"
+            android:layout_weight="0.4"
             android:layout_gravity="bottom"
             android:textColor="#C00808"
             android:onClick="deleteclick"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.1"/>
 
         </LinearLayout>
     <LinearLayout

@@ -329,5 +329,82 @@ public class Dbhandler extends SQLiteOpenHelper {
         return exp;
 
     }
+    public ArrayList<String> monthgraph(int x)
+    {
+        ArrayList<String> results = new ArrayList<String>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        try {
+            Cursor c = null;
+
+            String val = String.valueOf(x).toString();
+            Log.e("monthvalue", val);
+            String[] columns = {"id", "expense", "cat", "description", "time", "date", "day", "month", "year"};
+            String selection = "month=?";
+            String[] selectionArgs = {val};
+            c = db.query(TB_name, columns, selection, selectionArgs, null, null, null);
+            Log.e("cursor", "" + c);
+            if (c != null) {
+                if (c.moveToFirst()) {
+                    do {
+                        String exp = c.getString(c.getColumnIndex("expense"));
+
+                        results.add(exp);
+                    } while (c.moveToNext());
+                }
+            } else {
+                Toast.makeText(context, "data no found", Toast.LENGTH_LONG).show();
+            }
+        } catch (Exception e) {
+
+        }
+        return results;
+    }
+    public  ArrayList<Integer> monthwise(int j) {
+
+        ArrayList<Integer> data=new ArrayList<Integer>();
+        db = this.getReadableDatabase();
+        try {
+
+                String val = j+"";
+                Cursor d = null;
+                String[] columns = {"id", "expense", "cat", "description", "time", "date", "day", "month", "year"};
+                String selection = "month=?";
+                String[] selectionArgs = {val};
+                Log.v("selection", selection);
+
+                d = db.query(TB_name, columns, selection, selectionArgs, null, null, null);
+                int exp = 0;
+
+                if (d != null) {
+                    if (d.moveToFirst()) ;
+                    {
+                        do {
+                            int cc = d.getCount();
+                            if (cc < 1) {
+                                System.out.print("Empty");
+                                data.add(0);
+                               continue;
+//                                return new ArrayList<Integer>();
+                            }
+                            int z = d.getInt(d.getColumnIndex("expense"));
+                            exp = exp + z;
+                        }
+                        while (d.moveToNext());
+                        data.add(exp);
+                    }
+                } else {
+                    Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
+                }
+
+            }catch(SQLiteException se){
+                Log.e(getClass().getSimpleName(), "could not connect");
+            }
+//        if(data==null)
+//        {
+//            return new ArrayList<Integer>();
+//        }
+            return data;
+
+    }
 
 }

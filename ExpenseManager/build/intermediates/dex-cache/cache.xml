@@ -2,32 +2,39 @@
 <items version="2" >
 
     <item
-        jar="/home/imrokraft/AndroidStudioProjects/ExpenseManager/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.0/classes.jar"
+        jar="/home/imrokraft/AndroidStudioProjects/ExpenseManager/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/jars/classes.jar"
         jumboMode="false"
-        revision="21.1.2"
-        sha1="eeebabdfd8203f6ab639ccea4ffa1f20e1adee3a">
-        <dex dex="/home/imrokraft/AndroidStudioProjects/ExpenseManager/app/build/intermediates/pre-dexed/debug/classes-fd0863a1dbdbc61526ad6d8dd5eeee1b6868bfdf.jar" />
-    </item>
-    <item
-        jar="/home/imrokraft/AndroidStudioProjects/ExpenseManager/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.0/libs/internal_impl-22.1.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="025cb89f2896c63200ff4c2e6c467a95691d880a">
-        <dex dex="/home/imrokraft/AndroidStudioProjects/ExpenseManager/app/build/intermediates/pre-dexed/debug/internal_impl-22.1.0-8cf515153913da5d355841c1370be3aab8d1fbb7.jar" />
-    </item>
-    <item
-        jar="/home/imrokraft/android-sdk/extras/android/m2repository/com/android/support/support-annotations/22.1.0/support-annotations-22.1.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="281bc6c58ecb3644c23fbc5ee0452019f67b4d5d">
-        <dex dex="/home/imrokraft/AndroidStudioProjects/ExpenseManager/app/build/intermediates/pre-dexed/debug/support-annotations-22.1.0-c61485acad704547e260311239d494625285b967.jar" />
-    </item>
-    <item
-        jar="/home/imrokraft/AndroidStudioProjects/ExpenseManager/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
+        revision="22.0.1"
         sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
-        <dex dex="/home/imrokraft/AndroidStudioProjects/ExpenseManager/app/build/intermediates/pre-dexed/debug/classes-362dcf964d6c4d017385d77e4ed42d96ecc9eb9d.jar" />
+        <dex dex="/home/imrokraft/AndroidStudioProjects/ExpenseManager/app/build/intermediates/pre-dexed/debug/classes-77541d0a9e255ca554e96ae22896e01f8314f9a9.jar" />
+    </item>
+    <item
+        jar="/home/imrokraft/AndroidStudioProjects/ExpenseManager/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.1/jars/libs/internal_impl-22.1.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="9e070ad32b2700b0343e8e0cccc437733d91ba3a">
+        <dex dex="/home/imrokraft/AndroidStudioProjects/ExpenseManager/app/build/intermediates/pre-dexed/debug/internal_impl-22.1.1-2ce7245b15cc7ffa2719bcb07377ea8452a61eba.jar" />
+    </item>
+    <item
+        jar="/home/imrokraft/AndroidStudioProjects/ExpenseManager/app/build/intermediates/exploded-aar/com.echo/HoloGraphLibrary/1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a1eed10c9648b9c76c439ebe14a3de6a3b9710a5">
+        <dex dex="/home/imrokraft/AndroidStudioProjects/ExpenseManager/app/build/intermediates/pre-dexed/debug/classes-791e4850393d4f0114873745e7ad35b7eeab6364.jar" />
+    </item>
+    <item
+        jar="/home/imrokraft/android-sdk/extras/android/m2repository/com/android/support/support-annotations/22.1.1/support-annotations-22.1.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="01d051a6bfb1218b1db2d3a5af0480ac2c25c42a">
+        <dex dex="/home/imrokraft/AndroidStudioProjects/ExpenseManager/app/build/intermediates/pre-dexed/debug/support-annotations-22.1.1-2973b2ab8c70fd43381b9623a27f76f3437c7e67.jar" />
+    </item>
+    <item
+        jar="/home/imrokraft/AndroidStudioProjects/ExpenseManager/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
+        <dex dex="/home/imrokraft/AndroidStudioProjects/ExpenseManager/app/build/intermediates/pre-dexed/debug/classes-15767e46ae45de59185c0e1a6667e7defcb5379c.jar" />
     </item>
 
 </items>

@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/abcd"
+    android:background="@drawable/a4"
     android:orientation="vertical"
     android:weightSum="1.0"
    >
@@ -21,21 +21,24 @@
          android:textColor="#C00808"
         android:layout_weight="0.3"
         android:layout_gravity="center"/>
-    <View
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.4"/>
+   <TextView
+       android:layout_width="0dp"
+       android:layout_height="match_parent"
+       android:layout_weight="0.3"
+       android:gravity="center|end"
+       android:id="@+id/rupees"
+       android:textSize="30sp"
+       />
 
     <TextView
         android:id="@+id/totv"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_gravity="end"
-        android:gravity="center"
+        android:gravity="start|center"
         android:textSize="30sp"
-        android:textColor="#ffffff"
+        android:textColor="#000000"
         android:layout_weight="0.3"
-        android:text=""
 
         android:textAppearance="?android:attr/textAppearanceLarge" />
 </LinearLayout>
@@ -54,19 +57,23 @@
         android:onClick="monthclick"
         android:layout_gravity="center"
          android:textColor="#C00808"/>
-        <View
+        <TextView
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.4"/>
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:gravity="center|end"
+            android:id="@+id/rupees2"
+            android:textSize="30sp"
+            />
 
     <TextView
         android:id="@+id/monthv"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:text=""
-        android:gravity="center"
+        android:gravity="start|center"
         android:textSize="30sp"
-        android:textColor="#ffffff"
+        android:textColor="#000000"
         android:layout_weight="0.3"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -86,18 +93,22 @@
 
             android:layout_gravity="center"
             android:textColor="#C00808"/>
-        <View
+        <TextView
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.4"/>
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:gravity="center|end"
+            android:id="@+id/rupees3"
+            android:textSize="30sp"
+            />
 
         <TextView
             android:id="@+id/monthtotal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text=""
-            android:textColor="#ffffff"
-            android:gravity="center"
+            android:textColor="#000000"
+            android:gravity="start|center"
             android:textSize="30sp"
             android:layout_weight="0.3"
             android:textAppearance="?android:attr/textAppearanceLarge" />

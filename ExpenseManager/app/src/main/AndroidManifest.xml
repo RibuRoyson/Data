@@ -6,7 +6,7 @@
 
     <uses-sdk
         android:minSdkVersion="8"
-        android:targetSdkVersion="21" />
+        android:targetSdkVersion="22" />
     <supports-screens android:smallScreens="true"
         android:normalScreens="true"
         android:largeScreens="true"
@@ -17,6 +17,7 @@
     <application
         android:allowBackup="true"
         android:icon="@drawable/expense"
+        android:logo="@drawable/expense"
         android:label="@string/app_name"
         android:theme="@android:style/Theme.Black" >
         <activity
@@ -75,6 +76,10 @@
         </activity>
         <activity
             android:name="com.example.expensemanager.Aboutus"
+            android:theme="@style/AppTheme"
+            android:label="@string/app_name"/>
+        <activity
+            android:name="com.example.expensemanager.Sampletotalmonth"
             android:theme="@style/AppTheme"
             android:label="@string/app_name"/>
     </application>

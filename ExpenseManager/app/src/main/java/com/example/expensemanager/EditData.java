@@ -1,10 +1,12 @@
 package com.example.expensemanager;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,9 +16,9 @@ import android.widget.Toast;
 /**
  * Created by imrokraft on 29/4/15.
  */
-public class EditData extends Activity {
+public class EditData extends ActionBarActivity {
     EditText exp, cat, desc, tim, dat;
-    String id, exp1, cat1, desc1, tim1, dat1;
+    String id,  cat1, desc1, tim1, dat1,exp1;
     details d;
     int a, b, c;
     Dbhandler dbh;
@@ -25,11 +27,15 @@ public class EditData extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.new1);
+        android.support.v7.app.ActionBar ab = getSupportActionBar();
+        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#0F62A6"));
+        ab.setBackgroundDrawable(colorDrawable);
         exp = (EditText) findViewById(R.id.expet);
         cat = (EditText) findViewById(R.id.catet);
         desc = (EditText) findViewById(R.id.deset);
         tim = (EditText) findViewById(R.id.timeet);
         dat = (EditText) findViewById(R.id.dateet);
+
         Intent i = getIntent();
         id = i.getExtras().getString("id");
         exp1 = i.getExtras().getString("expense");
@@ -47,6 +53,8 @@ public class EditData extends Activity {
     }
 
     public void updateclick(View v) {
+
+
         d.setExpense(exp.getText().toString());
         d.setCat(cat.getText().toString());
         d.setDescription(desc.getText().toString());
@@ -102,6 +110,7 @@ public class EditData extends Activity {
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main,menu);
         return super.onCreateOptionsMenu(menu);
     }
 

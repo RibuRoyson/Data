@@ -5,7 +5,7 @@
   android:layout_height="fill_parent" 
   android:id="@+id/TheSplashLayout"
   android:layout_gravity="center"
-  android:background="@drawable/abcd"
+  android:background="#000000"
   android:orientation="vertical"
   >
 
