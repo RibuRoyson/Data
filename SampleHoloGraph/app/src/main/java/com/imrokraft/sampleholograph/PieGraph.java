@@ -30,15 +30,12 @@ public class PieGraph extends ActionBarActivity {
         slice.setColor(Color.parseColor("#AA66CC"));
         slice.setValue(8);
         pg.addSlice(slice);
-
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return super.onCreateOptionsMenu(menu);
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -50,7 +47,6 @@ public class PieGraph extends ActionBarActivity {
                 Intent inc=new Intent(getApplicationContext(),PieGraph.class);
                 startActivity(inc);
                 break;
-
         }
         return super.onOptionsItemSelected(item);
     }

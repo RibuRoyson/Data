@@ -164,21 +164,22 @@
                 android:layout_height="0dp"
                 android:layout_weight="1.0" >
                 <ImageView
-                    android:id="@+id/imageview21"
+                    android:id="@+id/imageviewgraph"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:onClick="settings"
-                    android:src="@drawable/settings"
+                    android:src="@drawable/graph1"
+                    android:onClick="graphs"
                     android:padding="10dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/imageview21"
+                    android:layout_below="@+id/imageviewgraph"
                     android:layout_centerHorizontal="true"
-                    android:text="Settings"
+                    android:text="Graphs"
                     android:textColor="#000000"
+                    android:gravity="center"
                     android:textSize="20sp"
                     android:textStyle="bold" />
             </RelativeLayout>

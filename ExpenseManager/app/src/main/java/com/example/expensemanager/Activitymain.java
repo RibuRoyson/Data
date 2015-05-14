@@ -51,9 +51,9 @@ public class Activitymain extends ActionBarActivity {
         Intent inc = new Intent(getApplicationContext(), Bycat.class);
         startActivity(inc);
     }
-    public void settings(View v)
+    public void graphs(View v)
     {
-        Intent incn = new Intent(getApplicationContext(), Sampletotalmonth.class);
+        Intent incn = new Intent(getApplicationContext(), GraphMenu.class);
         startActivity(incn);
     }
 

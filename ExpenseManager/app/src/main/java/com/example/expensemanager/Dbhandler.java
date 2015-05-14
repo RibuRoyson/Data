@@ -9,8 +9,11 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 import android.widget.Toast;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 
 public class Dbhandler extends SQLiteOpenHelper {
     public static final String DB_name = "expensedb";
@@ -376,7 +379,7 @@ public class Dbhandler extends SQLiteOpenHelper {
                 int exp = 0;
 
                 if (d != null) {
-                    if (d.moveToFirst()) ;
+                    if (d.moveToFirst())
                     {
                         do {
                             int cc = d.getCount();
@@ -406,5 +409,251 @@ public class Dbhandler extends SQLiteOpenHelper {
             return data;
 
     }
+    public ArrayList<Integer> totaldaywise() {
 
-}
+        ArrayList<Integer> data = new ArrayList<Integer>();
+        db = this.getReadableDatabase();
+        try {
+            int y=0;
+            final Calendar c = Calendar.getInstance();
+            int mYear = c.get(Calendar.YEAR);
+            int mMonth = c.get(Calendar.MONTH);
+            int mDay = c.get(Calendar.DAY_OF_MONTH);
+            y = mMonth + 1;
+            int mDate=c.get(Calendar.DATE);
+            String val = String.valueOf(mDate).toString();
+            Cursor d = null;
+            d=db.rawQuery("select expense from " + TB_name, null);
+//            String[] columns = {"id", "expense", "cat", "description", "time", "date", "day", "month", "year"};
+//            String selection = "date=?";
+//            String[] selectionArgs = {val};
+//            Log.v("selection", selection);
+//
+//            d = db.query(TB_name, columns, selection, selectionArgs, null, null, null);
+
+            if (d != null) {
+                if (d.moveToFirst())
+                {
+                    do {
+                        int cc=d.getCount();
+                        if(cc<1)
+                        {
+                            return null;
+                        }
+                        int x = d.getInt(d.getColumnIndex("expense"));
+                        data.add(x);
+
+                    }
+                    while (d.moveToNext());
+                }
+            } else {
+                Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
+
+            }
+
+        } catch (SQLiteException se) {
+            Log.e(getClass().getSimpleName(), "could not connect");
+        }
+        return data;
+    }
+    public ArrayList<Integer> daywise() {
+
+        ArrayList<Integer> data = new ArrayList<Integer>();
+        db = this.getReadableDatabase();
+        try {
+            DateFormat df=new SimpleDateFormat("dd-MM-yyyy");
+            Date dat=new Date();
+            String s1=df.format(dat);
+            int y=0;
+            final Calendar c = Calendar.getInstance();
+            String mYear = String.valueOf(c.get(Calendar.YEAR));
+            int mMonth = (c.get(Calendar.MONTH));
+            String mDay = String.valueOf(c.get(Calendar.DAY_OF_MONTH));
+            y = mMonth + 1;
+            String mon=String.valueOf(y);
+            StringBuffer sb=new StringBuffer();
+            String s= String.valueOf(sb.append(mDay).append("-").append(mon).append("-").append(mYear));
+            int mDate=c.get(Calendar.DATE);
+
+            String val = String.valueOf(mDate).toString();
+            Cursor d = null;
+//            d=db.rawQuery("select expense from " + TB_name +"where date = "+mDate, null);
+            String[] columns = {"id", "expense", "cat", "description", "time", "date", "day", "month", "year"};
+            String selection = "date=?";
+            String[] selectionArgs = {s};
+            Log.v("selection", selection);
+
+            d = db.query(TB_name, columns, selection, selectionArgs, null, null, null);
+
+            if (d != null) {
+                if (d.moveToFirst())
+                {
+                    do {
+                        int cc=d.getCount();
+                        if(cc<1)
+                        {
+                            return null;
+                        }
+                        int x = d.getInt(d.getColumnIndex("expense"));
+                        data.add(x);
+
+                    }
+                    while (d.moveToNext());
+                }
+            } else {
+                Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
+
+            }
+
+        } catch (SQLiteException se) {
+            Log.e(getClass().getSimpleName(), "could not connect");
+        }
+        return data;
+    }
+    public ArrayList<Integer> cattotal()
+    {
+        ArrayList<Integer> total = new ArrayList<Integer>();
+        db = this.getReadableDatabase();
+        int exp = 0;
+        try
+        {
+
+            Cursor c=null;
+            c=db.rawQuery("select * from "+TB_name+" where cat='Drinks' ",null);
+            if(c!=null)
+            {
+                if(c.moveToFirst())
+                {
+                    do
+                    {
+                        int a=c.getCount();
+                        if(a<1)
+                        {
+                            return null;
+                        }
+                        int x=c.getInt(c.getColumnIndex("expense"));
+                        exp=exp+x;
+                    }while(c.moveToNext());
+                    total.add(exp);
+                }
+            }
+            else {
+                Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
+            }
+            Cursor c1=null;
+            int exp1=0;
+            c1=db.rawQuery("select * from "+TB_name+" where cat='Dress' ",null);
+            if(c1!=null)
+            {
+                if(c1.moveToFirst())
+                {
+                    do {
+                            int b=c1.getCount();
+                            if(b<1)
+                            {
+                                return null;
+                            }
+                            int y=c1.getInt(c1.getColumnIndex("expense"));
+                            exp1=exp1+y;
+                    }while(c1.moveToNext());
+                    total.add(exp1);
+                }
+            }
+            else {
+                Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
+            }
+            int exp2=0;
+            Cursor c2=null;
+            c2=db.rawQuery("select * from "+TB_name+" where cat='Food' ",null);
+            if(c2!=null)
+            {
+                if(c2.moveToFirst())
+                {
+                    do {
+                        int b=c2.getCount();
+                        if(b<1)
+                        {
+                            return null;
+                        }
+                        int y=c2.getInt(c2.getColumnIndex("expense"));
+                        exp2=exp2+y;
+                    }while(c2.moveToNext());
+                    total.add(exp2);
+                }
+            }
+            else {
+                Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
+            }
+            int exp3=0;
+            Cursor c3=null;
+            c3=db.rawQuery("select * from "+TB_name+" where cat='Others' ",null);
+            if(c3!=null)
+            {
+                if(c3.moveToFirst())
+                {
+                    do {
+                        int b=c3.getCount();
+                        if(b<1)
+                        {
+                            return null;
+                        }
+                        int y=c3.getInt(c3.getColumnIndex("expense"));
+                        exp3=exp3+y;
+                    }while(c3.moveToNext());
+                    total.add(exp3);
+                }
+            }
+            else {
+                Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
+            }
+            int exp4=0;
+            Cursor c4=null;
+            c4=db.rawQuery("select * from "+TB_name+" where cat='Personal' ",null);
+            if(c4!=null)
+            {
+                if(c4.moveToFirst())
+                {
+                    do {
+                        int b=c4.getCount();
+                        if(b<1)
+                        {
+                            return null;
+                        }
+                        int y=c4.getInt(c4.getColumnIndex("expense"));
+                        exp4=exp4+y;
+                    }while(c4.moveToNext());
+                    total.add(exp4);
+                }
+            }
+            else {
+                Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
+            }
+            int exp5=0;
+            Cursor c5=null;
+            c5=db.rawQuery("select * from "+TB_name+" where cat='Utilities' ",null);
+            if(c5!=null)
+            {
+                if(c5.moveToFirst())
+                {
+                    do {
+                        int b=c5.getCount();
+                        if(b<1)
+                        {
+                            return null;
+                        }
+                        int y=c5.getInt(c5.getColumnIndex("expense"));
+                        exp5=exp5+y;
+                    }while(c5.moveToNext());
+                    total.add(exp5);
+                }
+            }
+            else {
+                Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
+            }
+        }
+        catch(SQLiteException se) {
+            Log.e(getClass().getSimpleName(), "could not connect");
+        }
+        return total;
+    }
+   }
