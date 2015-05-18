@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extracts string &apos;password&apos; into R.string.password" description="Extracts string &apos;password&apos; into R.string.password" file="/Fragments/res/layout/fragment1.xml" flags="6" id="com.android.ide.eclipse.adt.refactoring.extract.string" mode="EDIT_SOURCE" proj="/Fragments" rplc-all-java="false" rplc-all-xml="false" sel-end="1041" sel-start="1019" stamp="1431754523329" tok-esc="password" xml-attr-name="android:hint"/>
+</session>
