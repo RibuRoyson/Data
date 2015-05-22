@@ -20,7 +20,7 @@
         android:id="@+id/listViewgraph"
         android:layout_weight="0.4"/>
 
-    <com.echo.holographlibrary.LineGraph
+    <com.echo.holographlibrary.BarGraph
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.5"

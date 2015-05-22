@@ -23,38 +23,38 @@ public class TotalGraph extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.totalgraph);
-        final Calendar c=Calendar.getInstance();
-        dbh=new Dbhandler(getApplicationContext());
-        result=dbh.totaldaywise();
-        if (result==null)
-        {
+        final Calendar c = Calendar.getInstance();
+        dbh = new Dbhandler(getApplicationContext());
+        result = dbh.totaldaywise();
+        if (result==null||result.isEmpty()) {
             System.out.println("Empty");
-        }
-        int x=result.size();
-        Line l=new Line();
-        for(int j=0;j<x;j++)
-        {
-            LinePoint p=new LinePoint();
-            p.setX(j);
-            p.setY(Float.parseFloat(String.valueOf(result.get(j))));
-            l.addPoint(p);
-        }
-        l.setColor(Color.parseColor("#FFBB33"));
-        LineGraph li=(LineGraph)findViewById(R.id.graph);
-        li.addLine(l);
-//        li.setRangeY(0, 700);
-        li.setLineToFill(0);
-        li.setOnPointClickedListener(new LineGraph.OnPointClickedListener() {
-            @Override
-            public void onClick(int lineIndex, int pointIndex) {
-                String s;
-                StringBuffer sb=new StringBuffer();
-                s=sb.append(lineIndex).append(",").append(pointIndex).toString();
-
-                Toast.makeText(getApplicationContext(),s,Toast.LENGTH_SHORT).show();
+        } else {
+            int x = result.size();
+            Line l = new Line();
+            for (int j = 0; j < x; j++) {
+                LinePoint p = new LinePoint();
+                p.setX(j);
+                p.setY(Float.parseFloat(String.valueOf(result.get(j))));
+                l.addPoint(p);
             }
-        });
+            l.setColor(Color.parseColor("#FFBB33"));
+            LineGraph li = (LineGraph) findViewById(R.id.graph);
+            li.addLine(l);
+//        li.setRangeY(0, 700);
+            li.setLineToFill(0);
 
+            li.setOnPointClickedListener(new LineGraph.OnPointClickedListener() {
+                @Override
+                public void onClick(int lineIndex, int pointIndex) {
+                    String s;
+                    StringBuffer sb = new StringBuffer();
+                    s = sb.append(lineIndex).append(",").append(pointIndex).toString();
+
+                    Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
+                }
+            });
+
+        }
     }
 
 }

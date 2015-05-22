@@ -362,51 +362,290 @@ public class Dbhandler extends SQLiteOpenHelper {
         }
         return results;
     }
-    public  ArrayList<Integer> monthwise(int j) {
-
-        ArrayList<Integer> data=new ArrayList<Integer>();
+    public ArrayList<Integer> monthwise() {
+        ArrayList<Integer> data = new ArrayList<Integer>();
         db = this.getReadableDatabase();
         try {
-
-                String val = j+"";
-                Cursor d = null;
-                String[] columns = {"id", "expense", "cat", "description", "time", "date", "day", "month", "year"};
-                String selection = "month=?";
-                String[] selectionArgs = {val};
-                Log.v("selection", selection);
-
-                d = db.query(TB_name, columns, selection, selectionArgs, null, null, null);
-                int exp = 0;
-
-                if (d != null) {
-                    if (d.moveToFirst())
+            int expa=0;
+            Cursor a=null;
+            a=db.rawQuery("select * from "+TB_name+" where month=1 ",null);
+            if(a!=null)
+            {
+                if(a.moveToFirst())
+                {
+                    do
                     {
-                        do {
-                            int cc = d.getCount();
-                            if (cc < 1) {
-                                System.out.print("Empty");
-                                data.add(0);
-                               continue;
-//                                return new ArrayList<Integer>();
-                            }
-                            int z = d.getInt(d.getColumnIndex("expense"));
-                            exp = exp + z;
+                        int a1=a.getCount();
+                        if(a1<1)
+                        {
+                            return null;
                         }
-                        while (d.moveToNext());
-                        data.add(exp);
-                    }
-                } else {
-                    Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
+                        int x=a.getInt(a.getColumnIndex("expense"));
+                        expa=expa+x;
+                    }while(a.moveToNext());
+                    data.add(expa);
                 }
-
-            }catch(SQLiteException se){
-                Log.e(getClass().getSimpleName(), "could not connect");
             }
-//        if(data==null)
-//        {
-//            return new ArrayList<Integer>();
-//        }
-            return data;
+            else {
+                Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
+            }
+            int expb=0;
+            Cursor b=null;
+            b=db.rawQuery("select * from "+TB_name+" where month=2 ",null);
+            if(b!=null)
+            {
+                if(b.moveToFirst())
+                {
+                    do
+                    {
+                        int a1=b.getCount();
+                        if(a1<1)
+                        {
+                            return null;
+                        }
+                        int x=b.getInt(b.getColumnIndex("expense"));
+                        expb=expb+x;
+                    }while(b.moveToNext());
+                    data.add(expb);
+                }
+            }
+            else {
+                Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
+            }
+            Cursor c=null;
+            int expc=0;
+            c=db.rawQuery("select * from "+TB_name+" where month=3 ",null);
+            if(c!=null)
+            {
+                if(c.moveToFirst())
+                {
+                    do
+                    {
+                        int a1=c.getCount();
+                        if(a1<1)
+                        {
+                            return null;
+                        }
+                        int x=c.getInt(c.getColumnIndex("expense"));
+                        expc=expc+x;
+                    }while(c.moveToNext());
+                    data.add(expc);
+                }
+            }
+            else {
+                Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
+            }
+            int expd=0;
+            Cursor d=null;
+            d=db.rawQuery("select * from "+TB_name+" where month=4 ",null);
+            if(d!=null)
+            {
+                if(d.moveToFirst())
+                {
+                    do
+                    {
+                        int a1=d.getCount();
+                        if(a1<1)
+                        {
+                            return null;
+                        }
+                        int x=d.getInt(d.getColumnIndex("expense"));
+                        expd=expd+x;
+                    }while(d.moveToNext());
+                    data.add(expd);
+                }
+            }
+            else {
+                Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
+            }
+            int expe=0;
+            Cursor e=null;
+            e=db.rawQuery("select * from "+TB_name+" where month=5 ",null);
+            if(e!=null)
+            {
+                if(e.moveToFirst())
+                {
+                    do
+                    {
+                        int a1=e.getCount();
+                        if(a1<1)
+                        {
+                            return null;
+                        }
+                        int x=e.getInt(e.getColumnIndex("expense"));
+                        expe=expe+x;
+                    }while(e.moveToNext());
+                    data.add(expe);
+                }
+            }
+            else {
+                Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
+            }
+            int expf=0;
+            Cursor f=null;
+            f=db.rawQuery("select * from "+TB_name+" where month=6 ",null);
+            if(f!=null)
+            {
+                if(f.moveToFirst())
+                {
+                    do
+                    {
+                        int a1=f.getCount();
+                        if(a1<1)
+                        {
+                            return null;
+                        }
+                        int x=f.getInt(f.getColumnIndex("expense"));
+                        expf=expf+x;
+                    }while(f.moveToNext());
+                    data.add(expf);
+                }
+            }
+            else {
+                Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
+            }
+            int expg=0;
+            Cursor g=null;
+            g=db.rawQuery("select * from "+TB_name+" where month=7 ",null);
+            if(g!=null)
+            {
+                if(g.moveToFirst())
+                {
+                    do
+                    {
+                        int a1=g.getCount();
+                        if(a1<1)
+                        {
+                            return null;
+                        }
+                        int x=g.getInt(g.getColumnIndex("expense"));
+                        expg=expg+x;
+                    }while(g.moveToNext());
+                    data.add(expg);
+                }
+            }
+            else {
+                Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
+            }
+            int exph=0;
+            Cursor h=null;
+            h=db.rawQuery("select * from "+TB_name+" where month=8 ",null);
+            if(h!=null)
+            {
+                if(h.moveToFirst())
+                {
+                    do
+                    {
+                        int a1=h.getCount();
+                        if(a1<1)
+                        {
+                            return null;
+                        }
+                        int x=h.getInt(h.getColumnIndex("expense"));
+                        exph=exph+x;
+                    }while(h.moveToNext());
+                    data.add(exph);
+                }
+            }
+            else {
+                Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
+            }
+            int expia=0;
+            Cursor ia=null;
+            ia=db.rawQuery("select * from "+TB_name+" where month=9 ",null);
+            if(ia!=null)
+            {
+                if(ia.moveToFirst())
+                {
+                    do
+                    {
+                        int a1=ia.getCount();
+                        if(a1<1)
+                        {
+                            return null;
+                        }
+                        int x=ia.getInt(ia.getColumnIndex("expense"));
+                        expia=expia+x;
+                    }while(ia.moveToNext());
+                    data.add(expia);
+                }
+            }
+            else {
+                Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
+            }
+            int expja=0;
+            Cursor ja=null;
+            ja=db.rawQuery("select * from "+TB_name+" where month=10 ",null);
+            if(ja!=null)
+            {
+                if(ja.moveToFirst())
+                {
+                    do
+                    {
+                        int a1=ja.getCount();
+                        if(a1<1)
+                        {
+                            return null;
+                        }
+                        int x=ja.getInt(ja.getColumnIndex("expense"));
+                        expja=expja+x;
+                    }while(ja.moveToNext());
+                    data.add(expja);
+                }
+            }
+            else {
+                Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
+            }
+            int expka=0;
+            Cursor ka=null;
+            ka=db.rawQuery("select * from "+TB_name+" where month=11 ",null);
+            if(ka!=null)
+            {
+                if(ka.moveToFirst())
+                {
+                    do
+                    {
+                        int a1=ka.getCount();
+                        if(a1<1)
+                        {
+                            return null;
+                        }
+                        int x=ka.getInt(ka.getColumnIndex("expense"));
+                        expka=expka+x;
+                    }while(ka.moveToNext());
+                    data.add(expka);
+                }
+            }
+            else {
+                Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
+            }
+            int expla=0;
+            Cursor la=null;
+            la=db.rawQuery("select * from "+TB_name+" where month=12 ",null);
+            if(la!=null)
+            {
+                if(la.moveToFirst())
+                {
+                    do
+                    {
+                        int a1=la.getCount();
+                        if(a1<1)
+                        {
+                            return null;
+                        }
+                        int x=la.getInt(la.getColumnIndex("expense"));
+                        expla=expla+x;
+                    }while(la.moveToNext());
+                    data.add(expla);
+                }
+            }
+            else {
+                Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
+            }
+        }catch (SQLiteException se) {
+            Log.e(getClass().getSimpleName(), "could not connect");
+        }
+           return data;
 
     }
     public ArrayList<Integer> totaldaywise() {
@@ -654,6 +893,7 @@ public class Dbhandler extends SQLiteOpenHelper {
         catch(SQLiteException se) {
             Log.e(getClass().getSimpleName(), "could not connect");
         }
+
         return total;
     }
    }

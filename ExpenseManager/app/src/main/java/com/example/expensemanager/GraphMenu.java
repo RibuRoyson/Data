@@ -29,5 +29,10 @@ public class GraphMenu extends ActionBarActivity {
         Intent incc=new Intent(getApplicationContext(),CategoryTotal.class);
         startActivity(incc);
     }
+    public void months(View v)
+    {
+        Intent inccc=new Intent(getApplicationContext(),Sampletotalmonth.class);
+        startActivity(inccc);
+    }
 
 }
