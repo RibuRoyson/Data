@@ -46,11 +46,9 @@ public class TotalGraph extends ActionBarActivity {
             li.setOnPointClickedListener(new LineGraph.OnPointClickedListener() {
                 @Override
                 public void onClick(int lineIndex, int pointIndex) {
-                    String s;
-                    StringBuffer sb = new StringBuffer();
-                    s = sb.append(lineIndex).append(",").append(pointIndex).toString();
-
-                    Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
+                    int s = result.get(pointIndex);
+                    String s1=String.valueOf(s);
+                    Toast.makeText(getApplicationContext(),"\u20B9"+"."+s1,Toast.LENGTH_LONG).show();
                 }
             });
 

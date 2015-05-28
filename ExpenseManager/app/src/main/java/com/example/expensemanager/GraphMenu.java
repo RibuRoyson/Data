@@ -18,21 +18,25 @@ public class GraphMenu extends ActionBarActivity {
     {
         Intent in=new Intent(getApplicationContext(),TotalGraph.class);
         startActivity(in);
+        GraphMenu.this.finish();
     }
     public void days(View v)
     {
         Intent inc=new Intent(getApplicationContext(),Daywise.class);
         startActivity(inc);
+        GraphMenu.this.finish();
     }
     public void categories(View v)
     {
         Intent incc=new Intent(getApplicationContext(),CategoryTotal.class);
         startActivity(incc);
+        GraphMenu.this.finish();
     }
     public void months(View v)
     {
         Intent inccc=new Intent(getApplicationContext(),Sampletotalmonth.class);
         startActivity(inccc);
+        GraphMenu.this.finish();
     }
 
 }

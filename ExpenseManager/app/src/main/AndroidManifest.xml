@@ -2,28 +2,29 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.expensemanager"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="1.0">
 
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="22" />
-    <supports-screens android:smallScreens="true"
-        android:normalScreens="true"
+    <supports-screens
+        android:anyDensity="true"
         android:largeScreens="true"
-        android:xlargeScreens="true"
-        android:anyDensity="true" />
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
 
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/expense"
         android:logo="@drawable/expense"
-        android:theme="@android:style/Theme.Black" >
+        android:theme="@android:style/Theme.Black">
         <activity
             android:name="com.example.expensemanager.SplashScreen"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Black.NoTitleBar" >
+            android:theme="@android:style/Theme.Black.NoTitleBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,71 +33,61 @@
         </activity>
         <activity
             android:name="com.example.expensemanager.Activitymain"
-            android:theme="@style/AppTheme"
             android:label="@string/app_name"
-            >
+            android:theme="@style/AppTheme">
 
         </activity>
         <activity
             android:name="com.example.expensemanager.Viewdb"
-            android:theme="@style/AppTheme"
             android:label="@string/app_name"
-            >
-        </activity>
+            android:theme="@style/AppTheme"></activity>
         <activity
             android:name="com.example.expensemanager.Showresult"
-            android:theme="@style/AppTheme"
             android:label="@string/app_name"
-            >
-        </activity>
+            android:theme="@style/AppTheme"></activity>
         <activity
             android:name="com.example.expensemanager.Add"
-            android:theme="@style/AppTheme"
             android:label="@string/app_name"
-            >
-        </activity>
+            android:theme="@style/AppTheme"></activity>
         <activity
             android:name="com.example.expensemanager.EditData"
-            android:theme="@style/AppTheme"
             android:label="@string/app_name"
-            >
-        </activity>
+            android:theme="@style/AppTheme"></activity>
         <activity
             android:name="com.example.expensemanager.Bycat"
-            android:theme="@style/AppTheme"
             android:label="@string/app_name"
-            >
-        </activity>
+            android:theme="@style/AppTheme"></activity>
         <activity
             android:name="com.example.expensemanager.Monthwise"
-            android:theme="@style/AppTheme"
             android:label="@string/app_name"
-            >
-        </activity>
+            android:theme="@style/AppTheme"></activity>
         <activity
             android:name="com.example.expensemanager.Aboutus"
-            android:theme="@style/AppTheme"
-            android:label="@string/app_name"/>
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme" />
         <activity
             android:name="com.example.expensemanager.Sampletotalmonth"
-            android:theme="@style/AppTheme"
             android:label="@string/app_name"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".TotalGraph"
-            android:theme="@style/AppTheme"
-            android:label="@string/app_name"/>
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme" />
         <activity
             android:name="com.example.expensemanager.GraphMenu"
-            android:theme="@style/AppTheme"
-            android:label="@string/app_name"/>
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme" />
         <activity
             android:name="com.example.expensemanager.Daywise"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppTheme" />
         <activity
             android:name="com.example.expensemanager.CategoryTotal"
-            android:theme="@style/AppTheme"
-            android:label="@string/app_name"/>
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".CurrentCatTotal"
+            android:label="ExpenseManager"
+            android:theme="@style/AppTheme"/>
     </application>
 
 </manifest>

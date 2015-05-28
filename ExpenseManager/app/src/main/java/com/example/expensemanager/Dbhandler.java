@@ -106,6 +106,8 @@ public class Dbhandler extends SQLiteOpenHelper {
                     }
                     while (d.moveToNext());
                 }
+                d.close();
+                db.close();
             } else {
                 Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
 
@@ -147,6 +149,8 @@ public class Dbhandler extends SQLiteOpenHelper {
                     }
                     while (d.moveToNext());
                 }
+                d.close();
+                db.close();
             } else {
                 Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
 
@@ -188,7 +192,7 @@ public class Dbhandler extends SQLiteOpenHelper {
 
     public void deletedetails(String idd) {
         Cursor c = null;
-        SQLiteDatabase db = getWritableDatabase();
+        db = getWritableDatabase();
         deleted = "false";
         String[] columns = {"expense", "cat", "description", "time", "date"};
         String selection = "id=?";
@@ -212,7 +216,7 @@ public class Dbhandler extends SQLiteOpenHelper {
 
     public ArrayList<details> category(String ca) {
         ArrayList<details> results = new ArrayList<details>();
-        SQLiteDatabase db = this.getReadableDatabase();
+        db = this.getReadableDatabase();
         try {
             Cursor c = null;
             String[] columns = {"id", "expense", "cat", "description", "time", "date", "day", "month", "year"};
@@ -255,10 +259,99 @@ public class Dbhandler extends SQLiteOpenHelper {
         }
         return results;
     }
+    public int currentcategory(String ab)
+    {
+        int ex=0;
+        db=this.getReadableDatabase();
+        try
+        {
+            int y=0;
+            final Calendar c = Calendar.getInstance();
+            String mYear = String.valueOf(c.get(Calendar.YEAR));
+            int mMonth = (c.get(Calendar.MONTH));
+            String mDay = String.valueOf(c.get(Calendar.DAY_OF_MONTH));
+            y = mMonth + 1;
+            String mon=String.valueOf(y);
+            StringBuffer sb=new StringBuffer();
+            String s= String.valueOf(sb.append(mDay).append("-").append(mon).append("-").append(mYear));
+            int mDate=c.get(Calendar.DATE);
+            String val = String.valueOf(mDate).toString();
+            Cursor d = null;
+//            String[] columns = {"id", "expense", "cat", "description", "time", "date", "day", "month", "year"};
+//            String selection = "month=?";
+//            String[] selectionArgs = {mon};
+//            d=db.rawQuery("select expense from " + TB_name +" where date = "+s, null);
+            d =db.rawQuery("select expense,month,cat from "+TB_name+" where month = "+mon+" and cat = "+ab,null);
+//            d = db.query(TB_name, columns, selection, selectionArgs, null, null, null);
+            if (d != null) {
+                if (d.moveToFirst())
+                {
+                    do {
+                        int cc=d.getCount();
+                        if(cc<1)
+                        {
+                            return 0;
+                        }
+                        int z = d.getInt(d.getColumnIndex("expense"));
+                        ex = ex + z;
 
+                    }
+                    while (d.moveToNext());
+                }
+                d.close();
+                db.close();
+            } else {
+                Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
+
+            }
+
+        } catch (SQLiteException se) {
+            Log.e(getClass().getSimpleName(), "could not connect");
+
+        }
+        return ex;
+    }
+
+
+    public int categorytotal(String ca) {
+       int exp=0;
+        db = this.getReadableDatabase();
+        try {
+            Cursor d = null;
+            String[] columns = {"id", "expense", "cat", "description", "time", "date", "day", "month", "year"};
+            String selection = "cat=?";
+            String[] selectionArgs = {ca};
+            Log.v("selection", selection);
+
+            d = db.query(TB_name, columns, selection, selectionArgs, null, null, null);
+            if (d != null) {
+                if (d.moveToFirst()) ;
+                {
+                    do {
+                        int cc = d.getCount();
+                        if (cc < 1) {
+                            return 0;
+                        }
+                        int z = d.getInt(d.getColumnIndex("expense"));
+                        exp = exp + z;
+
+                    }
+                    while (d.moveToNext());
+                }
+
+            } else {
+                Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
+
+            }
+
+        } catch (SQLiteException se) {
+            Log.e(getClass().getSimpleName(), "could not connect");
+        }
+        return exp;
+    }
     public ArrayList<details> monthWiseData(int x) {
         ArrayList<details> results = new ArrayList<details>();
-        SQLiteDatabase db = this.getReadableDatabase();
+        db = this.getReadableDatabase();
         try {
             Cursor c = null;
 
@@ -284,6 +377,8 @@ public class Dbhandler extends SQLiteOpenHelper {
                         results.add(new details(id, exp, cat, des, tim, dat, d, m, y));
                     } while (c.moveToNext());
                 }
+                c.close();
+                db.close();
             } else {
                 Toast.makeText(context, "data no found", Toast.LENGTH_LONG).show();
             }
@@ -321,6 +416,8 @@ public class Dbhandler extends SQLiteOpenHelper {
                     }
                     while (d.moveToNext());
                 }
+                d.close();
+                db.close();
             } else {
                 Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
 
@@ -335,7 +432,7 @@ public class Dbhandler extends SQLiteOpenHelper {
     public ArrayList<String> monthgraph(int x)
     {
         ArrayList<String> results = new ArrayList<String>();
-        SQLiteDatabase db = this.getReadableDatabase();
+        db = this.getReadableDatabase();
         try {
             Cursor c = null;
 
@@ -354,6 +451,8 @@ public class Dbhandler extends SQLiteOpenHelper {
                         results.add(exp);
                     } while (c.moveToNext());
                 }
+                c.close();
+                db.close();
             } else {
                 Toast.makeText(context, "data no found", Toast.LENGTH_LONG).show();
             }
@@ -385,7 +484,10 @@ public class Dbhandler extends SQLiteOpenHelper {
                     }while(a.moveToNext());
                     data.add(expa);
                 }
+//                a.close();
+//                db.close();
             }
+
             else {
                 Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
             }
@@ -408,6 +510,8 @@ public class Dbhandler extends SQLiteOpenHelper {
                     }while(b.moveToNext());
                     data.add(expb);
                 }
+//                b.close();
+//                db.close();
             }
             else {
                 Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
@@ -431,6 +535,8 @@ public class Dbhandler extends SQLiteOpenHelper {
                     }while(c.moveToNext());
                     data.add(expc);
                 }
+//                c.close();
+//                db.close();
             }
             else {
                 Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
@@ -454,6 +560,8 @@ public class Dbhandler extends SQLiteOpenHelper {
                     }while(d.moveToNext());
                     data.add(expd);
                 }
+//                d.close();
+//                db.close();
             }
             else {
                 Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
@@ -477,6 +585,8 @@ public class Dbhandler extends SQLiteOpenHelper {
                     }while(e.moveToNext());
                     data.add(expe);
                 }
+//                e.close();
+//                db.close();
             }
             else {
                 Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
@@ -500,6 +610,8 @@ public class Dbhandler extends SQLiteOpenHelper {
                     }while(f.moveToNext());
                     data.add(expf);
                 }
+//                f.close();
+//                db.close();
             }
             else {
                 Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
@@ -523,6 +635,8 @@ public class Dbhandler extends SQLiteOpenHelper {
                     }while(g.moveToNext());
                     data.add(expg);
                 }
+//                g.close();
+//                db.close();
             }
             else {
                 Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
@@ -546,6 +660,8 @@ public class Dbhandler extends SQLiteOpenHelper {
                     }while(h.moveToNext());
                     data.add(exph);
                 }
+//                h.close();
+//                db.close();
             }
             else {
                 Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
@@ -569,6 +685,8 @@ public class Dbhandler extends SQLiteOpenHelper {
                     }while(ia.moveToNext());
                     data.add(expia);
                 }
+//                ia.close();
+//                db.close();
             }
             else {
                 Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
@@ -592,6 +710,8 @@ public class Dbhandler extends SQLiteOpenHelper {
                     }while(ja.moveToNext());
                     data.add(expja);
                 }
+//                ja.close();
+//                db.close();
             }
             else {
                 Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
@@ -615,37 +735,79 @@ public class Dbhandler extends SQLiteOpenHelper {
                     }while(ka.moveToNext());
                     data.add(expka);
                 }
+//                ka.close();
+//                db.close();
             }
             else {
                 Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
             }
             int expla=0;
             Cursor la=null;
-            la=db.rawQuery("select * from "+TB_name+" where month=12 ",null);
-            if(la!=null)
-            {
-                if(la.moveToFirst())
-                {
-                    do
-                    {
-                        int a1=la.getCount();
-                        if(a1<1)
-                        {
-                            return null;
-                        }
-                        int x=la.getInt(la.getColumnIndex("expense"));
-                        expla=expla+x;
-                    }while(la.moveToNext());
-                    data.add(expla);
+            int s1;
+                la = db.rawQuery("select * from " + TB_name + " where month=12 ", null);
+                if (la != null) {
+                    if (la.moveToFirst()) {
+                        System.out.println("hello......................");
+                        do {
+                            int a1 = la.getCount();
+                            if (a1 < 1) {
+
+//                                if((s1=data.get(11))==0)
+//                                    data.add(s1);
+                                return null;
+//                                return new ArrayList<Integer>();
+
+                            }
+                            int x = la.getInt(la.getColumnIndex("expense"));
+                            expla = expla + x;
+                        } while (la.moveToNext());
+                        data.add(expla);
+                    }
+//                la.close();
+//                db.close();
+                } else {
+                    Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
+
                 }
-            }
-            else {
-                Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
-            }
+//            la.close();
+//            db.close();
         }catch (SQLiteException se) {
             Log.e(getClass().getSimpleName(), "could not connect");
         }
            return data;
+
+    }
+    public int april() {
+        int expa = 0;
+        db = this.getReadableDatabase();
+        try {
+
+            Cursor a = null;
+            a = db.rawQuery("select * from " + TB_name + " where month=5 ", null);
+            if (a != null) {
+                if (a.moveToFirst()) {
+                    do {
+                        int a1 = a.getCount();
+                        if (a1 < 1) {
+                            return 0;
+                        }
+                        int x = a.getInt(a.getColumnIndex("expense"));
+                        expa = expa + x;
+                    } while (a.moveToNext());
+
+                }
+//                a.close();
+//                db.close();
+            } else {
+                Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
+
+            }
+//            la.close();
+//            db.close();
+        }catch (SQLiteException se) {
+            Log.e(getClass().getSimpleName(), "could not connect");
+        }
+        return expa;
 
     }
     public ArrayList<Integer> totaldaywise() {
@@ -685,6 +847,8 @@ public class Dbhandler extends SQLiteOpenHelper {
                     }
                     while (d.moveToNext());
                 }
+                d.close();
+                db.close();
             } else {
                 Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
 
@@ -739,6 +903,8 @@ public class Dbhandler extends SQLiteOpenHelper {
                     }
                     while (d.moveToNext());
                 }
+                d.close();
+                db.close();
             } else {
                 Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
 
@@ -775,6 +941,8 @@ public class Dbhandler extends SQLiteOpenHelper {
                     }while(c.moveToNext());
                     total.add(exp);
                 }
+//                c.close();
+//                db.close();
             }
             else {
                 Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
@@ -797,6 +965,8 @@ public class Dbhandler extends SQLiteOpenHelper {
                     }while(c1.moveToNext());
                     total.add(exp1);
                 }
+//                c1.close();
+//                db.close();
             }
             else {
                 Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
@@ -819,6 +989,8 @@ public class Dbhandler extends SQLiteOpenHelper {
                     }while(c2.moveToNext());
                     total.add(exp2);
                 }
+//                c2.close();
+//                db.close();
             }
             else {
                 Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
@@ -841,6 +1013,8 @@ public class Dbhandler extends SQLiteOpenHelper {
                     }while(c3.moveToNext());
                     total.add(exp3);
                 }
+//                c3.close();
+//                db.close();
             }
             else {
                 Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
@@ -863,6 +1037,8 @@ public class Dbhandler extends SQLiteOpenHelper {
                     }while(c4.moveToNext());
                     total.add(exp4);
                 }
+//                c4.close();
+//                db.close();
             }
             else {
                 Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();
@@ -885,6 +1061,8 @@ public class Dbhandler extends SQLiteOpenHelper {
                     }while(c5.moveToNext());
                     total.add(exp5);
                 }
+//                c5.close();
+//                db.close();
             }
             else {
                 Toast.makeText(context, "Results Empty", Toast.LENGTH_LONG).show();

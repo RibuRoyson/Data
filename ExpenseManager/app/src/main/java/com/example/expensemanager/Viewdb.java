@@ -34,7 +34,6 @@ public class Viewdb extends ActionBarActivity {
         if (myuser.isEmpty() == true) {
             Toast.makeText(Viewdb.this, "Sorry No Entry!!", Toast.LENGTH_LONG).show();
         }else {
-
             lv.setAdapter(myuser);
         }
 //        registerForContextMenu(lv);
@@ -75,6 +74,7 @@ public class Viewdb extends ActionBarActivity {
                 i.putExtra("time",userslist.get(lv.getSelectedItemPosition()).getTime1());
                 i.putExtra("date",userslist.get(lv.getSelectedItemPosition()).getDate1());
                 startActivity(i);
+
                 break;
             case R.id.dele2:
 //                myuser.notifyDataSetChanged();
@@ -94,6 +94,12 @@ public class Viewdb extends ActionBarActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+       finish();
     }
 }
 

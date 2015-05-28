@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:text="Total Expense" 
         android:onClick="totalclick"
-         android:textColor="#C00808"
+         android:textColor="#000000"
         android:layout_weight="0.3"
         android:layout_gravity="center"/>
    <TextView
@@ -56,7 +56,7 @@
         android:layout_weight="0.3"
         android:onClick="monthclick"
         android:layout_gravity="center"
-         android:textColor="#C00808"/>
+         android:textColor="#000000"/>
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -92,7 +92,7 @@
             android:layout_weight="0.3"
 
             android:layout_gravity="center"
-            android:textColor="#C00808"/>
+            android:textColor="#000000"/>
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"

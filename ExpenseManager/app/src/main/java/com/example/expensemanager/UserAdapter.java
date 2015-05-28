@@ -73,17 +73,21 @@ public class UserAdapter extends ArrayAdapter<details> {
 
 
                 Intent i = new Intent(getContext(),EditData.class);
-                i.putExtra("id",userslist.get(position).getId());
+
+                i.putExtra("id", userslist.get(position).getId());
                 i.putExtra("expense", userslist.get(position).getExpense());
                 i.putExtra("cat", userslist.get(position).getCat());
                 i.putExtra("description", userslist.get(position).getDescription());
                 i.putExtra("time",userslist.get(position).getTime1());
-                i.putExtra("date",userslist.get(position).getDate1());
+                i.putExtra("date", userslist.get(position).getDate1());
                 i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 myContext.startActivity(i);
+
+
             }
         });
         return convertView;
+
     }
 
 

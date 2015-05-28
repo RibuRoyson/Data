@@ -6,7 +6,7 @@
     android:weightSum="1.0"
     >
 
-    <Button
+    <!--<Button
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:text="Getit"
@@ -18,11 +18,11 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:id="@+id/listViewgraph"
-        android:layout_weight="0.4"/>
+        android:layout_weight="0.4"/>-->
 
     <com.echo.holographlibrary.BarGraph
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.5"
+        android:layout_weight="1.0"
         android:id="@+id/graph"/>
 </LinearLayout>

@@ -23,10 +23,6 @@
 
 package com.echo.holographlibrary;
 
-import java.util.ArrayList;
-
-import com.echo.holographlibrary.PieGraph.OnSliceClickedListener;
-
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
@@ -34,7 +30,6 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.PixelFormat;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.graphics.RectF;
@@ -42,9 +37,9 @@ import android.graphics.Region;
 import android.graphics.drawable.NinePatchDrawable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
-import android.view.SurfaceHolder;
-import android.view.SurfaceView;
 import android.view.View;
+
+import java.util.ArrayList;
 
 public class BarGraph extends View {
 
@@ -96,7 +91,7 @@ public class BarGraph extends View {
 			if (showBarText) {
 				this.p.setTextSize(40);
 				Rect r3 = new Rect();
-				this.p.getTextBounds("$", 0, 1, r3);
+				this.p.getTextBounds("\u20B9"+".", 0, 1, r3);
 				usableHeight = getHeight()-bottomPadding-Math.abs(r3.top-r3.bottom)-26;
 			} else {
 				usableHeight = getHeight()-bottomPadding;
@@ -137,10 +132,10 @@ public class BarGraph extends View {
 					this.p.setTextSize(40);
 					this.p.setColor(Color.WHITE);
 					Rect r2 = new Rect();
-					this.p.getTextBounds("$"+p.getValue(), 0, 1, r2);
-					popup.setBounds((int)(((r.left+r.right)/2)-(this.p.measureText("$"+p.getValue())/2))-14, r.top+(r2.top-r2.bottom)-26, (int)(((r.left+r.right)/2)+(this.p.measureText("$"+p.getValue())/2))+14, r.top);
+					this.p.getTextBounds("\u20B9"+"."+p.getValue(), 0, 1, r2);
+					popup.setBounds((int)(((r.left+r.right)/2)-(this.p.measureText("\u20B9"+"."+p.getValue())/2))-14, r.top+(r2.top-r2.bottom)-26, (int)(((r.left+r.right)/2)+(this.p.measureText("\u20B9"+"."+p.getValue())/2))+14, r.top);
 					popup.draw(canvas);
-					canvas.drawText("$"+p.getValue(), (int)(((r.left+r.right)/2)-(this.p.measureText("$"+p.getValue())/2)), r.top-20, this.p);
+					canvas.drawText("\u20B9"+"."+p.getValue(), (int)(((r.left+r.right)/2)-(this.p.measureText("\u20B9"+"."+p.getValue())/2)), r.top-20, this.p);
 				}
 				if (indexSelected == count && listener != null) {
 					this.p.setColor(Color.parseColor("#33B5E5"));

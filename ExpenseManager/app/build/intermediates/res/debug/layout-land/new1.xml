@@ -28,7 +28,7 @@
             android:id="@+id/expet"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:textColor="#ffffff"
+            android:textColor="#000000"
             android:layout_weight="0.60"
             android:ems="10" />
     </LinearLayout>
@@ -56,7 +56,7 @@
             android:id="@+id/catet"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:textColor="#ffffff"
+            android:textColor="#000000"
             android:layout_weight="0.60"
             android:ems="10" />
     </LinearLayout>
@@ -84,7 +84,7 @@
             android:id="@+id/deset"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:textColor="#ffffff"
+            android:textColor="#000000"
             android:layout_weight="0.60"
             android:ems="10" />
     </LinearLayout>
@@ -113,7 +113,7 @@
             android:id="@+id/timeet"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:textColor="#ffffff"
+            android:textColor="#000000"
             android:layout_weight="0.60"
             android:ems="10" />
     </LinearLayout>
@@ -141,7 +141,7 @@
             android:id="@+id/dateet"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:textColor="#ffffff"
+            android:textColor="#000000"
             android:layout_weight="0.60"
             android:ems="10" />
     </LinearLayout>
@@ -158,19 +158,19 @@
             android:layout_weight="0.1"/>
         <Button
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="Update"
             android:layout_weight="0.4"
             android:layout_gravity="bottom"
-            android:textColor="#C00808"
+            android:textColor="#000000"
             android:onClick="updateclick"/>
         <Button
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="Delete"
             android:layout_weight="0.4"
             android:layout_gravity="bottom"
-            android:textColor="#C00808"
+            android:textColor="#000000"
             android:onClick="deleteclick"/>
         <View
             android:layout_width="0dp"
@@ -190,8 +190,8 @@
             android:layout_weight="0.3"/>
         <Button
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:textColor="#C00808"
+            android:layout_height="match_parent"
+            android:textColor="#000000"
             android:text="View"
             android:onClick="viewdb"
             android:layout_weight="0.4"/>
