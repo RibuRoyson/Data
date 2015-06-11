@@ -1,0 +1,89 @@
+package com.imrokraft.databasesimple;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AlertDialog;
+import android.view.View;
+import android.view.Window;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.parse.LogInCallback;
+import com.parse.ParseException;
+import com.parse.ParseUser;
+
+/**
+ * Created by imrokraft on 9/6/15.
+ */
+public class ActivityLogin extends ActionBarActivity {
+    protected EditText usernameEditText;
+    protected EditText passwordEditText;
+    protected Button loginButton;
+
+    protected TextView signUpTextView;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
+        super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.activity_login);
+        signUpTextView = (TextView)findViewById(R.id.signUpText);
+        usernameEditText = (EditText)findViewById(R.id.usernameField);
+        passwordEditText = (EditText)findViewById(R.id.passwordField);
+        loginButton = (Button)findViewById(R.id.loginButton);
+        signUpTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ActivityLogin.this, ActivitySignup.class);
+                startActivity(intent);
+            }
+        });
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String username = usernameEditText.getText().toString();
+                String password = passwordEditText.getText().toString();
+
+                username = username.trim();
+                password = password.trim();
+
+                if (username.isEmpty()||password.isEmpty())
+                {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(ActivityLogin.this);
+                    builder.setMessage(R.string.login_error_message)
+                            .setTitle(R.string.login_error_title)
+                            .setPositiveButton(android.R.string.ok, null);
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
+                }
+                else {
+
+                   //                    setProgressBarIndeterminateVisibility(true);
+                    ParseUser.logInInBackground(username, password, new LogInCallback() {
+                        @Override
+                        public void done(ParseUser newUser, ParseException e) {
+                            if (e == null) {
+                                Toast.makeText(getApplicationContext(), "Logging in...", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(ActivityLogin.this, Sandwitch.class);
+//                                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                startActivity(intent);
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Something went Wrong...", Toast.LENGTH_SHORT).show();
+                                AlertDialog.Builder builder = new AlertDialog.Builder(ActivityLogin.this);
+                                builder.setMessage(e.getMessage())
+                                        .setTitle(R.string.login_error_title)
+                                        .setPositiveButton(android.R.string.ok, null);
+                                AlertDialog dialog = builder.create();
+                                dialog.show();
+                            }
+                        }
+                    });
+                }
+            }
+        });
+    }
+}

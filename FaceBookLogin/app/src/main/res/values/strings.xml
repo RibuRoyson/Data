@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">FaceBookLogin</string>
+    <string name="logout">Logout</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="facebook_app_id">494541540710837</string>
+</resources>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.imrokraft.databasesimple" >
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:logo="@drawable/messenger_bubble_small_blue"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        >
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <activity
+            android:name=".Sandwitch"
+            android:label="@string/app_name" >
+                   <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".AddData"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".EditData"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".Four"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".Second"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".Third"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".ActivityLogin"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".FaceBookLogin"
+            android:label="@string/app_name" />
+        <activity android:name=".ActivitySignup"
+            android:label="@string/app_name">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ActivityLogin"/>
+        </activity>
+        <activity
+            android:name=".ListSecond"
+            android:label="@string/app_name" />
+        <activity android:name="com.facebook.FacebookActivity"
+            android:configChanges=
+                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:label="@string/app_name" />
+
+    </application>
+
+</manifest>
