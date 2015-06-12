@@ -51,7 +51,7 @@ public class UserAdapter extends ArrayAdapter<details> {
 
     private View getCustomView(final int position, View convertView, ViewGroup parent) {
 
-        share=myContext.getSharedPreferences("MyPrefs",Context.MODE_PRIVATE);
+        share=myContext.getSharedPreferences("UsernamePrefs",Context.MODE_PRIVATE);
         email=share.getString("email",null);
         ParseQuery<ParseObject> query1 = ParseQuery.getQuery("SimpleDB");
         query1.whereEqualTo("Email",email);

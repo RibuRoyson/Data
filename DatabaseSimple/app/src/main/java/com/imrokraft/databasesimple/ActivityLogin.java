@@ -1,9 +1,13 @@
 package com.imrokraft.databasesimple;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AlertDialog;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -62,12 +66,18 @@ public class ActivityLogin extends ActionBarActivity {
                 else {
 
                    //                    setProgressBarIndeterminateVisibility(true);
+                    final String finalUsername = username;
                     ParseUser.logInInBackground(username, password, new LogInCallback() {
                         @Override
                         public void done(ParseUser newUser, ParseException e) {
                             if (e == null) {
                                 Toast.makeText(getApplicationContext(), "Logging in...", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(ActivityLogin.this, Sandwitch.class);
+                                SharedPreferences sharenew = getSharedPreferences("UsernamePrefs", Context.MODE_PRIVATE);
+                                SharedPreferences.Editor editornew = sharenew.edit();
+                                editornew.putString("username", finalUsername);
+                                editornew.putInt("loginfb",0);
+                                editornew.commit();
 //                                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 //                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                 startActivity(intent);
@@ -85,5 +95,23 @@ public class ActivityLogin extends ActionBarActivity {
                 }
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.facebook,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId())
+        {
+            case R.id.facebookitem:
+                Intent inccc = new Intent(getApplication(),FaceBookLogin.class);
+                startActivity(inccc);
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

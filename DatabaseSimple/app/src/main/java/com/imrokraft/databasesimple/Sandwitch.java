@@ -1,6 +1,8 @@
 package com.imrokraft.databasesimple;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 
@@ -28,6 +30,10 @@ public class Sandwitch extends ActionBarActivity {
         if (newUser!=null)
         {
             Intent intentabc=new Intent(this,MainActivity.class);
+            SharedPreferences sharenew = getSharedPreferences("UsernamePrefs", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editornew = sharenew.edit();
+            editornew.putInt("loginvalue",0);
+            editornew.commit();
             startActivity(intentabc);
         }
         else {

@@ -56,11 +56,12 @@ public class ActivitySignup extends ActionBarActivity {
                 }
                 else {
 //                    setProgressBarIndeterminateVisibility(true);
-                    SharedPreferences share=getSharedPreferences("MyPrefs",Context.MODE_PRIVATE);
+                    SharedPreferences share=getSharedPreferences("UsernamePrefs",Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor=share.edit();
                     editor.putString("username",username);
                     editor.putString("password",password);
                     editor.putString("email",email);
+                    editor.putInt("loginfb",0);
                     editor.commit();
 //                        Intent inc = new Intent(getApplicationContext(), Sandwitch.class);
 //                        inc.putExtra("username", username);

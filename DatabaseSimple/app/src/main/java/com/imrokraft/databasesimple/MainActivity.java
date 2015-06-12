@@ -24,7 +24,7 @@ public class MainActivity extends ActionBarActivity {
 
     databasehandler dbh;
     EditText name, qual;
-    String name1, qual1,uname,email;
+    String name1, qual1,uname,email,emailfb;
     int id ;
     final ParseObject database=new ParseObject("SimpleDB");
     ParseUser newUser;
@@ -40,10 +40,13 @@ public class MainActivity extends ActionBarActivity {
         getSupportActionBar().setLogo(R.drawable.messenger_bubble_small_blue);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
         setContentView(R.layout.activity_main);
-        share=getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        share=getSharedPreferences("UsernamePrefs", MODE_PRIVATE);
         uname=share.getString("username", null);
+        email=share.getString("email", null);
         System.out.println("Username:"+uname);
+        System.out.println(email);
         Toast.makeText(getApplicationContext(),"Logged In:"+uname,Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(),"Email"+email,Toast.LENGTH_LONG).show();
 //        ParseUser currentUser=ParseUser.getCurrentUser();
 //        if (currentUser==null)
 //        {
@@ -59,6 +62,7 @@ public class MainActivity extends ActionBarActivity {
         startActivity(intent);
     }
     public void submitclick(View v) {
+
         databasehandler dbh=new databasehandler(getApplicationContext());
         int s=dbh.resultid();
         name = (EditText) findViewById(R.id.editname);
@@ -73,14 +77,22 @@ public class MainActivity extends ActionBarActivity {
         Toast.makeText(getApplicationContext(), "Details Submitted", Toast.LENGTH_SHORT).show();
         name.setText("");
         qual.setText("");
-        share=getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        share=getSharedPreferences("UsernamePrefs", MODE_PRIVATE);
+        emailfb=share.getString("emailfb",null);
         uname=share.getString("username", null);
         email=share.getString("email",null);
 //        database.put("Id",s);
         database.put("Name",name1);
         database.put("Qualification", qual1);
         database.put("UserName",uname);
-        database.put("Email",email);
+        int ab=share.getInt("loginfb",0);
+        if(ab==1) {
+            database.put("Email",emailfb);
+
+        }
+        else{
+            database.put("Email", email);
+        }
         if (isNetworkAvailable(this)==true)
         {
             database.saveInBackground();
@@ -129,18 +141,23 @@ public class MainActivity extends ActionBarActivity {
                 Intent incc = new Intent(getApplication(),Four.class);
                 startActivity(incc);
                 break;
-            case R.id.action_settings:
-                Intent inccc = new Intent(getApplication(),FaceBookLogin.class);
-                startActivity(inccc);
-                break;
             case R.id.cloud:
                 Intent inc1=new Intent(getApplication(),ListSecond.class);
                 startActivity(inc1);
                 break;
             case R.id.action_logout:
-                ParseUser.logOut();
-                ParseUser newUser = ParseUser.getCurrentUser();
-                loadloginView();
+                share=getSharedPreferences("UsernamePrefs", MODE_PRIVATE);
+                int s=share.getInt("loginvalue", 0);
+               if (s==0)
+                {
+                    ParseUser.logOut();
+                    ParseUser newUser = ParseUser.getCurrentUser();
+                    loadloginView();
+                }
+                else if (s==1){
+                   Intent a=new Intent(getApplicationContext(),FaceBookLogin.class);
+                   startActivity(a);
+                }
                 break;
         }
         return super.onOptionsItemSelected(item);
